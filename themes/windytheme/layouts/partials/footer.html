@@ -1,3 +1,12 @@
-<footer>
-	<p>&copy;{{ dateFormat "2006" now }} {{ .Site.Title }}</p>
+<footer class="footer">
+	<div class="footer__inner">
+		{{ if $.Site.Copyright }}
+			<div class="copyright copyright--user">
+				<span>{{ $.Site.Copyright | safeHTML }}</span>
+		{{ else }}
+			<div class="copyright">
+				<span>© {{ now.Year }} {{ .Site.Title }}</span>
+	  	{{ end }}
+			</div>
+	</div>
 </footer>

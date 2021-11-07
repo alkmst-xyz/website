@@ -1,12 +1,12 @@
 ---
-title : "One of my first posts"
-date : "2021-11-05T14:44:28+01:00"
+title : "Lorem ipsum 2"
+date : "2021-11-05T15:08:40+01:00"
 author : ""
-authorTwitter : ""
+authorTwitter : "josephsv96"
 cover : ""
-tags : ["moon-shot", "darknet"]
-keywords : ["", ""]
-description : "a maiden lorem "
+tags : ["first-post", "noob"]
+keywords : ["fitzbitze", "deere"]
+description : "the great lorem ipsum"
 showFullContent : false
 readingTime : true
 ---
