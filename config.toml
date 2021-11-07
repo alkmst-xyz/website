@@ -1,0 +1,17 @@
+baseURL = "https://mynewhugosite.com"
+languageCode = "en-us"
+title = "My New Hugo Site"
+theme = "windytheme"
+
+[menu]
+  [[menu.main]]
+    identifier = "posts"
+    name = "Posts"
+    url = "/posts"
+    weight = 10
+
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "/about"
+    weight = 20
