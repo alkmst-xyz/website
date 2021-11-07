@@ -1,15 +1,15 @@
-+++
-title = "One of my first posts"
-date = "2021-11-05T14:44:28+01:00"
-author = ""
-authorTwitter = ""
-cover = ""
-tags = ["moon-shot", "darknet"]
-keywords = ["", ""]
-description = "a maiden lorem "
-showFullContent = false
-readingTime = true
-+++
+---
+title : "One of my first posts"
+date : "2021-11-05T14:44:28+01:00"
+author : ""
+authorTwitter : ""
+cover : ""
+tags : ["moon-shot", "darknet"]
+keywords : ["", ""]
+description : "a maiden lorem "
+showFullContent : false
+readingTime : true
+---
 
 # Parentum Festa praedam ferrumque nam
 

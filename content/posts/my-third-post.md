@@ -1,15 +1,15 @@
-+++
-title = "My Third Post"
-date = "2021-11-05T15:14:37+01:00"
-author = ""
-authorTwitter = ""
-cover = ""
-tags = ["politik", "sentry","69"]
-keywords = ["", ""]
-description = "a lorem ipsum to remember"
-showFullContent = false
-readingTime = false
-+++
+---
+title : "My Third Post"
+date : "2021-11-05T15:14:37+01:00"
+author : ""
+authorTwitter : ""
+cover : ""
+tags : ["politik", "sentry","69"]
+keywords : ["", ""]
+description : "a lorem ipsum to remember"
+showFullContent : false
+readingTime : false
+---
 
 # Tuumque est
 

@@ -1,15 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-    <!-- <header class="w-full bg-red-300">
-      <h1 class="text-center">Welcome to HugoTails!</h1>
-    </header> -->
-    {{- partial "head.html" . -}}
-    <body>
-        <!-- {{- partial "head.html" . -}} -->
-        {{ partial "nav.html" . }}
-        <!-- <div id="content">
-        {{- block "main" . }}{{- end }}
-        </div>
-        {{- partial "footer.html" . -}} -->
-        <main class="content">
-
+<header class="site-header">
+  <nav class="site-nav">
+    <a class="logo" href="{{ .Site.BaseURL }}">
+      {{ .Site.Title }}
+    </a>
+    <ul class="main-menu">
+      {{ range.Site.Menus.main }}
+      <li>
+        <a href="{{ .URL }}">{{ .Name }}</a>
+      </li>
+      {{ end }}
+    </ul>
+  </nav>
+</header>

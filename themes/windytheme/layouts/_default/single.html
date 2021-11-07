@@ -1,7 +1,10 @@
-{{ partial "header.html" . }}
-
-<h1>{{ .Title }}</h1>
-
-{{ .Content }}
-
-{{ partial "footer.html" . }}
+{{ define "main" }}
+  <div class="container mx-auto px-4">
+    <header class="mb-12">
+      <h1>{{ .Title }}</h1>
+    </header>
+    <div class="prose">
+      {{ .Content }}
+    </div>
+  </div>
+{{ end }}

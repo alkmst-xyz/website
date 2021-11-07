@@ -1,15 +1,15 @@
-+++
-title = "My Second Post"
-date = "2021-11-05T15:08:40+01:00"
-author = ""
-authorTwitter = "josephsv96"
-cover = ""
-tags = ["first-post", "noob"]
-keywords = ["fitzbitze", "deere"]
-description = "the great lorem ipsum"
-showFullContent = false
-readingTime = true
-+++
+---
+title : "My Second Post"
+date : "2021-11-05T15:08:40+01:00"
+author : ""
+authorTwitter : "josephsv96"
+cover : ""
+tags : ["first-post", "noob"]
+keywords : ["fitzbitze", "deere"]
+description : "the great lorem ipsum"
+showFullContent : false
+readingTime : true
+---
 
 Lorem ipsum dolor sit amet, *consectetur* adipisicing elit, sed do eiusmod
 tempor incididunt ut **labore et dolore magna aliqua**. Ut enim ad minim veniam,
