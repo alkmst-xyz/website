@@ -2,10 +2,6 @@
 title: "Home"
 ---
 
-## Hi there
+## Hi there :)
 
-Welcome to your new Hugo site :)
-
-## A sub heading
-
-Now go build something great.
+Welcome to my new Hugo site!
