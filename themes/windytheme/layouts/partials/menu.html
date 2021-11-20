@@ -1,8 +1,8 @@
-<nav class="site-nav">
-<a class="logo" href="{{ .Site.BaseURL }}">
+<nav>
+<a href="{{ .Site.BaseURL }}">
     {{ .Site.Title }}
 </a>
-<ul class="main-menu">
+<ul>
     {{ range.Site.Menus.main }}
     <li>
     <a href="{{ .URL }}">{{ .Name }}</a>

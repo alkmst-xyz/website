@@ -15,5 +15,13 @@
     "postcss-cli": "^9.0.2",
     "postcss-import": "^14.0.2",
     "tailwindcss": "^2.2.19"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/josephsv96/website.git"
+  },
+  "bugs": {
+    "url": "https://github.com/josephsv96/website/issues"
+  },
+  "homepage": "https://github.com/josephsv96/website#readme"
 }
