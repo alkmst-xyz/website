@@ -1,10 +1,10 @@
-<footer>
-	<div>
+<footer class="bg-gray-900">
+	<div class="flex justify-center text-white py-1">
 		{{ if $.Site.Copyright }}
-			<div>
+			<div class="copyright copyright--user">
 				<span>{{ $.Site.Copyright | safeHTML }}</span>
 		{{ else }}
-			<div>
+			<div class="copyright">
 				<span>© {{ now.Year }} {{ .Site.Title }}</span>
 	  	{{ end }}
 			</div>
