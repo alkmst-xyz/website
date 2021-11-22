@@ -39,7 +39,7 @@ body {
 }
 
 .navbar-nav-item {
-  @apply ml-2 hover:underline;
+  @apply ml-auto hover:underline;
 }
 
 /* LISTS */
