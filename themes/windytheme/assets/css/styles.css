@@ -3,7 +3,6 @@
 @import "node_modules/tailwindcss/utilities";
 
 /* LAYOUT */
-
 body {
   color: #333;
   font-size: 125%;
@@ -19,37 +18,28 @@ body {
 
 /* NAVIGATION */
 
-.site-nav {
-  display: flex;
+.navbar {
+  @apply relative select-none md:flex md:items-stretch min-w-full;
 }
 
-.site-nav a {
-  display: block;
-  padding: 1rem;
+.navbar-title-div {
+  @apply flex-none;
 }
 
-.site-nav .logo {
-  font-weight: bold;
-  padding-left: 0;
+.navbar-title {
+  @apply font-bold;
 }
 
-.main-menu {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
+.navbar-nav-div {
+  @apply flex-1;
 }
 
-@media screen and (max-width: 48rem) {
-  .site-nav,
-  .main-menu {
-    flex-direction: column;
-  }
+.navbar-nav {
+  @apply md:flex md:items-stretch md:justify-end ml-auto;
+}
 
-  .site-nav a {
-    padding: 0.5rem;
-    padding-left: 0;
-  }
+.navbar-nav-item {
+  @apply ml-2 hover:underline;
 }
 
 /* LISTS */
@@ -92,7 +82,7 @@ body {
 }
 
 .markdown a {
-  @apply text-blue-600 font-semibold;
+  @apply text-blue-400 font-semibold;
 }
 
 .markdown strong a {

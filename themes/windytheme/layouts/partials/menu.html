@@ -1,12 +1,16 @@
-<nav class="site-nav">
-<a class="logo" href="{{ .Site.BaseURL }}">
-    {{ .Site.Title }}
-</a>
-<ul class="main-menu">
-    {{ range.Site.Menus.main }}
-    <li>
-    <a href="{{ .URL }}">{{ .Name }}</a>
-    </li>
-    {{ end }}
-</ul>
+<nav class="navbar">
+    <div class="navbar-title-div">
+        <a class="navbar-title" href="{{ .Site.BaseURL }}">
+            {{ .Site.Title }}
+        </a>
+    </div>
+    <div class="navbar-nav-div">
+        <div class="navbar-nav">
+            {{ range.Site.Menus.main }}
+                <a class= "navbar-nav-item" href="{{ .URL }}" title="{{ .Name }}">
+                    {{ .Pre }}{{ .Name }}{{ .Post }}
+                </a>
+            {{ end }}
+        </div>
+    </div>
 </nav>
