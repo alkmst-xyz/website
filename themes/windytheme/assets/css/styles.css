@@ -2,21 +2,15 @@
 @import "node_modules/tailwindcss/components";
 @import "node_modules/tailwindcss/utilities";
 
-/* LAYOUT */
+/* MARKDOWN: https://github.com/iandinwoodie/github-markdown-tailwindcss */
+
 body {
-  color: #333;
-  font-size: 125%;
-  line-height: 1.5;
-  max-width: 45rem;
-  padding: 1rem;
-  margin: 0 auto;
+  @apply text-gray-700 text-lg font-mono leading-6 max-w-3xl p-4 m-auto;
 }
 
 .content {
   margin-bottom: 2rem;
 }
-
-/* NAVIGATION */
 
 .navbar {
   @apply relative select-none md:flex md:items-stretch min-w-full;
@@ -27,7 +21,7 @@ body {
 }
 
 .navbar-title {
-  @apply font-bold;
+  @apply font-bold hover:underline;
 }
 
 .navbar-nav-div {
@@ -42,8 +36,6 @@ body {
   @apply md:ml-2 hover:underline;
 }
 
-/* LISTS */
-
 .post-snippet {
   margin-bottom: 1rem;
 }
@@ -52,17 +44,13 @@ body {
   margin-bottom: 0.25rem;
 }
 
-/* MARKDOWN */
-/* https://github.com/iandinwoodie/github-markdown-tailwindcss */
-
-/* Additional vertical padding used by kbd tag. */
 .py-05 {
   padding-top: 0.125rem;
   padding-bottom: 0.125rem;
 }
 
 .markdown {
-  @apply text-gray-900 leading-normal break-words;
+  @apply text-base leading-normal break-words;
 }
 
 .markdown > * + * {
@@ -82,7 +70,7 @@ body {
 }
 
 .markdown a {
-  @apply text-blue-400 font-semibold;
+  @apply font-semibold hover:underline;
 }
 
 .markdown strong a {
@@ -152,10 +140,3 @@ body {
 .markdown td {
   @apply border py-1 px-3;
 }
-
-/* Override pygments style background color. */
-/*
-.markdown .highlight pre {
-  @apply bg-gray-100 !important;
-}
-*/
