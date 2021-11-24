@@ -20,3 +20,8 @@ hugo server -D
 # Start in production mode
 NODE_ENV=production hugo server -D
 ```
+
+## References
+
+1. [Hugo+Tailwind+Netlify](https://jamespleger.com/blog/2020/hugo-tailwind-netlify/)
+2. [NPM as build tool for Hugo](https://thecodestead.com/post/how-to-use-npm-as-a-build-tool-with-hugo/)

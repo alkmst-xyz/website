@@ -5,11 +5,12 @@
   <title>{{ if not .IsHome }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
 
   {{ $css := resources.Get "css/styles.css"}}
-  {{ $styles := $css | resources.PostCSS (dict "config" "./assets/css/postcss.config.js") }}
-  {{ if .Site.IsServer }}
-    <link rel="stylesheet" href="{{ $styles.RelPermalink }}">
+  {{ $css = $css | resources.PostCSS (dict "config" "./assets/css/postcss.config.js") }}
+  
+  {{ if hugo.IsProduction }}
+    {{ $css = $css | minify | fingerprint | resources.PostProcess }}
+    <link rel="stylesheet" href="{{ $css.Permalink }}" integrity="{{ $css.Data.Integrity }}">
   {{ else }}
-    {{ $styles := $styles | minify | fingerprint | resources.PostProcess }}
-    <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}">
+    <link rel="stylesheet" href="{{ $css.RelPermalink }}">
   {{ end }}
 </head>
