@@ -1,27 +1,26 @@
 {
-  "name": "hugotails",
+  "name": "website",
   "version": "1.0.0",
-  "description": "",
+  "description": "## To install tailwind, postcss, etc.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "autoprefixer": "^10.4.0",
-    "postcss": "^8.3.11",
-    "postcss-cli": "^9.0.2",
-    "postcss-import": "^14.0.2",
-    "tailwindcss": "^2.2.19"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/josephsv96/website.git"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "bugs": {
     "url": "https://github.com/josephsv96/website/issues"
   },
-  "homepage": "https://github.com/josephsv96/website#readme"
+  "homepage": "https://github.com/josephsv96/website#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.4.0",
+    "postcss": "^8.4.0",
+    "postcss-cli": "^9.0.2",
+    "tailwindcss": "^2.2.19"
+  }
 }

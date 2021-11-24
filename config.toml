@@ -1,7 +1,7 @@
 baseURL = "https://mynewhugosite.com"
 languageCode = "en-us"
 title = "Joseph Sebastian"
-theme = "windytheme"
+theme = "mistral"
 
 [menu]
   [[menu.main]]

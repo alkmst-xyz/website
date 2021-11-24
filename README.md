@@ -1,27 +1,28 @@
 # My personal website (WIP)
 
-## To install tailwind, postcss, etc.
+## Run locally
+
+### Clone repo
+
+```sh
+git clone --recurse-submodules https://github.com/josephsv96/website
+```
+
+### Install dependencies
 
 ```sh
 npm init --yes
 npm install --save-dev autoprefixer postcss postcss-cli tailwindcss
 ```
 
-> 1. postcss - a tool for transforming CSS with JavaScript
-> 2. postcss-cli - CLI tool to execute Postcss commands in the terminal
-> 3. postcss-import - to resolve the path of an @import rule
-> 4. autoprefixer - helps to add vendor prefixes to CSS
-> 5. tailwindcss - CSS library containing utility class
-
-## Start server
+### Start server
 
 ```sh
-hugo server -D
-# Start in production mode
 NODE_ENV=production hugo server -D
 ```
 
-## References
+## Update [theme](https://github.com/josephsv96/hugo-theme-mistral)
 
-1. [Hugo+Tailwind+Netlify](https://jamespleger.com/blog/2020/hugo-tailwind-netlify/)
-2. [NPM as build tool for Hugo](https://thecodestead.com/post/how-to-use-npm-as-a-build-tool-with-hugo/)
+```sh
+git submodule foreach git pull
+```
