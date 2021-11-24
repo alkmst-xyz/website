@@ -3,7 +3,6 @@ module.exports = {
     content: [
       './layouts/**/*.html',
       './content/**/*.md',
-      './node_modules/**/*.js'
     ],
     safelist:[]
   },
