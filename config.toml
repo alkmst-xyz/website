@@ -15,3 +15,13 @@ theme = "windytheme"
     name = "About"
     url = "/about"
     weight = 2
+
+  [[menu.footer]]
+    name = "Github"
+    url = "https://github.com/example"
+    weight = 1
+
+  [[menu.footer]]
+    name = "Imprint"
+    url = "/imprint"
+    weight = 2
