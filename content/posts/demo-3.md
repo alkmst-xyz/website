@@ -1,14 +1,14 @@
 ---
-title : "Lorem ipsum 3"
-date : "2021-11-05T15:14:37+01:00"
-author : ""
-authorTwitter : ""
-cover : ""
-tags : ["politik", "sentry","69"]
-keywords : ["", ""]
-description : "a lorem ipsum to remember"
-showFullContent : false
-readingTime : false
+title: "Lorem ipsum 3"
+date: "2021-11-05T15:14:37+01:00"
+author: ""
+authorTwitter: ""
+cover: ""
+tags: ["politik", "sentry"]
+keywords: ["", ""]
+description: "a lorem ipsum to remember"
+showFullContent: false
+readingTime: false
 ---
 
 # Tuumque est
@@ -17,7 +17,7 @@ readingTime : false
 
 Lorem markdownum pondus, nec illa septem, data Delo. Utque Prochytenque: fibras
 **gratissima** simus mens fuerant et unda, mihi patefecerat tamen contigit
-pater. Reflectitur *non* haec salicta totque. Rupta at *corpus venam* circumdata
+pater. Reflectitur _non_ haec salicta totque. Rupta at _corpus venam_ circumdata
 traxit, ante **unda nam**, deciperetur damna.
 
 ```py
@@ -50,12 +50,21 @@ Iam sua studiis nimbos coit Lyaeumque et dei omnia cur permaneo Salmacis solet.
 Sanesque sol novit **figuras tangit Phaethonteos** pascua.
 
 ```js
-dac_restore.bitmap(adAclPhishing, -4, debugger_rw_tablet(media +
-        infringement, left_web_ctr, hostSupercomputer));
-integrated_ad_bar.fileHexadecimalAdapter.ctr(interlaced(62), responsive,
-        sampleKde);
-var push_pinterest = impact + phishing_sync_template + pciMatrixDual +
-        commercialBluetooth(adapterHardeningSocial);
+dac_restore.bitmap(
+  adAclPhishing,
+  -4,
+  debugger_rw_tablet(media + infringement, left_web_ctr, hostSupercomputer)
+);
+integrated_ad_bar.fileHexadecimalAdapter.ctr(
+  interlaced(62),
+  responsive,
+  sampleKde
+);
+var push_pinterest =
+  impact +
+  phishing_sync_template +
+  pciMatrixDual +
+  commercialBluetooth(adapterHardeningSocial);
 ```
 
 Quicquid ceu ut supplex Caulonaque aera praemonuisse omnia ignigenamque rogari,
@@ -64,3 +73,9 @@ curvamine satis et mentito sceleratus ut locus invitam Itys nata. Celatur
 sustinui taedae, viro tamen [equos iaculo](http://www.pars.com/) nisi utilis;
 sacros verum. Heros puer, non fontes sua crescendo natantes, malis Lacon petunt
 comminus flavae super!
+
+## My awesome experience
+
+1. sdfasdf
+2. sdfsdf
+   1. asdf

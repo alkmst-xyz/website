@@ -15,6 +15,29 @@ npm init --yes
 npm install --save-dev autoprefixer postcss postcss-cli tailwindcss
 ```
 
+### Optional
+
+Prettier support for GoHtml files.
+
+```sh
+npm install --save-dev prettier prettier-plugin-go-template
+```
+
+Add to .vscode/.prettierrc
+
+```json
+{
+  "overrides": [
+    {
+      "files": ["*.html"],
+      "options": {
+        "parser": "go-template"
+      }
+    }
+  ]
+}
+```
+
 ### Start server
 
 ```sh
