@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="{{ meta.lang }}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>{{ meta.title }}</title>
+
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+
+  <body>
+    <div class="layout" role="document">
+      {% include "header.njk" %}
+
+      <main id="main" class="main" tabindex="-1">
+        {{ content | safe }}
+      </main>
+
+      {% include "footer.njk" %}
+    </div>
+  </body>
+</html>

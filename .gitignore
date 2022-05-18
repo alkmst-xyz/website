@@ -1,7 +1,5 @@
-# Hugo
-# Hugo default output directory
-/public
-/resources
+# 11ty
+_site/
 
 ## OS Files
 # Windows

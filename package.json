@@ -1,14 +1,16 @@
 {
   "name": "website",
-  "version": "1.0.0",
-  "description": "## To install tailwind, postcss, etc.",
+  "version": "0.1.0",
+  "description": "Joseph Sebastian's website",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/josephsv96/website.git"
+    "clean": "rimraf _site",
+    "dev:tailwind": "npx tailwindcss -i src/css/tailwind.css -o _site/css/styles.css --watch",
+    "dev:eleventy": "npx @11ty/eleventy --serve",
+    "build:tailwind": "npx tailwindcss -i src/css/tailwind.css -o _site/css/styles.css --minify",
+    "build:eleventy": "ELEVENTY_PRODUCTION=true npx @11ty/eleventy --serve",
+    "dev": "npm-run-all clean --parallel dev:*",
+    "build": "NODE_ENV=production npm-run-all clean build:tailwind build:eleventy"
   },
   "keywords": [],
   "author": "",
@@ -18,11 +20,17 @@
   },
   "homepage": "https://github.com/josephsv96/website#readme",
   "devDependencies": {
-    "autoprefixer": "^10.4.0",
-    "postcss": "^8.4.0",
-    "postcss-cli": "^9.0.2",
-    "prettier": "^2.5.0",
-    "prettier-plugin-go-template": "^0.0.11",
-    "tailwindcss": "^2.2.19"
+    "@11ty/eleventy": "^1.0.1",
+    "@11ty/eleventy-navigation": "^0.3.3",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^4.0.0",
+    "autoprefixer": "^10.4.7",
+    "cssnano": "^5.1.8",
+    "eleventy-plugin-lazyimages": "^2.1.2",
+    "html-minifier": "^4.0.0",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.13",
+    "postcss-cli": "^9.1.0",
+    "rimraf": "^3.0.2",
+    "tailwindcss": "^3.0.24"
   }
 }
