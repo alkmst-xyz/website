@@ -13,7 +13,7 @@
     "build": "NODE_ENV=production npm-run-all clean build:tailwind build:eleventy"
   },
   "keywords": [],
-  "author": "",
+  "author": "Joseph Sebastian",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/josephsv96/website/issues"
