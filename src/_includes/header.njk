@@ -1,47 +1,34 @@
 <header class="flex flex-row px-4 py-8 text-xl bg-slate-400">
-
-        <div class="flex-auto font-bold">
-            My Website
-        </div>
-        
-        <div class="header_nav">
-            <nav class="nav js-nav" role="navigation" tabindex="-1">
-
-                {# Menu Toggle Button #}
-                <button
-                    class="nav__toggle js-nav-toggle md:hidden"
-                    aria-expanded="false"
-                    aria-controls="nav-menu"
-                >
-                    <span class="sr-only">toggle menu</span>
-                    <span class="menuicon">
-                        <span class="menuicon__bar"></span>
-                        <span class="menuicon__bar"></span>
-                        <span class="menuicon__bar"></span>
-                        <span class="menuicon__bar"></span>
-                    </span>
-                </button>
-
-                {# Nav Links  #}
-                <ul class="hidden md:flex md:flex-row">
+    <div class="flex-auto font-bold">
+        <a href="/" class="logo">Joseph Sebastian</a>
+    </div>
+    <div class="header_nav">
+        <nav
+            class="nav js-nav" role="navigation" tabindex="-1">
+            {# Menu Toggle Button #}
+            <button class="nav__toggle js-nav-toggle md:hidden" aria-expanded="false" aria-controls="nav-menu">
+                <span class="sr-only">toggle menu</span>
+                <span class="menuicon">
+                    <span class="menuicon__bar"></span>
+                    <span class="menuicon__bar"></span>
+                    <span class="menuicon__bar"></span>
+                    <span class="menuicon__bar"></span>
+                </span>
+            </button>
+            {# Nav Links  #}
+            <ul class="hidden md:flex md:flex-row">
                 {%- for item in collections.all | eleventyNavigation -%}
                     {%- if item.url -%}
                         {%- set isCurrent = (item.url == page.url) -%}
                         {%- set isParent = item.url != '/' and item.url in page.url -%}
                         <li class="ml-4{% if isCurrent or isParent %} nav__item--active{% endif %}">
-                            <a
-                                class="nav_link"
-                                href="{% if isCurrent %}#main{% else %}{{ item.url | url }}{% endif %}"
-                                {% if isCurrent %}aria-current="page"{% endif %}
-                            >
+                            <a class="nav_link" href="{% if isCurrent %}#main{% else %}{{ item.url | url }}{% endif %}" {% if isCurrent %} aria-current="page" {% endif %}>
                                 {{ item.title }}
                             </a>
                         </li>
                     {%- endif -%}
                 {%- endfor -%}
-                </ul>
-
-            </nav>
-        </div>
-
+            </ul>
+        </nav>
+    </div>
 </header>
