@@ -1,7 +1,9 @@
 ---
 title: My second post
 description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-date: 2021-06-06T00:00:00Z
+date: 2021-06-06
+tags: programming
+layout: post.njk
 ---
 
 Empower your NuxtJS application with `@nuxtjs/content` module: write in a `content/` directory and fetch your Markdown, JSON, YAML and CSV files through a MongoDB like API, acting as a **Git-based Headless CMS**.

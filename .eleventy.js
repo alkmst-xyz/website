@@ -1,3 +1,5 @@
+const { DateTime } = require("luxon");
+
 const htmlmin = require("html-minifier");
 const pluginLazyImages = require("eleventy-plugin-lazyimages");
 const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
@@ -15,6 +17,27 @@ module.exports = function (eleventyConfig) {
         return `./src/${imgPath}`;
       }
     },
+  });
+
+  // date
+  eleventyConfig.addFilter("readableDate", (dateObj) => {
+    return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat(
+      "dd LLL yyyy"
+    );
+  });
+
+  // tags
+  function filterTagList(tags) {
+    return (tags || []).filter(
+      (tag) => ["all", "nav", "post", "posts"].indexOf(tag) === -1
+    );
+  }
+
+  eleventyConfig.addFilter("filterTagList", filterTagList);
+
+  // https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
+  eleventyConfig.addFilter("htmlDateString", (dateObj) => {
+    return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat("yyyy-LL-dd");
   });
 
   eleventyConfig.addWatchTarget("./src/css/tailwind.css");

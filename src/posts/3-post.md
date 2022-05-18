@@ -1,7 +1,9 @@
 ---
 title: My third post (yay!)
 description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-date: 2021-10-06T00:00:00Z
+date: 2021-10-06
+tags: programming
+layout: post.njk
 ---
 
 Here, some code :)

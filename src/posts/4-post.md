@@ -1,7 +1,9 @@
 ---
 title: My 4th Blog Post
 description: Learning how to use @nuxt/content to create a blog
-date: 2021-11-02T00:00:00Z
+date: 2021-11-02
+tags: content
+layout: post.njk
 ---
 
 ## Writing content

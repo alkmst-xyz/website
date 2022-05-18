@@ -21,8 +21,8 @@
                     {%- if item.url -%}
                         {%- set isCurrent = (item.url == page.url) -%}
                         {%- set isParent = item.url != '/' and item.url in page.url -%}
-                        <li class="ml-4{% if isCurrent or isParent %} nav__item--active{% endif %}">
-                            <a class="nav_link" href="{% if isCurrent %}#main{% else %}{{ item.url | url }}{% endif %}" {% if isCurrent %} aria-current="page" {% endif %}>
+                        <li class="nav-item{% if isCurrent or isParent %} nav-item-active{% endif %}">
+                            <a class="nav-link" href="{% if isCurrent %}#main{% else %}{{ item.url | url }}{% endif %}" {% if isCurrent %} aria-current="page" {% endif %}>
                                 {{ item.title }}
                             </a>
                         </li>

@@ -11,3 +11,6 @@ body {
 .main {
   @apply px-4 bg-slate-50;
 }
+.nav-item {
+  @apply ml-4;
+}

@@ -1,7 +1,9 @@
 ---
 title: My first Blog Post
 description: Learning how to use @nuxt/content to create a blog
-date: 2020-02-02T00:00:00Z
+date: 2020-02-02
+tags: test
+layout: post.njk
 ---
 
 ## Writing content

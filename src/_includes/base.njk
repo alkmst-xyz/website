@@ -1,17 +1,18 @@
 <!DOCTYPE html>
-<html lang="{{ meta.lang }}">
+<html lang="{{ metadata.lang }}">
     <head>
-        <meta charset="UTF-8"/>
+        <meta charset="utf-8"/>
         <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <title>{{ meta.title }}</title>
+        <title>{{ title or metadata.title }}</title>
+        <meta name="description" content="{{ description or metadata.description }}">
         <link rel="stylesheet" href="/css/styles.css"/>
         <link href="https://unpkg.com/prism-themes@1.9.0/themes/prism-one-dark.css" rel="stylesheet">
     </head>
     <body>
         <div class="layout" role="document">
             {% include "header.njk" %}
-            <main id="main" class="main" tabindex="-1">
+            <main {% if templateClass %} class="{{ templateClass }}" {% endif %}>
                 {{ content | safe }}
             </main>
             {% include "footer.njk" %}
