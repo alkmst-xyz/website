@@ -5,12 +5,13 @@
   "main": "index.js",
   "scripts": {
     "clean": "rimraf _site",
+    "postcss": "npx postcss --use cssnano --dir _site/css/code-style/ src/css/code-style",
     "dev:tailwind": "npx tailwindcss -i src/css/tailwind.css -o _site/css/styles.css --watch",
     "dev:eleventy": "npx @11ty/eleventy --serve",
     "build:tailwind": "npx tailwindcss -i src/css/tailwind.css -o _site/css/styles.css --minify",
     "build:eleventy": "ELEVENTY_PRODUCTION=true npx @11ty/eleventy --serve",
-    "dev": "npm-run-all clean --parallel dev:*",
-    "build": "NODE_ENV=production npm-run-all clean build:tailwind build:eleventy"
+    "dev": "npm-run-all clean --parallel postcss dev:*",
+    "build": "NODE_ENV=production npm-run-all clean postcss build:tailwind build:eleventy"
   },
   "keywords": [],
   "author": "Joseph Sebastian",

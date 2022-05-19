@@ -28,7 +28,8 @@ def prepend_path(self, name: str, paths: List[str]) -> None:
 ```diff-js
 // this is a command
 function myCommand() {
-+	let counter = 0;
+    let counter = 0;
+-	counter--;
 +	counter++;
 }
 
