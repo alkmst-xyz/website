@@ -40,7 +40,8 @@ module.exports = function (eleventyConfig) {
     return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat("yyyy-LL-dd");
   });
 
-  eleventyConfig.addWatchTarget("./src/css/tailwind.css");
+  eleventyConfig.addWatchTarget("./src/css/styles.css");
+  eleventyConfig.addPassthroughCopy("./src/static");
   eleventyConfig.addPassthroughCopy("./src/img");
 
   eleventyConfig.addTransform("htmlmin", (content, outputPath) => {

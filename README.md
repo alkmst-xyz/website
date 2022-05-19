@@ -24,3 +24,7 @@ npm run build
 ```sh
 npx lighthouse http://localhost:8080 --view --chrome-flags="--headless" --form-factor desktop --screenEmulation.disabled
 ```
+
+## Credits
+
+- Favicon generated from icons created by [GitHub - covahn](https://github.com/covahn/very-colorful-terminal-icons)
