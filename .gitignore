@@ -1,5 +1,6 @@
 # Hugo
 # Hugo default output directory
+/_site
 /public
 /resources
 
