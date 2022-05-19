@@ -10,7 +10,8 @@
     "dev:eleventy": "npx @11ty/eleventy --serve",
     "build": "npm-run-all clean build:postcss build:eleventy",
     "build:postcss": "NODE_ENV=production npx postcss src/css/*.css --dir _site/css",
-    "build:eleventy": "ELEVENTY_PRODUCTION=true npx @11ty/eleventy --serve"
+    "build:eleventy": "ELEVENTY_PRODUCTION=true npx @11ty/eleventy --pathprefix 'website'",
+    "serve": "npx @11ty/eleventy --serve"
   },
   "keywords": [],
   "author": "Joseph Sebastian",
