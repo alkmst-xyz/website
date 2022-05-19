@@ -1,11 +1,14 @@
 ---
 layout: base
+title: Home
 eleventyNavigation:
   key: Home
+  order: 0
+eleventyComputed:
+  title: "{{ title }} | {{ metadata.author }}"
 ---
 
 <div>
-    <h1>A blank 11ty project.</h1>
     <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget hendrerit ex. Duis vulputate dictum rutrum. Aenean eu
         quam neque. Aliquam erat volutpat. Nam pretium vel neque in consectetur.

@@ -23,7 +23,7 @@ def prepend_path(self, name: str, paths: List[str]) -> None:
     self.env[name] = new_val
 ```
 
-## Some JavaScript
+## Some CPP
 
 ```cpp
 void EngineExplorer::listEngines()
@@ -39,7 +39,3 @@ void EngineExplorer::listEngines()
     m_engines->setCurrentIndex(-1);
 }
 ```
-
-## Sup
-
-small section

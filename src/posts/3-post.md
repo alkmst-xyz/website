@@ -23,19 +23,15 @@ def prepend_path(self, name: str, paths: List[str]) -> None:
 	self.env[name] = new_val
 ```
 
-## Some JavaScript
+## Some JavaScript Diff
 
-```cpp
-void EngineExplorer::listEngines()
-{
-	m_engines->clear();
-	KPluginInfo::List engines = m_engineManager->listDataEngineInfo(m_app);
-	qSort(engines);
-
-	foreach (const KPluginInfo engine, engines) {
-		m_engines->addItem(QIcon::fromTheme(engine.icon()), engine.pluginName());
-	}
-
-	m_engines->setCurrentIndex(-1);
+```diff-js
+// this is a command
+function myCommand() {
++	let counter = 0;
++	counter++;
 }
+
+// Test with a line break above this line.
+console.log('Test');
 ```

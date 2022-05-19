@@ -2,7 +2,9 @@
 title: My second post
 description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 date: 2021-06-06
-tags: programming
+tags:
+  - programming
+  - nuxt
 layout: post.njk
 ---
 

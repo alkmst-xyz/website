@@ -1,9 +1,12 @@
 ---
 layout: base
+title: About
 permalink: about.html
 eleventyNavigation:
   key: About
   order: 2
+eleventyComputed:
+  title: "{{ title }} | {{ metadata.author }}"
 ---
 
 <div>
