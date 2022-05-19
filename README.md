@@ -18,3 +18,9 @@ npm run dev
 # Run production server
 npm run build
 ```
+
+## Google Lighthouse
+
+```sh
+npx lighthouse http://localhost:8080 --view --chrome-flags="--headless" --form-factor desktop --screenEmulation.disabled
+```

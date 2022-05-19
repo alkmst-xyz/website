@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "clean": "rimraf _site",
-    "dev": "run-p clean dev:*",
-    "dev:postcss": "npx postcss --use cssnano --dir _site/css src/css/*.css --watch",
+    "dev": "npm-run-all clean --parallel dev:*",
+    "dev:postcss": "npx postcss src/css/*.css --dir _site/css --watch",
     "dev:eleventy": "npx @11ty/eleventy --serve",
-    "build": "run-s clean build:postcss build:eleventy",
+    "build": "npm-run-all clean build:postcss build:eleventy",
     "build:postcss": "NODE_ENV=production npx postcss src/css/*.css --dir _site/css",
     "build:eleventy": "ELEVENTY_PRODUCTION=true npx @11ty/eleventy --serve"
   },
