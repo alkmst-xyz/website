@@ -1,51 +1,30 @@
 # My personal website (WIP)
 
+Migrated from Hugo to 11ty.
+
+## Clone repo
+
+```sh
+git clone https://github.com/josephsv96/website
+```
+
 ## Run locally
 
-### Clone repo
+```sh
+# Install dependencies
+npm install
+# Run development server
+npm run dev
+# Run production server
+npm run build
+```
+
+## Google Lighthouse
 
 ```sh
-git clone --recurse-submodules https://github.com/josephsv96/website
+npx lighthouse http://localhost:8080 --view --chrome-flags="--headless" --form-factor desktop --screenEmulation.disabled
 ```
 
-### Install dependencies
+## Credits
 
-```sh
-npm init --yes
-npm install --save-dev autoprefixer postcss postcss-cli tailwindcss
-```
-
-### Optional
-
-Prettier support for GoHtml files.
-
-```sh
-npm install --save-dev prettier prettier-plugin-go-template
-```
-
-Add to .vscode/.prettierrc
-
-```json
-{
-  "overrides": [
-    {
-      "files": ["*.html"],
-      "options": {
-        "parser": "go-template"
-      }
-    }
-  ]
-}
-```
-
-### Start server
-
-```sh
-NODE_ENV=production hugo server -D
-```
-
-## Update [theme](https://github.com/josephsv96/hugo-theme-mistral)
-
-```sh
-git submodule foreach git pull
-```
+- Favicon generated from icons created by [GitHub - covahn](https://github.com/covahn/very-colorful-terminal-icons)

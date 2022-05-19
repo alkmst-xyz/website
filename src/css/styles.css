@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply font-mono text-lg bg-slate-200;
+}
+main {
+  @apply px-4 bg-slate-50;
+}
+.layout {
+  @apply bg-slate-300 container max-w-4xl mx-auto;
+}
+.nav-item {
+  @apply ml-4;
+}
