@@ -1,7 +1,17 @@
-<footer class="flex justify-center py-10 text-base bg-slate-400" role="contentinfo">
-    <div>
-        <a href="{{ '/' | url }}">
-        Ⓒ 2022 Joseph Sebastian {{ build.timestamp }}
-        </a>
+<footer class="text-sm bg-slate-400" role="contentinfo">
+  <div class="flex flex-col items-center py-10">
+    <div class="flex flex-col items-center md:flex-row">
+      <span class="mx-4"> Ⓒ 2022 Joseph Sebastian </span>
+      <span class="mx-4">
+        Made using
+        <a class="underline" href="www.11ty.dev">11ty</a>
+      </span>
+      <a class="underline mx-4" href="https://github.com/josephsv96/website"
+        >GitHub</a
+      >
     </div>
+    <div>
+      <span> Updated on {{ generated }} </span>
+    </div>
+  </div>
 </footer>

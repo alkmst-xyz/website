@@ -9,6 +9,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(pluginNavigation);
   eleventyConfig.addPlugin(pluginSyntaxHighlight);
   eleventyConfig.addPlugin(pluginLazyImages, {
+    cacheFile: "", // turns off cache .lazyimages.json
     transformImgPath: (imgPath) => {
       if (imgPath.startsWith("http://") || imgPath.startsWith("https://")) {
         // Handle remote file
@@ -56,6 +57,14 @@ module.exports = function (eleventyConfig) {
     }
 
     return content;
+  });
+
+  eleventyConfig.addGlobalData("generated", () => {
+    let now = new Date();
+    return new Intl.DateTimeFormat("en-US", {
+      dateStyle: "short",
+      timeStyle: "long",
+    }).format(now);
   });
 
   return {

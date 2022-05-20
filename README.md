@@ -1,6 +1,13 @@
-# My personal website (WIP)
+# josephsebastian.me (WIP)
 
-Migrated from Hugo to 11ty.
+<p align="center">
+    <img width="100" src="./img/indigo-to-blue-to-green_512x512x32.png" alt="logo">
+    </a>
+</p>
+
+> Note:
+>
+> 2022-05-19: Migrated from Hugo to 11ty.
 
 ## Clone repo
 
