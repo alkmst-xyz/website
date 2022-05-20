@@ -26,11 +26,11 @@ npm run dev
 npm run build
 ```
 
-## Google Lighthouse
+## TODO
 
-```sh
-npx lighthouse http://localhost:8080 --view --chrome-flags="--headless" --form-factor desktop --screenEmulation.disabled
-```
+- [ ] Update styling
+- [ ] Convert images to .webp during build (while retaining lazy-loading), similar to what [@11ty/eleventy-img](https://www.11ty.dev/docs/plugins/image/) offers.
+- [ ] RSS feed
 
 ## Credits
 
