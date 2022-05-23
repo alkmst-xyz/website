@@ -1,16 +1,15 @@
-const { DateTime } = require("luxon");
-
 const path = require("path");
+const { DateTime } = require("luxon");
 const htmlmin = require("html-minifier");
-const pluginImage = require("@11ty/eleventy-img");
+const Image = require("@11ty/eleventy-img");
 const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginNavigation = require("@11ty/eleventy-navigation");
 
 async function imageShortcode(src, alt, sizes) {
   console.log(`Generating image(s) from:  ${src}`);
 
-  let imageMetadata = await pluginImage(src, {
-    formats: ["webp", null],
+  let imageMetadata = await Image(src, {
+    formats: ["webp"],
     urlPath: "img/",
     outputDir: "_site/img/",
     filenameFormat: function (id, src, width, format, options) {
@@ -27,7 +26,9 @@ async function imageShortcode(src, alt, sizes) {
   };
 
   // You bet we throw an error on missing alt in `imageAttributes` (alt="" works okay)
-  return pluginImage.generateHTML(imageMetadata, imageAttributes);
+  return Image.generateHTML(imageMetadata, imageAttributes, {
+    whitespaceMode: "inline",
+  });
 }
 
 module.exports = function (eleventyConfig) {
