@@ -1,26 +1,44 @@
 const { DateTime } = require("luxon");
 
+const path = require("path");
 const htmlmin = require("html-minifier");
-const pluginLazyImages = require("eleventy-plugin-lazyimages");
+const pluginImage = require("@11ty/eleventy-img");
 const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginNavigation = require("@11ty/eleventy-navigation");
 
-module.exports = function (eleventyConfig) {
-  eleventyConfig.addPlugin(pluginLazyImages, {
-    cacheFile: "", // turns off cache .lazyimages.json
-    transformImgPath: (imgPath) => {
-      if (imgPath.startsWith("http://") || imgPath.startsWith("https://")) {
-        // Handle remote file
-        return imgPath;
-      } else {
-        return `./src/${imgPath}`;
-      }
+async function imageShortcode(src, alt, sizes) {
+  console.log(`Generating image(s) from:  ${src}`);
+
+  let imageMetadata = await pluginImage(src, {
+    formats: ["webp", null],
+    urlPath: "img/",
+    outputDir: "_site/img/",
+    filenameFormat: function (id, src, width, format, options) {
+      const { name } = path.parse(src);
+      return `${name}-${width}w.${format}`;
     },
   });
+
+  let imageAttributes = {
+    alt,
+    sizes,
+    loading: "lazy",
+    decoding: "async",
+  };
+
+  // You bet we throw an error on missing alt in `imageAttributes` (alt="" works okay)
+  return pluginImage.generateHTML(imageMetadata, imageAttributes);
+}
+
+module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(pluginSyntaxHighlight);
   eleventyConfig.addPlugin(pluginNavigation);
 
   // Shortcodes
+
+  eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
+  eleventyConfig.addLiquidShortcode("image", imageShortcode);
+  eleventyConfig.addJavaScriptFunction("image", imageShortcode);
 
   // Filters
 
@@ -48,7 +66,6 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addWatchTarget("./src/css/styles.css");
   eleventyConfig.addPassthroughCopy("./src/static");
-  eleventyConfig.addPassthroughCopy("./src/img");
 
   eleventyConfig.addTransform("htmlmin", (content, outputPath) => {
     if (outputPath.endsWith(".html")) {

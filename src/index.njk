@@ -8,8 +8,11 @@ eleventyComputed:
   title: "{{ title }} | {{ metadata.author }}"
 ---
 
-<div>
-    <img class="mx-auto" src="img/logo.png" alt="logo"/>
+<div class="flex">
+    <div class="mx-auto">
+        {% image "./src/img/logo.png",
+        "logo" %}
+    </div>
 </div>
 
 <div>
