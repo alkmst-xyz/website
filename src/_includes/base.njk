@@ -1,48 +1,45 @@
 <!DOCTYPE html>
 <html lang="{{ metadata.lang }}">
-    <head>
-        {# general #}
-        <meta charset="utf-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <title>{{ title or metadata.title }}</title>
-        <meta
-        name="description" content="{{ description or metadata.description }}"/>
-        {# open graph #}
-        <meta property="og:title" content="{{ title or metadata.title }}"/>
-        <meta property="og:type" content="website"/>
-        <meta property="og:url" content="{{ absolutePageUrl }}"/>
-        <meta property="og:description" content="{{ description or metadata.description }}"/>
-        <meta
-        property="og:image" content="{{ '/img/logo.png' }}"/>
-        <meta property="og:site_name" content="{{ metadata.title }}"/>
-        <meta property="og:locale" content="{{ meta.locale }}"/>
-        {# twitter meta #}
-        <meta name="twitter:card" content="summary_large_image"/>
-        <meta name="twitter:title" content="{{ title or metadata.title }}"/>
-        <meta property="twitter:url" content="{{ absolutePageUrl }}"/>
-        <meta name="twitter:description" content="{{ description or metadata.description }}"/>
-        <meta
-        name="twitter:image" content="{{ '/img/logo.png' }}"/>
-        <meta property="twitter:domain" content=""/>
-        {# icons #}
-        <link rel="apple-touch-icon" sizes="180x180" href="{{ '/static/apple-touch-icon.png' | url }}"/>
-        <link rel="icon" type="image/png" sizes="32x32" href="{{ '/static/favicon-32x32.png' | url }}"/>
-        <link rel="icon" type="image/png" sizes="16x16" href="{{ '/static/favicon-16x16.png' | url }}"/>
-        <link rel="mask-icon" href="{{ '/static/safari-pinned-tab.svg' | url }}" color="#5bbad5"/>
-        <link rel="shortcut icon" href="{{ 'static/favicon.ico' | url }}"/>
-        <link rel="manifest" href="{{ '/static/site.webmanifest' | url }}"/>
-        {# stylesheets #}
-        <link rel="stylesheet" href="{{ '/css/styles.css' | url }}"/>
-        <link rel="stylesheet" href="{{ '/css/prism-one-dark.css' | url }}"/>
-        <link rel="stylesheet" href="{{ '/css/prism-diff.css' | url }}"/>
-    </head>
-    <body>
-        <div class="layout" role="document">
-            {% include "header.njk" %}
-            <main {% if templateClass %} class="{{ templateClass }}" {% endif %}>
-                {{ content | safe }}
-            </main>
-            {% include "footer.njk" %}
-        </div>
-    </body>
+  <head>
+    {# general #}
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>{{ title or metadata.title }}</title>
+    <meta name="description" content="{{ description or metadata.description }}"/>
+    {# open graph #}
+    <meta property="og:title" content="{{ title or metadata.title }}"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="{{ absolutePageUrl }}"/>
+    <meta property="og:description" content="{{ description or metadata.description }}"/>
+    <meta property="og:image" content="{{ '/img/logo.png' | url }}"/>
+    <meta property="og:site_name" content="{{ metadata.title }}"/>
+    <meta property="og:locale" content="{{ meta.locale }}"/>
+    {# twitter meta #}
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="{{ title or metadata.title }}"/>
+    <meta property="twitter:url" content="{{ absolutePageUrl }}"/>
+    <meta name="twitter:description" content="{{ description or metadata.description }}"/>
+    <meta name="twitter:image" content="{{ '/img/logo.png' | url }}"/>
+    <meta property="twitter:domain" content=""/>
+    {# icons #}
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ '/static/apple-touch-icon.png' | url }}"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ '/static/favicon-32x32.png' | url }}"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ '/static/favicon-16x16.png' | url }}"/>
+    <link rel="mask-icon" href="{{ '/static/safari-pinned-tab.svg' | url }}" color="#5bbad5"/>
+    <link rel="shortcut icon" href="{{ 'static/favicon.ico' | url }}"/>
+    <link rel="manifest" href="{{ '/static/site.webmanifest' | url }}"/>
+    {# stylesheets #}
+    <link rel="stylesheet" href="{{ '/css/styles.css' | url }}"/>
+    <link rel="stylesheet" href="{{ '/css/prism-one-dark.css' | url }}"/>
+    <link rel="stylesheet" href="{{ '/css/prism-diff.css' | url }}"/>
+  </head>
+  <body>
+    <div class="layout" role="document">
+      {% include "header.njk" %}
+      <main {% if templateClass %} class="{{ templateClass }}" {% endif %}>
+        {{ content | safe }}
+      </main>
+      {% include "footer.njk" %}
+    </div>
+  </body>
 </html>
