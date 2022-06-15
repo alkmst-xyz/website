@@ -11,7 +11,7 @@
     <meta property="og:type" content="website"/>
     <meta property="og:url" content="{{ absolutePageUrl }}"/>
     <meta property="og:description" content="{{ description or metadata.description }}"/>
-    <meta property="og:image" content="{{ '/img/logo.png' | url }}"/>
+    <meta property="og:image" content="{{ '/static/logo.png' | url }}"/>
     <meta property="og:site_name" content="{{ metadata.title }}"/>
     <meta property="og:locale" content="{{ meta.locale }}"/>
     {# twitter meta #}
@@ -19,7 +19,7 @@
     <meta name="twitter:title" content="{{ title or metadata.title }}"/>
     <meta property="twitter:url" content="{{ absolutePageUrl }}"/>
     <meta name="twitter:description" content="{{ description or metadata.description }}"/>
-    <meta name="twitter:image" content="{{ '/img/logo.png' | url }}"/>
+    <meta name="twitter:image" content="{{ '/static/logo.png' | url }}"/>
     <meta property="twitter:domain" content=""/>
     {# icons #}
     <link rel="apple-touch-icon" sizes="180x180" href="{{ '/static/apple-touch-icon.png' | url }}"/>
