@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ metadata.lang }}">
   <head>
-    {# general #}
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>{{ title or metadata.title }}</title>
@@ -33,6 +32,7 @@
     <link rel="stylesheet" href="{{ '/css/prism-one-dark.css' | url }}"/>
     <link rel="stylesheet" href="{{ '/css/prism-diff.css' | url }}"/>
   </head>
+
   <body>
     <div class="layout" role="document">
       {% include "header.njk" %}
@@ -42,4 +42,5 @@
       {% include "footer.njk" %}
     </div>
   </body>
+
 </html>
