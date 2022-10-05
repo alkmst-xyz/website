@@ -1,22 +1,21 @@
 ---
 layout: base
-templateClass: main-post
 ---
 
-<div class="flex flex-col">
+<div>
   <div>
     <h1>{{ title }}</h1>
   </div>
-  <div class="flex text-slate-500">
+  <div>
     {# Timestamp #}
-    <time class="pr-2" datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time>
+    <time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time>
 
     {# TODP: Time to read post #}
 
     {# Tags #}
     {%- for tag in tags | filterTagList -%}
       {%- set tagUrl %}/tags/{{ tag | slug }}/{% endset -%}
-      <div class="pr-2 lowercase">
+      <div>
         <a href="{{ tagUrl | url }}" >#{{ tag }}</a>
       </div>
     {%- endfor %}
@@ -32,12 +31,12 @@ templateClass: main-post
     <ul>
       {%- if nextPost %}
         <li>Next:
-                    <a href="{{ nextPost.url | url }}">{{ nextPost.data.title }}</a>
+          <a href="{{ nextPost.url | url }}">{{ nextPost.data.title }}</a>
         </li>
       {% endif %}
       {%- if previousPost %}
         <li>Previous:
-                    <a href="{{ previousPost.url | url }}">{{ previousPost.data.title }}</a>
+          <a href="{{ previousPost.url | url }}">{{ previousPost.data.title }}</a>
         </li>
       {% endif %}
     </ul>
