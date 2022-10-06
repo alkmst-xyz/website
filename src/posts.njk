@@ -14,14 +14,16 @@ eleventyComputed:
   title: "{% if pagination.pageNumber > 0 %}Page {{ pagination.pageNumber + 1 }} | {% endif %}{{ title }} | {{ metadata.author }}"
 ---
 
-<ul>
-  {%- for post in posts %}
-    <li class="flex justify-between">
-      <a href="{{ post.url | url }}">{{ post.data.title }}</a>
-    </li>
-  {% endfor -%}
-</ul>
-<div class="flex justify-between">
+<div>
+  <ul>
+    {%- for post in posts %}
+      <li>
+        <a href="{{ post.url | url }}">{{ post.data.title }}</a>
+      </li>
+    {% endfor -%}
+  </ul>
+</div>
+<div>
   {% if pagination.previous %}
     <div>
       <a href="{{ pagination.previous.replace(index.html, "") | url }}"
@@ -30,7 +32,7 @@ eleventyComputed:
     </div>
   {% endif -%}
   {% if pagination.next %}
-    <div class="text-right ml-auto">
+    <div>
       <a href="{{ pagination.next.replace(index.html, "") | url }}"
         >Older Posts →
       </a>
