@@ -30,9 +30,8 @@
     {# stylesheets #}
     <link rel="stylesheet" href="{{ '/css/styles.css' | url }}"/>
   </head>
-
   <body>
-    <div>
+    <div class="max-w-screen-md mx-auto font-sans text-gray-900">
       {% include "header.njk" %}
       <main>
         {{ content | safe }}
