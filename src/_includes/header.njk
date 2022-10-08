@@ -1,7 +1,12 @@
 <header class="text-lg">
   <div class="flex flex-row justify-center py-10">
     <div>
-      <a href="{{ '/' | url }}">Joseph Sebastian</a>
+      {%- set isHome = (page.url == '/') -%}
+      <a
+        href="{% if isHome %}#main{% else %}{{ '/' | url }}{% endif %}"
+        {% if isHome %} aria-current="page" {% endif %}
+        >Joseph Sebastian
+      </a>
     </div>
     <div class="hidden md:flex">
       <nav>
@@ -13,8 +18,9 @@
               <li>
                 <a
                   class="pl-4"
-                  href="{% if isCurrent %}#main{% else %}{{ item.url | url }}{% endif %}" {% if isCurrent %} aria-current="page" {% endif %}
-                >{{ item.title }}
+                  href="{% if isCurrent %}#main{% else %}{{ item.url | url }}{% endif %}"
+                  {% if isCurrent %} aria-current="page" {% endif %}
+                  >{{ item.title }}
                 </a>
               </li>
             {%- endif -%}
