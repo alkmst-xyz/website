@@ -1,5 +1,5 @@
 <header class="text-lg">
-  <div class="flex flex-row justify-center py-10">
+  <div class="flex justify-between py-10">
     <div>
       {%- set isHome = (page.url == '/') -%}
       <a
@@ -10,11 +10,10 @@
     </div>
     <div class="hidden md:flex">
       <nav>
-        <ul class="flex flex-row">
+        <ul class="flex">
           {%- for item in collections.all | eleventyNavigation -%}
             {%- if item.url -%}
               {%- set isCurrent = (item.url == page.url) -%}
-              {%- set isParent = item.url != '/' and item.url in page.url -%}
               <li>
                 <a
                   class="pl-4"
