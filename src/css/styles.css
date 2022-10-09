@@ -6,5 +6,5 @@
 @tailwind utilities;
 
 details {
-  @apply ring-1 ring-lightButton p-2 rounded-lg;
+  @apply p-2 rounded-lg bg-lightSecondary;
 }

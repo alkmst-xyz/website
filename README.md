@@ -35,3 +35,4 @@ npm run build
 ## Credits
 
 - Favicon generated from icons created by [GitHub - covahn](https://github.com/covahn/very-colorful-terminal-icons)
+- Light theme based on [Happy Hues - Palette 6](https://www.happyhues.co/palettes/6).

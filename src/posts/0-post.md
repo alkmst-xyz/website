@@ -1,7 +1,7 @@
 ---
 title: GitHub Flavored Markdown (GFM)
 description: Full example of GFM
-date: 2022-03-06
+date: 2022-10-07
 tags:
   - markdown
   - github
@@ -9,6 +9,8 @@ layout: post.njk
 ---
 
 GFM according to [github](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#headings).
+
+<hr>
 
 ## Headings
 
@@ -48,7 +50,7 @@ Use `git status` to list all new or modified files that haven't yet been committ
 
 Some basic Git commands are:
 
-```shell
+```
 git status
 git add
 git commit
@@ -64,11 +66,14 @@ The background color should be `#ffffff` for light mode and `#0d1117` for dark m
 
 ## Links
 
-This site was built using [GitHub Pages](https://pages.github.com/).
+This site was built using [GitHub pages](https://pages.github.com/).
 
 ## Images
 
-![This is an image](https://myoctocat.com/assets/images/base-octocat.svg)
+<figure>
+  <img src="https://myoctocat.com/assets/images/base-octocat.svg" alt="Octocat">
+  <figcaption>Fig 1. Octocat</figcaption>
+</figure>
 
 ## Lists
 
