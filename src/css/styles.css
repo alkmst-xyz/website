@@ -4,3 +4,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+details {
+  @apply p-2 rounded-lg bg-lightSecondary;
+}

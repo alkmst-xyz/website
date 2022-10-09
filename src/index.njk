@@ -1,19 +1,17 @@
 ---
 layout: base
 title: Home
-eleventyNavigation:
-  key: Home
-  order: 0
+eleventyExcludeFromCollections: true
 eleventyComputed:
   title: "{{ title }} | {{ metadata.author }}"
 ---
 
-<div class="flex justify-center">
-  {% image "./src/img/logo.png",
-  "logo" %}
-</div>
+<article class="prose max-w-none">
+  <div class="flex justify-center">
+    {% image "./src/img/logo.png",
+    "logo" %}
+  </div>
 
-<div>
   <p>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget hendrerit
     ex. Duis vulputate dictum rutrum. Aenean eu quam neque. Aliquam erat
@@ -59,4 +57,4 @@ eleventyComputed:
     amet elit. Aenean dui velit, pharetra sed sagittis ac, mattis non ipsum.
     Nullam luctus sagittis congue.
   </p>
-</div>
+</article>

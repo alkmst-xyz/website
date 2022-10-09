@@ -3,7 +3,7 @@ layout: base
 title: Posts
 eleventyNavigation:
   key: Posts
-  oder: 1
+  oder: 0
 pagination:
   data: collections.posts
   size: 5
@@ -17,13 +17,18 @@ eleventyComputed:
 <div>
   <ul>
     {%- for post in posts %}
-      <li>
-        <a href="{{ post.url | url }}">{{ post.data.title }}</a>
-      </li>
+      <div class="flex text-lg justify-between">
+        <div>
+          <a  href="{{ post.url | url }}">{{ post.data.title }}</a>
+        </div>
+        <div>
+          <span>{{ post.date | readableDate }}</span>
+        </div>
+      </div>
     {% endfor -%}
   </ul>
 </div>
-<div>
+<div class="pt-4">
   {% if pagination.previous %}
     <div>
       <a href="{{ pagination.previous.replace(index.html, "") | url }}"

@@ -65,6 +65,7 @@ module.exports = function (eleventyConfig) {
 
   // Others
 
+  eleventyConfig.addWatchTarget("./tailwind.config.js");
   eleventyConfig.addWatchTarget("./src/css/styles.css");
   eleventyConfig.addPassthroughCopy("./src/static");
 

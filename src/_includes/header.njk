@@ -1,20 +1,25 @@
 <header class="text-lg">
-  <div class="flex flex-row justify-center py-10">
+  <div class="flex justify-between py-10">
     <div>
-      <a href="{{ '/' | url }}">Joseph Sebastian</a>
+      {%- set isHome = (page.url == '/') -%}
+      <a
+        href="{% if isHome %}#main{% else %}{{ '/' | url }}{% endif %}"
+        {% if isHome %} aria-current="page" {% endif %}
+        >Joseph Sebastian
+      </a>
     </div>
     <div class="hidden md:flex">
       <nav>
-        <ul class="flex flex-row">
+        <ul class="flex">
           {%- for item in collections.all | eleventyNavigation -%}
             {%- if item.url -%}
               {%- set isCurrent = (item.url == page.url) -%}
-              {%- set isParent = item.url != '/' and item.url in page.url -%}
               <li>
                 <a
                   class="pl-4"
-                  href="{% if isCurrent %}#main{% else %}{{ item.url | url }}{% endif %}" {% if isCurrent %} aria-current="page" {% endif %}
-                >{{ item.title }}
+                  href="{% if isCurrent %}#main{% else %}{{ item.url | url }}{% endif %}"
+                  {% if isCurrent %} aria-current="page" {% endif %}
+                  >{{ item.title }}
                 </a>
               </li>
             {%- endif -%}
