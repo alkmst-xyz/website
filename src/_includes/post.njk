@@ -11,7 +11,7 @@ layout: base
       <time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time>
     </div>
     <div>
-      {# TODP: Time to read post #}
+      <span>~{{ content | timeToRead }}</span>
     </div>
     <div>
       {%- for tag in tags | filterTagList %}

@@ -8,14 +8,18 @@ const markdownItEmoji = require("markdown-it-emoji");
 const markdownItTexmath = require("markdown-it-texmath");
 const htmlmin = require("html-minifier");
 
-const Image = require("@11ty/eleventy-img");
+const pluginImage = require("@11ty/eleventy-img");
 const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginNavigation = require("@11ty/eleventy-navigation");
+const pluginTimeToRead = require("eleventy-plugin-time-to-read");
 
 module.exports = function (eleventyConfig) {
   // plugins
   eleventyConfig.addPlugin(pluginSyntaxHighlight);
   eleventyConfig.addPlugin(pluginNavigation);
+  eleventyConfig.addPlugin(pluginTimeToRead, {
+    speed: "250 words a minute",
+  });
 
   // transform: minify HTML
   eleventyConfig.addTransform("htmlmin", minifyHTML);
@@ -30,6 +34,12 @@ module.exports = function (eleventyConfig) {
     );
   });
 
+  // filter: date string
+  // https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
+  eleventyConfig.addFilter("htmlDateString", (dateObj) => {
+    return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat("yyyy-LL-dd");
+  });
+
   // filter: tags
   function filterTagList(tags) {
     return (tags || []).filter(
@@ -37,12 +47,6 @@ module.exports = function (eleventyConfig) {
     );
   }
   eleventyConfig.addFilter("filterTagList", filterTagList);
-
-  // filter: date string
-  // https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
-  eleventyConfig.addFilter("htmlDateString", (dateObj) => {
-    return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat("yyyy-LL-dd");
-  });
 
   // collection: create an array of all tags
   eleventyConfig.addCollection("tagList", function (collection) {
@@ -105,7 +109,7 @@ module.exports = function (eleventyConfig) {
 async function imageShortcode(src, alt, sizes) {
   console.log(`Generating image(s) from:  ${src}`);
 
-  let imageMetadata = await Image(src, {
+  let imageMetadata = await pluginImage(src, {
     formats: ["webp"],
     urlPath: "img/",
     outputDir: "_site/img/",
@@ -123,7 +127,7 @@ async function imageShortcode(src, alt, sizes) {
   };
 
   // You bet we throw an error on missing alt in `imageAttributes` (alt="" works okay)
-  return Image.generateHTML(imageMetadata, imageAttributes, {
+  return pluginImage.generateHTML(imageMetadata, imageAttributes, {
     whitespaceMode: "inline",
   });
 }

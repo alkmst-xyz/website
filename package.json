@@ -28,6 +28,7 @@
     "@tailwindcss/typography": "^0.5.7",
     "autoprefixer": "^10.4.12",
     "cssnano": "^5.1.13",
+    "eleventy-plugin-time-to-read": "^1.2.0",
     "html-minifier": "^4.0.0",
     "luxon": "^2.5.0",
     "markdown-it": "^13.0.1",
