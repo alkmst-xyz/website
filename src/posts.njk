@@ -16,7 +16,7 @@ eleventyComputed:
 
 <div>
   <ul>
-    {%- for post in posts %}
+    {% for post in posts %}
       <div class="flex text-lg justify-between">
         <div>
           <a  href="{{ post.url | url }}">{{ post.data.title }}</a>
@@ -25,7 +25,7 @@ eleventyComputed:
           <span>{{ post.date | readableDate }}</span>
         </div>
       </div>
-    {% endfor -%}
+    {% endfor %}
   </ul>
 </div>
 <div class="pt-4">
@@ -35,12 +35,12 @@ eleventyComputed:
         >← Newer Posts
       </a>
     </div>
-  {% endif -%}
+  {% endif %}
   {% if pagination.next %}
     <div>
       <a href="{{ pagination.next.replace(index.html, "") | url }}"
         >Older Posts →
       </a>
     </div>
-  {% endif -%}
+  {% endif %}
 </div>
