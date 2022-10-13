@@ -30,20 +30,18 @@
     "cssnano": "^5.1.13",
     "eleventy-plugin-time-to-read": "^1.2.0",
     "html-minifier": "^4.0.0",
+    "katex": "^0.16.2",
     "luxon": "^2.5.0",
     "markdown-it": "^13.0.1",
     "markdown-it-anchor": "^8.6.5",
     "markdown-it-emoji": "^2.0.2",
     "markdown-it-footnote": "^3.0.3",
-    "markdown-it-texmath": "^1.0.0",
+    "markdown-it-katex": "^2.0.3",
     "npm-run-all": "^4.1.5",
     "postcss": "^8.4.17",
     "postcss-cli": "^9.1.0",
     "postcss-import": "^14.1.0",
     "rimraf": "^3.0.2",
     "tailwindcss": "^3.1.8"
-  },
-  "dependencies": {
-    "katex": "^0.16.2"
   }
 }

@@ -5,7 +5,7 @@ const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
 const markdownItFootnote = require("markdown-it-footnote");
 const markdownItEmoji = require("markdown-it-emoji");
-const markdownItTexmath = require("markdown-it-texmath");
+const markdownItKatex = require("markdown-it-katex");
 const htmlmin = require("html-minifier");
 
 const pluginImage = require("@11ty/eleventy-img");
@@ -89,9 +89,8 @@ module.exports = function (eleventyConfig) {
     })
     .use(markdownItFootnote)
     .use(markdownItEmoji)
-    .use(markdownItTexmath, {
-      engine: require("katex"),
-      delimiters: "dollars",
+    .use(markdownItKatex, {
+      output: "html",
     });
   eleventyConfig.setLibrary("md", mdLib);
 
