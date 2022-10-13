@@ -1,4 +1,3 @@
 {
-  "tags": "posts",
-  "layout": "base"
+  "tags": ["posts"]
 }
