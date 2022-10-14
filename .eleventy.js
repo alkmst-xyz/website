@@ -5,7 +5,6 @@ const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
 const markdownItFootnote = require("markdown-it-footnote");
 const markdownItEmoji = require("markdown-it-emoji");
-const markdownItKatex = require("markdown-it-katex");
 const htmlmin = require("html-minifier");
 
 const pluginImage = require("@11ty/eleventy-img");
@@ -77,21 +76,20 @@ module.exports = function (eleventyConfig) {
   let mdLib = markdownIt({
     html: true,
     linkify: true,
+    typographer: true,
   })
     .use(markdownItAnchor, {
-      permalink: markdownItAnchor.permalink.ariaHidden({
-        placement: "after",
-        class: "direct-link",
-        symbol: "∮",
+      permalink: markdownItAnchor.permalink.linkAfterHeader({
+        class: "headings-link",
+        symbol: "¶",
+        style: "aria-labelledby",
+        wrapper: ['<div class="headings-wrapper">', "</div>"],
       }),
       level: [1, 2, 3, 4],
       slugify: eleventyConfig.getFilter("slugify"),
     })
     .use(markdownItFootnote)
-    .use(markdownItEmoji)
-    .use(markdownItKatex, {
-      output: "html",
-    });
+    .use(markdownItEmoji);
   eleventyConfig.setLibrary("md", mdLib);
 
   return {

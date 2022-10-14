@@ -1,6 +1,5 @@
 @import "./prism-diff.css";
 @import "./prism-one-dark.css";
-/* @import "./katex.css"; */
 
 @tailwind base;
 @tailwind components;
