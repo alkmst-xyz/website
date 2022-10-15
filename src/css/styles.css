@@ -6,34 +6,39 @@
 @tailwind utilities;
 
 @layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply text-lightHighlight font-bold my-4;
+  }
+  h1 {
+    @apply text-4xl;
+  }
+  h2 {
+    @apply text-3xl;
+  }
+  h3 {
+    @apply text-2xl;
+  }
+  h4 {
+    @apply text-xl;
+  }
+  h5,
+  h6 {
+    @apply text-lg;
+  }
 }
 
 /* markdown */
 .markdown {
+  @apply break-words my-8;
 }
-.markdown h1,
-.markdown h2,
-.markdown h3,
-.markdown h4,
-.markdown h5,
-.markdown h6 {
-  @apply text-lightHighlight font-bold my-4;
-}
-.markdown h1 {
-  @apply text-4xl;
-}
-.markdown h2 {
-  @apply text-3xl;
-}
-.markdown h3 {
-  @apply text-2xl;
-}
-.markdown h4 {
-  @apply text-xl;
-}
-h5,
-.markdown h6 {
-  @apply text-lg;
+
+.markdown p {
+  @apply my-3;
 }
 
 .markdown a {
@@ -53,13 +58,49 @@ h5,
   @apply transition-opacity duration-300 opacity-100;
 }
 
+.markdown .footnote-ref a,
+.markdown .footnote-backref {
+  @apply no-underline;
+}
+
+.markdown ul,
+.markdown ol {
+  @apply my-0 pl-4 marker:text-lightHighlight;
+}
+
+.markdown ul {
+  @apply list-disc;
+}
+
+.markdown ul ul {
+  @apply list-[circle];
+}
+
+.markdown ul ul ul {
+  @apply list-[square];
+}
+
+.markdown ol {
+  @apply list-decimal;
+}
+
+.markdown ol ol {
+  @apply list-[lower-latin];
+}
+
+.markdown ol ol ol {
+  @apply list-[lower-roman];
+}
+
 .markdown table {
   @apply mx-auto;
 }
+
 .markdown td,
 .markdown th {
   @apply p-0;
 }
+
 .markdown table th,
 .markdown table td {
   @apply px-4 py-2 border-b border-lightSecondary;
@@ -68,6 +109,7 @@ h5,
 .markdown hr {
   @apply text-lightHighlight my-8;
 }
+
 .markdown details {
   @apply p-2 rounded-lg bg-lightSecondary;
 }

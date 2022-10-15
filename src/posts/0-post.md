@@ -80,18 +80,14 @@ This site was built using [GitHub pages](https://pages.github.com/).
 - George Washington
 - John Adams
 - Thomas Jefferson
+  - First nested list item
+    - Second nested list item
 
 1. James Madison
 2. James Monroe
 3. John Quincy Adams
-
-4. First list item
-
-   - First nested list item
-     - Second nested list item
-
-5. First list item
-   - First nested list item
+   1. First nested list item
+      1. Second nested list item
 
 ## Tasks Lists
 
