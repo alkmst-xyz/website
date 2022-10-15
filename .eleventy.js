@@ -79,13 +79,11 @@ module.exports = function (eleventyConfig) {
     typographer: true,
   })
     .use(markdownItAnchor, {
-      permalink: markdownItAnchor.permalink.linkAfterHeader({
-        class: "headings-link",
-        symbol: "¶",
-        style: "aria-labelledby",
-        wrapper: ['<div class="headings-wrapper">', "</div>"],
+      permalink: markdownItAnchor.permalink.linkInsideHeader({
+        class: "heading-anchor",
+        symbol: "#",
       }),
-      level: [1, 2, 3, 4],
+      level: [1, 2, 3, 4, 5, 6],
       slugify: eleventyConfig.getFilter("slugify"),
     })
     .use(markdownItFootnote)

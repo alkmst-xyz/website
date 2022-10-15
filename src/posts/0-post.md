@@ -29,7 +29,7 @@ GFM according to [github](https://docs.github.com/en/get-started/writing-on-gith
 ## Styling text
 
 | Style                  | Example                                |
-| ---------------------- | -------------------------------------- |
+| :--------------------- | :------------------------------------- |
 | Bold                   | **This is bold text**                  |
 | Italic                 | _This text is italicized_              |
 | Strikethrough          | ~~This was mistaken text~~             |
@@ -50,7 +50,7 @@ Use `git status` to list all new or modified files that haven't yet been committ
 
 Some basic Git commands are:
 
-```
+```shell
 git status
 git add
 git commit
@@ -58,11 +58,11 @@ git commit
 
 The background color should be `#ffffff` for light mode and `#0d1117` for dark mode.
 
-| Style | Example              |
-| ----- | -------------------- |
-| HEX   | `#0969DA`            |
-| RGB   | `rgb(9, 105, 218)`   |
-| HSL   | `hsl(212, 92%, 45%)` |
+| Style |       Example        |
+| :---: | :------------------: |
+|  HEX  |      `#0969DA`       |
+|  RGB  |  `rgb(9, 105, 218)`  |
+|  HSL  | `hsl(212, 92%, 45%)` |
 
 ## Links
 

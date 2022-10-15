@@ -2,7 +2,8 @@
 layout: base
 ---
 
-<article class="prose max-w-none">
+<article>
+
   <div>
     <div>
       <h1>{{ title }}</h1>
@@ -23,7 +24,9 @@ layout: base
     </div>
   </div>
 
-  {{ content | safe }}
+  <div class="markdown">
+    {{ content | safe }}
+  </div>
 
   {%- if collections.posts %}
     {%- set nextPost = collections.posts | getNextCollectionItem(page) %}
