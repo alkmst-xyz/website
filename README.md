@@ -12,7 +12,7 @@
 ## Clone repo
 
 ```sh
-git clone https://github.com/josephsv96/website
+git clone https://github.com/jspsv/website
 ```
 
 ## Run locally

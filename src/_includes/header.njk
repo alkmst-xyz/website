@@ -3,6 +3,7 @@
     <div>
       {%- set isHome = (page.url == '/') -%}
       <a
+        class="{% if isHome %} bg-lightSecondary {% else %} hover:bg-lightSecondary {% endif %}"
         href="{% if isHome %}#main{% else %}{{ '/' | url }}{% endif %}"
         {% if isHome %} aria-current="page" {% endif %}
         >Joseph Sebastian
@@ -16,7 +17,7 @@
               {%- set isCurrent = (item.url == page.url) -%}
               <li>
                 <a
-                  class="pl-4"
+                  class="ml-4 {% if isCurrent %} bg-lightSecondary {% else %} hover:bg-lightSecondary {% endif %}"
                   href="{% if isCurrent %}#main{% else %}{{ item.url | url }}{% endif %}"
                   {% if isCurrent %} aria-current="page" {% endif %}
                   >{{ item.title }}

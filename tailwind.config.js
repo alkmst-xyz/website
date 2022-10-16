@@ -13,30 +13,6 @@ module.exports = {
       lightSecondary: "#d1d1e9",
       lightTertiary: "#e45858",
     },
-    extend: {
-      typography: ({ theme }) => ({
-        DEFAULT: {
-          css: {
-            color: theme("colors.lightParagraph"),
-            // "--tw-prose-body": theme("colors.lightHighlight"), <remove>
-            "--tw-prose-headings": theme("colors.lightHighlight"),
-            // "--tw-prose-lead": theme("colors.lightHighlight"), <remove>
-            "--tw-prose-links": theme("colors.lightHighlight"),
-            "--tw-prose-counters": theme("colors.lightHighlight"),
-            "--tw-prose-bullets": theme("colors.lightHighlight"),
-            "--tw-prose-hr": theme("colors.lightSecondary"),
-            "--tw-prose-quotes": theme("colors.lightParagraph"),
-            "--tw-prose-quote-borders": theme("colors.lightSecondary"),
-            "--tw-prose-captions": theme("colors.lightParagraph"),
-            "--tw-prose-code": theme("colors.lightParagraph"),
-            "--tw-prose-pre-code": theme("colors.lightSecondary"),
-            "--tw-prose-pre-bg": theme("colors.lightParagraph"),
-            "--tw-prose-th-borders": theme("colors.lightSecondary"),
-            "--tw-prose-td-borders": theme("colors.lightSecondary"),
-          },
-        },
-      }),
-    },
   },
-  plugins: [require("@tailwindcss/typography")],
+  plugins: [],
 };

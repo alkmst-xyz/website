@@ -1,16 +1,37 @@
 ---
 title: GitHub Flavored Markdown (GFM)
 description: Full example of GFM
-date: 2022-10-07
+date: 2022-10-01
 tags:
   - markdown
   - github
 layout: post.njk
 ---
 
-GFM according to [github](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#headings).
+Basic writing and formatting syntax. Create sophisticated formatting for your prose and code on GitHub with simple syntax.
 
-<hr>
+> GFM according to [github](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#headings).
+
+<details>
+<summary>List of Features</summary>
+<p>
+
+1. [Headings](#headings)
+2. [Styling text](#styling-text)
+3. [Quoting text](#quoting-text)
+4. [Quoting code](#quoting-code)
+5. [Links](#links)
+6. [Images](#images)
+7. [Lists](#lists)
+8. [~~Task Lists~~](#tasks-lists)
+9. [Using emoji](#using-emoji)
+10. [Footnotes](#footnotes)
+11. [Collapsed section](#collapsed-section)
+12. [~~Math expressions~~](#math-expressions)
+13. [~~Creating digrams~~](#creating-diagrams)
+
+</p>
+</details>
 
 ## Headings
 
@@ -29,7 +50,7 @@ GFM according to [github](https://docs.github.com/en/get-started/writing-on-gith
 ## Styling text
 
 | Style                  | Example                                |
-| ---------------------- | -------------------------------------- |
+| :--------------------- | :------------------------------------- |
 | Bold                   | **This is bold text**                  |
 | Italic                 | _This text is italicized_              |
 | Strikethrough          | ~~This was mistaken text~~             |
@@ -50,7 +71,7 @@ Use `git status` to list all new or modified files that haven't yet been committ
 
 Some basic Git commands are:
 
-```
+```shell
 git status
 git add
 git commit
@@ -58,11 +79,11 @@ git commit
 
 The background color should be `#ffffff` for light mode and `#0d1117` for dark mode.
 
-| Style | Example              |
-| ----- | -------------------- |
-| HEX   | `#0969DA`            |
-| RGB   | `rgb(9, 105, 218)`   |
-| HSL   | `hsl(212, 92%, 45%)` |
+| Style |       Example        |
+| :---: | :------------------: |
+|  HEX  |      `#0969DA`       |
+|  RGB  |  `rgb(9, 105, 218)`  |
+|  HSL  | `hsl(212, 92%, 45%)` |
 
 ## Links
 
@@ -80,18 +101,14 @@ This site was built using [GitHub pages](https://pages.github.com/).
 - George Washington
 - John Adams
 - Thomas Jefferson
+  - First nested list item
+    - Second nested list item
 
 1. James Madison
 2. James Monroe
 3. John Quincy Adams
-
-4. First list item
-
-   - First nested list item
-     - Second nested list item
-
-5. First list item
-   - First nested list item
+   1. First nested list item
+      1. Second nested list item
 
 ## Tasks Lists
 
@@ -129,13 +146,13 @@ You can also use words, to fit your writing style more closely[^note].
 <p>
 
 ```ruby
-  puts "Hello World"
+puts "Hello World"
 ```
 
 </p>
 </details>
 
-## Writing mathematical expressions
+## Math expressions
 
 - This sentence uses `$` delimiters to show math inline: $\sqrt{3x-1}+(1+x)^2$.
 - This expression uses `\$` to display a dollar sign: $\sqrt{\$4}$.
@@ -148,3 +165,12 @@ You can also use words, to fit your writing style more closely[^note].
 $$
 \left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)
 $$
+
+### Creating diagrams
+
+```dot
+digraph example1 {
+    1 -> 2 -> { 4, 5 };
+    1 -> 3 -> { 6, 7 };
+}
+```
