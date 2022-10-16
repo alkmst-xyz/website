@@ -8,11 +8,11 @@ tags:
 layout: post.njk
 ---
 
-GFM according to [github](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#headings).
+Basic writing and formatting syntax. Create sophisticated formatting for your prose and code on GitHub with simple syntax.
 
-> Basic writing and formatting syntax. Create sophisticated formatting for your prose and code on GitHub with simple syntax.
+> GFM according to [github](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#headings).
 
-<details open>
+<details>
 <summary>List of Features</summary>
 <p>
 
