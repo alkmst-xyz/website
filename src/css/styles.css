@@ -32,6 +32,11 @@
   }
 }
 
+/* header */
+header a {
+  @apply px-2 py-1 rounded-lg transition-colors duration-300;
+}
+
 /* markdown */
 .markdown {
   @apply break-words my-8;
