@@ -10,12 +10,14 @@ const htmlmin = require("html-minifier");
 const pluginImage = require("@11ty/eleventy-img");
 const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginNavigation = require("@11ty/eleventy-navigation");
+const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginTimeToRead = require("eleventy-plugin-time-to-read");
 
 module.exports = function (eleventyConfig) {
   // plugins
   eleventyConfig.addPlugin(pluginSyntaxHighlight);
   eleventyConfig.addPlugin(pluginNavigation);
+  eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(pluginTimeToRead, {
     speed: "250 words a minute",
   });
