@@ -1,7 +1,7 @@
 ---
 title: GitHub Flavored Markdown (GFM)
 description: Full example of GFM
-date: 2022-10-07
+date: 2022-10-01
 tags:
   - markdown
   - github
@@ -10,7 +10,28 @@ layout: post.njk
 
 GFM according to [github](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#headings).
 
-<hr>
+> Basic writing and formatting syntax. Create sophisticated formatting for your prose and code on GitHub with simple syntax.
+
+<details open>
+<summary>List of Features</summary>
+<p>
+
+1. [Headings](#headings)
+2. [Styling text](#styling-text)
+3. [Quoting text](#quoting-text)
+4. [Quoting code](#quoting-code)
+5. [Links](#links)
+6. [Images](#images)
+7. [Lists](#lists)
+8. [~~Task Lists~~](#tasks-lists)
+9. [Using emoji](#using-emoji)
+10. [Footnotes](#footnotes)
+11. [Collapsed section](#collapsed-section)
+12. [~~Math expressions~~](#math-expressions)
+13. [~~Creating digrams~~](#creating-diagrams)
+
+</p>
+</details>
 
 ## Headings
 
@@ -125,13 +146,13 @@ You can also use words, to fit your writing style more closely[^note].
 <p>
 
 ```ruby
-  puts "Hello World"
+puts "Hello World"
 ```
 
 </p>
 </details>
 
-## Writing mathematical expressions
+## Math expressions
 
 - This sentence uses `$` delimiters to show math inline: $\sqrt{3x-1}+(1+x)^2$.
 - This expression uses `\$` to display a dollar sign: $\sqrt{\$4}$.

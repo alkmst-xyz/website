@@ -8,20 +8,25 @@ layout: base
     <div>
       <h1>{{ title }}</h1>
     </div>
-    <div>
-      <time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time>
-    </div>
-    <div>
-      <span>~{{ content | timeToRead }}</span>
-    </div>
-    <div>
+    <div class="flex flex-row space-x-2 my-2">
       {%- for tag in tags | filterTagList %}
         {%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset -%}
-        <div>
-          <a href="{{ tagUrl | url }}" >#{{ tag }}</a>
-        </div>
+        <a
+          class="font-mono text-xs bg-lightSecondary p-2 rounded-lg"
+          href="{{ tagUrl | url }}"
+          >#{{ tag }}
+        </a>
       {%- endfor %}
     </div>
+    <div class="flex flex-row space-x-2 my-2 opacity-70">
+      <time
+        datetime="{{ page.date | htmlDateString }}"
+        >{{ page.date | readableDate }}
+      </time>
+      <span class="text-lightHighlight">⊙</span>
+      <span>~{{ content | timeToRead }}</span>
+    </div>
+
   </div>
 
   <div class="markdown">

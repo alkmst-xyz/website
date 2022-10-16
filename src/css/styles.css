@@ -65,7 +65,7 @@
 
 .markdown ul,
 .markdown ol {
-  @apply my-0 pl-4 marker:text-lightHighlight;
+  @apply my-0 pl-8 marker:text-lightHighlight;
 }
 
 .markdown ul {

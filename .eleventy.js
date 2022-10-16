@@ -26,18 +26,13 @@ module.exports = function (eleventyConfig) {
   // shortcode: image
   eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
 
-  // filter: date
-  eleventyConfig.addFilter("readableDate", (dateObj) => {
-    return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat(
-      "dd LLL yyyy"
-    );
-  });
-
-  // filter: date string
-  // https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
+  // filter: valid date string, used by datetime attribute
   eleventyConfig.addFilter("htmlDateString", (dateObj) => {
     return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat("yyyy-LL-dd");
   });
+
+  // filter: readable date string
+  eleventyConfig.addFilter("readableDate", readableDate);
 
   // filter: tags
   function filterTagList(tags) {
@@ -64,6 +59,7 @@ module.exports = function (eleventyConfig) {
   // pass through static files
   eleventyConfig.addPassthroughCopy("./src/static");
 
+  // global data: "generated" contains complete date string at build time
   eleventyConfig.addGlobalData("generated", () => {
     let now = new Date();
     return new Intl.DateTimeFormat("en-US", {
@@ -141,4 +137,19 @@ function minifyHTML(content, outputPath) {
         useShortDoctype: true,
       })
     : content;
+}
+
+function readableDate(dateObj) {
+  const pr = new Intl.PluralRules("en-US", { type: "ordinal" });
+  const dateOrdinals = new Map([
+    ["one", "st"],
+    ["two", "nd"],
+    ["few", "rd"],
+    ["other", "th"],
+  ]);
+  const date_d = DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat("d");
+  const date_m = DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat("LLL");
+  const date_y = DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat("yyyy");
+
+  return `${date_m} ${date_d}${dateOrdinals.get(pr.select(date_d))}, ${date_y}`;
 }
