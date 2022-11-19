@@ -5,6 +5,12 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Caskaydia_Cove_Nerd_Font_Complete_Regular.otf */
+@font-face {
+  font-family: "CaskaydiaCove";
+  src: url("../static/fonts/Caskaydia_Cove_Nerd_Font_Complete_Regular.otf");
+}
+
 @layer base {
   h1,
   h2,
@@ -14,18 +20,23 @@
   h6 {
     @apply text-lightHighlight font-bold my-4;
   }
+
   h1 {
     @apply text-4xl;
   }
+
   h2 {
     @apply text-3xl;
   }
+
   h3 {
     @apply text-2xl;
   }
+
   h4 {
     @apply text-xl;
   }
+
   h5,
   h6 {
     @apply text-lg;

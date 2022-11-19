@@ -1,6 +1,11 @@
 module.exports = {
   content: ["./src/*.{html,njk}", "./src/**/*.{html,njk}"],
   theme: {
+    extend: {
+      fontFamily: {
+        caskaydia_cove: ["CaskaydiaCove", "monospace"],
+      },
+    },
     colors: {
       lightBg: "#fffffe",
       lightHeadline: "#2b2c34",
