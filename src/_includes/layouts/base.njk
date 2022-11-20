@@ -5,14 +5,20 @@
               font-caskaydia_cove
               selection:bg-lightSecondary
               ">
-  {% include "head.njk" %}
-  <body >
+
+  {% include "components/head.njk" %}
+
+  <body>
     <div class="max-w-screen-md mx-auto px-2">
-      {% include "header.njk" %}
+
+      {% include "components/header.njk" %}
+
       <main class="px-2">
         {{ content | safe }}
       </main>
-      {% include "footer.njk" %}
+
+      {% include "components/footer.njk" %}
+
     </div>
   </body>
 </html>

@@ -5,7 +5,7 @@ date: 2022-10-01
 tags:
   - markdown
   - github
-layout: post.njk
+layout: layouts/post.njk
 ---
 
 Basic writing and formatting syntax. Create sophisticated formatting for your prose and code on GitHub with simple syntax.

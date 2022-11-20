@@ -3,7 +3,7 @@ title: My last post (oh no!)
 description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 date: 2022-03-06
 tags: programming
-layout: post.njk
+layout: layouts/post.njk
 ---
 
 Here, some code :)
