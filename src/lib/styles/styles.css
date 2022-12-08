@@ -1,11 +1,25 @@
+/* OLD STYLES
+body {
+	margin: 0;
+	background: #eee;
+	color: #333;
+	font-family: sans-serif;
+}
+
+main {
+	padding: 1rem;
+	margin: 2rem auto;
+	max-width: 40rem;
+} */
+
 /* @import './prism-diff.css';
 @import './prism-one-dark.css'; */
 
+/* OLD STYLES
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* 
 @font-face {
 	font-family: 'CaskaydiaCove';
 	src: url('../static/fonts/Caskaydia_Cove_Nerd_Font_Complete_Regular.otf');
