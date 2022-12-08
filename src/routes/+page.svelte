@@ -10,16 +10,11 @@
 <article>
 	<h1>Welcome to SvelteKit</h1>
 
-	<!-- TODO: render picture like so -->
-	<!-- <span class="welcome">
-		<picture>
-			<source srcset={welcome} type="image/webp" />
-			<img src={welcome_fallback} alt="Welcome" />
-		</picture>
-	</span> -->
-
 	<div class="flex justify-center">
-		<img alt="The project logo" src={logo} />
+		<picture>
+			<source srcset={logo} type="image/webp" />
+			<img src={logo} alt="Logo" />
+		</picture>
 	</div>
 
 	<div class="markdown">

@@ -2,10 +2,11 @@
 	import Header from '$lib/components/Header.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 	import '$lib/styles/styles.css';
+	import 'uno.css';
 </script>
 
 <div
-	class="bg-lightBg text-lightParagraph
+	class="bg-slate-100 text-lightParagraph
   leading-relaxed tracking-normal subpixel-antialiased
   font-caskaydia_cove
   selection:bg-lightSecondary"
