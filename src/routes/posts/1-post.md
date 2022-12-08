@@ -1,9 +1,8 @@
 ---
-title: My 4th Blog Post
+title: My first Blog Post
+date: '2020-02-02'
 description: Learning how to use @nuxt/content to create a blog
-date: 2021-11-02
-tags: content
-layout: layouts/post.njk
+tags: test
 ---
 
 ## Writing content

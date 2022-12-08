@@ -1,11 +1,10 @@
 ---
 title: GitHub Flavored Markdown (GFM)
+date: '2019-10-01'
 description: Full example of GFM
-date: 2022-10-01
 tags:
   - markdown
   - github
-layout: layouts/post.njk
 ---
 
 Basic writing and formatting syntax. Create sophisticated formatting for your prose and code on GitHub with simple syntax.
@@ -14,9 +13,9 @@ Basic writing and formatting syntax. Create sophisticated formatting for your pr
 
 <details>
 <summary>List of Features</summary>
-<p>
 
-1. [Headings](#headings)
+<!-- TODO: inpage linking fails in sveltekit -->
+<!-- 1. [Headings](#headings)
 2. [Styling text](#styling-text)
 3. [Quoting text](#quoting-text)
 4. [Quoting code](#quoting-code)
@@ -28,9 +27,8 @@ Basic writing and formatting syntax. Create sophisticated formatting for your pr
 10. [Footnotes](#footnotes)
 11. [Collapsed section](#collapsed-section)
 12. [~~Math expressions~~](#math-expressions)
-13. [~~Creating digrams~~](#creating-diagrams)
+13. [~~Creating digrams~~](#creating-diagrams) -->
 
-</p>
 </details>
 
 ## Headings
@@ -143,16 +141,14 @@ You can also use words, to fit your writing style more closely[^note].
 
 <details>
 <summary>Collapsed section</summary>
-<p>
 
 ```ruby
 puts "Hello World"
 ```
 
-</p>
 </details>
 
-## Math expressions
+<!-- ## Math expressions
 
 - This sentence uses `$` delimiters to show math inline: $\sqrt{3x-1}+(1+x)^2$.
 - This expression uses `\$` to display a dollar sign: $\sqrt{\$4}$.
@@ -173,4 +169,4 @@ digraph example1 {
     1 -> 2 -> { 4, 5 };
     1 -> 3 -> { 6, 7 };
 }
-```
+``` -->

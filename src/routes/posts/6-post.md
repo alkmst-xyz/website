@@ -1,9 +1,8 @@
 ---
 title: My last post (oh no!)
+date: '2022-03-06'
 description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-date: 2022-03-06
 tags: programming
-layout: layouts/post.njk
 ---
 
 Here, some code :)

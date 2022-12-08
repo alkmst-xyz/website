@@ -1,9 +1,10 @@
 ---
-title: My fifth post
+title: My second post
+date: '2021-06-06'
 description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-date: 2021-12-06
-tags: nuxtjs
-layout: layouts/post.njk
+tags:
+  - programming
+  - nuxt
 ---
 
 Empower your NuxtJS application with `@nuxtjs/content` module: write in a `content/` directory and fetch your Markdown, JSON, YAML and CSV files through a MongoDB like API, acting as a **Git-based Headless CMS**.
