@@ -1,7 +1,7 @@
 <script>
-	import Header from '../components/Header.svelte';
-	import Footer from '../components/Footer.svelte';
-	import '$lib/css/styles.css';
+	import Header from '$lib/components/Header.svelte';
+	import Footer from '$lib/components/Footer.svelte';
+	import '$lib/styles/styles.css';
 </script>
 
 <div
@@ -18,8 +18,5 @@
 		</main>
 
 		<Footer />
-		<!-- <footer>
-      <p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p>
-    </footer> -->
 	</body>
 </div>

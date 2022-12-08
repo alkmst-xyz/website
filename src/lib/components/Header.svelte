@@ -5,13 +5,10 @@
 		<nav>
 			<ul>
 				<li>
-					<a href="/blog">Blog</a>
+					<a href="/posts">Posts</a>
 				</li>
 				<li>
 					<a href="/about">About</a>
-				</li>
-				<li>
-					<a href="/contact">Contact</a>
 				</li>
 			</ul>
 		</nav>
@@ -60,7 +57,7 @@
 	</header>
 </div>
 
-<style>
+<!-- <style>
 	header {
 		padding: 1rem;
 		background: lightskyblue;
@@ -80,4 +77,4 @@
 		text-decoration: none;
 		color: inherit;
 	}
-</style>
+</style> -->

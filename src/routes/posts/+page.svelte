@@ -1,7 +1,34 @@
+<script>
+	/** @type {import('./$types').PageData} */
+	export let data;
+</script>
+
+<svelte:head>
+	<title>Posts</title>
+	<meta name="description" content="About this app" />
+</svelte:head>
+
 <div>
+	<h1>Posts</h1>
+
 	<ul>
-		<!-- TODO -->
-		<!-- {% for post in posts %}
+		{#each data.posts as post}
+			<li>
+				<h2>
+					<a href={post.path}>
+						{post.meta.title}
+					</a>
+				</h2>
+				Published {post.meta.date}
+			</li>
+		{/each}
+	</ul>
+
+	<!-- TODO -->
+	<!--
+    <div>
+    <ul>
+		{% for post in posts %}
       <div class="flex text-lg justify-between">
         <div>
           <a href="{{ post.url | url }}">{{ post.data.title }}</a>
@@ -10,24 +37,28 @@
           <span>{{ post.date | readableDate }}</span>
         </div>
       </div>
-    {% endfor %} -->
-	</ul>
-</div>
+    {% endfor %}
+    </div>
+	</ul> 
+  -->
 
-<div class="pt-4">
 	<!-- TODO -->
-	<!-- {% if pagination.previous %}
-    <div>
-      <a href="{{ pagination.previous.replace(index.html, "") | url }}"
-        >← Newer Posts
-      </a>
-    </div>
-  {% endif %}
-  {% if pagination.next %}
-    <div>
-      <a href="{{ pagination.next.replace(index.html, "") | url }}"
-        >Older Posts →
-      </a>
-    </div>
-  {% endif %} -->
+	<!--
+    <div class="pt-4">
+     {% if pagination.previous %}
+      <div>
+        <a href="{{ pagination.previous.replace(index.html, "") | url }}"
+          >← Newer Posts
+        </a>
+      </div>
+    {% endif %}
+    {% if pagination.next %}
+      <div>
+        <a href="{{ pagination.next.replace(index.html, "") | url }}"
+          >Older Posts →
+        </a>
+      </div>
+    {% endif %}
+  </div>
+  -->
 </div>
