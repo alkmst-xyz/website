@@ -2,7 +2,7 @@
 	export let data;
 
 	// Content is capitalized as it is a component
-	const { title, date, categories, Content } = data;
+	const { title, date, categories, tags, Content } = data;
 </script>
 
 <svelte:head>
@@ -22,6 +22,21 @@
 					<li>
 						<a href="/posts/category/{category}">
 							{category}
+						</a>
+					</li>
+				{/each}
+			</ul>
+		</aside>
+	{/if}
+
+	{#if tags.length}
+		<aside>
+			<h3>Tags:</h3>
+			<ul>
+				{#each tags as tag}
+					<li>
+						<a href="/posts/tags/{tag}">
+							{tag}
 						</a>
 					</li>
 				{/each}
