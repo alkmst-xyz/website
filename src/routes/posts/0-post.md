@@ -18,7 +18,8 @@ Basic writing and formatting syntax. Create sophisticated formatting for your pr
 <summary>List of Features</summary>
 
 <!-- TODO: inpage linking fails in sveltekit -->
-<!-- 1. [Headings](#headings)
+
+1. [Headings](#headings)
 2. [Styling text](#styling-text)
 3. [Quoting text](#quoting-text)
 4. [Quoting code](#quoting-code)
@@ -30,7 +31,7 @@ Basic writing and formatting syntax. Create sophisticated formatting for your pr
 10. [Footnotes](#footnotes)
 11. [Collapsed section](#collapsed-section)
 12. [~~Math expressions~~](#math-expressions)
-13. [~~Creating digrams~~](#creating-diagrams) -->
+13. [~~Creating digrams~~](#creating-diagrams)
 
 </details>
 
@@ -151,25 +152,26 @@ puts "Hello World"
 
 </details>
 
-<!-- ## Math expressions
+## Math expressions
 
-- This sentence uses `$` delimiters to show math inline: $\sqrt{3x-1}+(1+x)^2$.
-- This expression uses `\$` to display a dollar sign: $\sqrt{\$4}$.
+<!-- - This sentence uses `$` delimiters to show math inline: $\sqrt{3x-1}+(1+x)^2$.
+- This expression uses `\$` to display a dollar sign: $\sqrt{\$4}$. -->
+
 - Use `\$` to use `$` sign directly, for example: \$100.
 
 ### Writing expressions as blocks
 
 **The Cauchy-Schwarz Inequality**
 
-$$
+<!-- $$
 \left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)
-$$
+$$ -->
 
-### Creating diagrams
+## Creating diagrams
 
 ```dot
 digraph example1 {
     1 -> 2 -> { 4, 5 };
     1 -> 3 -> { 6, 7 };
 }
-``` -->
+```
