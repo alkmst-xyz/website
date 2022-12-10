@@ -2,7 +2,10 @@
 title: My last post (oh no!)
 date: '2022-03-06'
 description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-tags: programming
+categories:
+  - 'dev'
+tags:
+  - 'programming'
 ---
 
 Here, some code :)

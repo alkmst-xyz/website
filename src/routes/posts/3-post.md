@@ -2,7 +2,10 @@
 title: My third post (yay!)
 date: '2021-10-06'
 description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-tags: programming
+categories:
+  - 'dev'
+tags:
+  - 'programming'
 ---
 
 Here, some code :)
