@@ -1,6 +1,7 @@
 <script>
 	/** @type {import('./$types').PageData} */
 	export let data;
+	const { posts } = data;
 </script>
 
 <svelte:head>
@@ -12,7 +13,7 @@
 	<h1>Posts</h1>
 
 	<ul>
-		{#each data.posts as post}
+		{#each posts as post}
 			<li>
 				<h2>
 					<a href={post.path}>
@@ -61,4 +62,11 @@
     {% endif %}
   </div>
   -->
+
+	<h2>
+		<a href="/posts/category">All categories</a>
+	</h2>
+	<h2>
+		<a href="/posts/tags">All Tags</a>
+	</h2>
 </div>
