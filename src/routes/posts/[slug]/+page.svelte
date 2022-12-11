@@ -1,5 +1,6 @@
 <script>
 	export let data;
+	import Tag from '$lib/components/Tag.svelte';
 
 	// Content is capitalized as it is a component
 	const { title, date, categories, tags, Content } = data;
@@ -11,38 +12,33 @@
 </svelte:head>
 
 <article>
-	<h1>{title}</h1>
-	<p>Published: {date}</p>
+	<div class="flex flex-col">
+		<h1>{title}</h1>
 
-	{#if categories.length}
-		<aside>
-			<h3>Posted in:</h3>
-			<ul>
-				{#each categories as category}
-					<li>
-						<a href="/posts/category/{category}">
-							{category}
-						</a>
-					</li>
-				{/each}
-			</ul>
-		</aside>
-	{/if}
-
-	{#if tags.length}
-		<aside>
-			<h3>Tags:</h3>
-			<ul>
+		<div class="flex space-x-4">
+			<p>{date}</p>
+			{#if categories.length}
+				<ul class="flex">
+					{#each categories as category}
+						<li>
+							<a href="/posts/category/{category}">
+								{category}
+							</a>
+						</li>
+					{/each}
+				</ul>
+			{/if}
+		</div>
+		{#if tags.length}
+			<ul class="flex space-x-2">
 				{#each tags as tag}
 					<li>
-						<a href="/posts/tags/{tag}">
-							{tag}
-						</a>
+						<Tag tagsPage="/posts/tags" {tag} />
 					</li>
 				{/each}
 			</ul>
-		</aside>
-	{/if}
+		{/if}
+	</div>
 
 	<article class="markdown">
 		<svelte:component this={Content} />

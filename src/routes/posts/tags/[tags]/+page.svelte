@@ -1,4 +1,6 @@
 <script>
+	import PostItem from '$lib/components/PostItem.svelte';
+
 	/** @type {import('./$types').PageData} */
 	export let data;
 	const { tags, posts } = data;
@@ -15,12 +17,7 @@
 	<ul>
 		{#each posts as post}
 			<li>
-				<h2>
-					<a href={post.path}>
-						{post.meta.title}
-					</a>
-				</h2>
-				Published {post.meta.date}
+				<PostItem url={post.path} title={post.meta.title} date={post.meta.date} />
 			</li>
 		{/each}
 	</ul>
