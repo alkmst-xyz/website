@@ -7,7 +7,8 @@
 
 > Note:
 >
-> 2022-05-19: Migrated from Hugo to 11ty.
+> 2022-11-25: Migrated from 11ty to SvelteKit.
+> SvelteKit + Markdown (based on https://github.com/josh-collinsworth/sveltekit-blog-starter/
 
 ## Clone repo
 

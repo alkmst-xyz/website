@@ -1,18 +1,23 @@
-// SvelteKit loads some client-side JavaScript to help with navigation and preloading in the background
-// Set to false to remove disable this
-//
-// we don't need any JS on this page, though we'll load
-// it in dev so that we get hot module replacement
-// import { dev } from '$app/environment';
-// export const csr = dev;
+import type { Load } from '@sveltejs/kit';
+import { error } from '@sveltejs/kit';
 
 // all pages are prerendered
 export const prerender = true;
 
-export async function load({ url }) {
-	const currentRoute = url.pathname;
+// set csr=true to allow client side routing.
+// Necessary for page transitions and link prefetching.
+// change to false if you prefer ordinary routing without JS
+// or to dev for HMR in development
+// import { dev } from '$app/environment';
+// export const csr = dev;
+export const csr = true;
 
-	return {
-		currentRoute
-	};
-}
+export const load: Load = async ({ url }) => {
+	try {
+		return {
+			path: url.pathname
+		};
+	} catch (err) {
+		throw error(500, err);
+	}
+};

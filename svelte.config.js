@@ -10,11 +10,7 @@ const config = {
 	kit: {
 		adapter: adapter()
 	},
-
 	extensions: ['.svelte', '.md'],
-
-	// Consult https://github.com/sveltejs/svelte-preprocess
-	// for more information about preprocessors
 	preprocess: [
 		preprocess(),
 		mdsvex({

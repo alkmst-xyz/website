@@ -1,13 +1,16 @@
 <script>
-	import { fade } from 'svelte/transition';
+	import 'uno.css';
+	import '$lib/styles/styles.css';
 
 	import Header from '$lib/components/Header.svelte';
 	import Footer from '$lib/components/Footer.svelte';
-	import '$lib/styles/styles.css';
-	import 'uno.css';
+
+	import { fade } from 'svelte/transition';
 
 	export let data;
-	const { currentRoute } = data;
+
+	const transitionIn = { delay: 150, duration: 150 };
+	const transitionOut = { duration: 100 };
 </script>
 
 <div
@@ -21,8 +24,8 @@
 	<body class="max-w-screen-md mx-auto px-2">
 		<Header />
 
-		{#key currentRoute}
-			<main class="px-2" in:fade={{ duration: 150, delay: 150 }} out:fade={{ duration: 150 }}>
+		{#key data.path}
+			<main class="px-2" in:fade={transitionIn} out:fade={transitionOut}>
 				<slot />
 			</main>
 		{/key}
