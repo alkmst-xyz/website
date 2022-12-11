@@ -8,8 +8,6 @@
 </svelte:head>
 
 <article>
-	<h1>Welcome to SvelteKit</h1>
-
 	<div class="flex justify-center">
 		<picture>
 			<source srcset={logo} type="image/webp" />

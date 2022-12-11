@@ -2,6 +2,7 @@
 	import '$lib/styles/styles.css';
 
 	import Header from '$lib/components/Header.svelte';
+	import Nav from '$lib/components/Nav.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 
 	import { fade } from 'svelte/transition';
@@ -22,7 +23,7 @@
   "
 >
 	<body class="max-w-screen-md mx-auto px-2">
-		<Header />
+		<Nav />
 
 		{#key data.path}
 			<main class="px-2" in:fade={transitionIn} out:fade={transitionOut}>

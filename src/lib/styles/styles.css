@@ -31,7 +31,7 @@ main {
 	h4,
 	h5,
 	h6 {
-		@apply text-lightHighlight font-bold my-4;
+		@apply text-lightHighlight font-bold;
 	}
 
 	h1 {
@@ -54,10 +54,6 @@ main {
 	h6 {
 		@apply text-lg;
 	}
-}
-
-header a {
-	@apply px-2 py-1 rounded-lg transition-colors duration-300;
 }
 
 .markdown {
