@@ -44,5 +44,7 @@
 		</aside>
 	{/if}
 
-	<svelte:component this={Content} />
+	<article class="markdown">
+		<svelte:component this={Content} />
+	</article>
 </article>

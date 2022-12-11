@@ -1,18 +1,5 @@
 <div>
 	<header class="text-lg">
-		<a href="/">Home</a>
-
-		<nav>
-			<ul>
-				<li>
-					<a href="/posts">Posts</a>
-				</li>
-				<li>
-					<a href="/about">About</a>
-				</li>
-			</ul>
-		</nav>
-
 		<div class="flex justify-between py-10">
 			<div>
 				<!-- TODO -->

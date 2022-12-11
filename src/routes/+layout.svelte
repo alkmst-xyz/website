@@ -1,5 +1,4 @@
 <script>
-	import 'uno.css';
 	import '$lib/styles/styles.css';
 
 	import Header from '$lib/components/Header.svelte';
@@ -7,6 +6,7 @@
 
 	import { fade } from 'svelte/transition';
 
+	/** @type {import('./$types').PageData} */
 	export let data;
 
 	const transitionIn = { delay: 150, duration: 150 };

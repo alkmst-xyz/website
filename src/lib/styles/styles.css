@@ -12,18 +12,17 @@ main {
 	max-width: 40rem;
 } */
 
-/* @import './prism-diff.css';
-@import './prism-one-dark.css'; */
+@import './prism-diff.css';
+@import './prism-one-dark.css';
 
-/* OLD STYLES
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
+/* @font-face {
 	font-family: 'CaskaydiaCove';
 	src: url('../static/fonts/Caskaydia_Cove_Nerd_Font_Complete_Regular.otf');
-}
+} */
 
 @layer base {
 	h1,
@@ -148,4 +147,4 @@ header a {
 
 .markdown :not(pre) > code {
 	@apply bg-lightSecondary text-sm rounded-md px-1.5 py-1 whitespace-normal;
-} */
+}
