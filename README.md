@@ -20,14 +20,12 @@ git clone https://github.com/jspsv/website
 
 ```sh
 # Install dependencies
-npm install
-# pnpm install
+pnpm install
 # Run development server
-npm run dev
-# pnpm run dev
+pnpm run dev
 # Run production server
-npm run build
-# pnpm run build
+pnpm run build
+pnpm run preview
 ```
 
 ## From scratch
@@ -36,7 +34,9 @@ npm run build
 npm create svelte@latest my-app
 nvm use
 pnpm i
-pnpm -D
+pnpm -D tailwindcss postcss autoprefixer \
+        mdsvex rehype-slug rehype-autolink-headings \
+        @sveltejs/adapter-static
 ```
 
 ## TODO
