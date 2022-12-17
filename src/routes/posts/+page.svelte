@@ -1,8 +1,8 @@
-<script>
+<script lang="ts">
+	import type { PageData } from './$types';
 	import PostItem from '$lib/components/PostItem.svelte';
 
-	/** @type {import('./$types').PageData} */
-	export let data;
+	export let data: PageData;
 	const { posts } = data;
 </script>
 

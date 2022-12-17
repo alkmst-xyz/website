@@ -1,14 +1,12 @@
-<script>
+<script lang="ts">
 	import '$lib/styles/styles.css';
-
+	import type { PageData } from './$types';
+	import { fade } from 'svelte/transition';
 	import Header from '$lib/components/Header.svelte';
 	import Nav from '$lib/components/Nav.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 
-	import { fade } from 'svelte/transition';
-
-	/** @type {import('./$types').PageData} */
-	export let data;
+	export let data: PageData;
 
 	const transitionIn = { delay: 150, duration: 150 };
 	const transitionOut = { duration: 100 };

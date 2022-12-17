@@ -1,7 +1,7 @@
 # josephsebastian.me (WIP)
 
 <p align="center">
-    <img width="100" src="./img/indigo-to-blue-to-green_512x512x32.png" alt="logo">
+    <img width="100" src="./src/lib/images/indigo-to-blue-to-green_512x512x32.png" alt="logo">
     </a>
 </p>
 
@@ -21,10 +21,22 @@ git clone https://github.com/jspsv/website
 ```sh
 # Install dependencies
 npm install
+# pnpm install
 # Run development server
 npm run dev
+# pnpm run dev
 # Run production server
 npm run build
+# pnpm run build
+```
+
+## From scratch
+
+```sh
+npm create svelte@latest my-app
+nvm use
+pnpm i
+pnpm -D
 ```
 
 ## TODO

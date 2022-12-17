@@ -1,6 +1,8 @@
-<script>
-	export let data;
+<script lang="ts">
+	import type { PageData } from './$types';
 	import Tag from '$lib/components/Tag.svelte';
+
+	export let data: PageData;
 
 	// Content is capitalized as it is a component
 	const { title, date, categories, tags, Content } = data;
