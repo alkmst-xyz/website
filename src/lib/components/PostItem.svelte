@@ -4,7 +4,15 @@
 	export let date = '';
 </script>
 
-<div class="flex flex-col my-2">
+<div
+	class="
+  px-2 py-3
+  flex flex-col 
+  hover:bg-lightSecondary/50 
+  transition-all ease-in-out duration-300
+  rounded hover:shadow-sm
+  "
+>
 	<span class="text-2xl font-bold">
 		<a href={url}>
 			{title}

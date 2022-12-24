@@ -1,9 +1,21 @@
 <script lang="ts">
 	import type { PageData } from './$types';
 	import PostItem from '$lib/components/PostItem.svelte';
+	import PostMenuItem from '$lib/components/PostMenuItem.svelte';
 
 	export let data: PageData;
 	const { posts } = data;
+
+	let postMenuItems = [
+		{
+			url: '/posts/category',
+			title: 'Categories'
+		},
+		{
+			url: '/posts/tags',
+			title: 'Tags'
+		}
+	];
 </script>
 
 <svelte:head>
@@ -12,9 +24,15 @@
 </svelte:head>
 
 <div>
-	<h1>Posts</h1>
+	<h1 class="mb-8 px-2">Posts</h1>
 
-	<ul>
+	<div class="flex my-2">
+		{#each postMenuItems as item}
+			<PostMenuItem url={item.url} title={item.title} />
+		{/each}
+	</div>
+
+	<ul class="flex flex-col space-y-2">
 		{#each posts as post}
 			<li>
 				<PostItem url={post.path} title={post.meta.title} date={post.meta.date} />
@@ -59,11 +77,4 @@
     {% endif %}
   </div>
   -->
-
-	<h2>
-		<a href="/posts/category">All categories</a>
-	</h2>
-	<h2>
-		<a href="/posts/tags">All Tags</a>
-	</h2>
 </div>

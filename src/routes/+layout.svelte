@@ -13,7 +13,7 @@
 
 <div
 	class="
-  bg-slate-100 text-lightParagraph
+  text-lightParagraph
   leading-relaxed tracking-normal subpixel-antialiased
   font-caskaydia_cove
   selection:bg-lightSecondary
