@@ -1,10 +1,17 @@
 import type { PageLoad } from './$types';
 
 export const load = (async ({ fetch }) => {
-	const response = await fetch(`/api/posts`);
-	const posts = await response.json();
+	try {
+		const response = await fetch(`/api/posts`);
 
-	return {
-		posts
-	};
+		if (!response.ok) {
+			throw new Error(response.statusText);
+		}
+
+		const posts = await response.json();
+
+		return { posts };
+	} catch (error) {
+		console.error(`Error in load function for /: ${error}`);
+	}
 }) satisfies PageLoad;

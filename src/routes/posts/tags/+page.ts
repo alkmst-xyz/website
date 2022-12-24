@@ -1,14 +1,21 @@
 import type { PageLoad } from './$types';
 
 export const load = (async ({ fetch }) => {
-	const response = await fetch(`/api/posts`);
-	const posts = await response.json();
+	try {
+		const response = await fetch(`/api/posts`);
 
-	// non-unique list of all tags
-	const allTags = posts.map((post) => post.meta.tags).flat();
-	const tags = [...new Set(allTags)];
+		if (!response.ok) {
+			throw new Error(response.statusText);
+		}
 
-	return {
-		tags
-	};
+		const posts = await response.json();
+
+		// non-unique list of all tags
+		const allTags = posts.map((post) => post.meta.tags).flat();
+		const tags = [...new Set(allTags)];
+
+		return { tags };
+	} catch (error) {
+		console.error(`Error in load function for /: ${error}`);
+	}
 }) satisfies PageLoad;
