@@ -1,12 +1,11 @@
 <script lang="ts">
 	import NavItem from './NavItem.svelte';
-	import { base } from '$app/paths';
 
 	export let activeUrl: string;
 
 	const navItems = [
-		{ title: 'Posts', url: `${base}/posts` },
-		{ title: 'About', url: `${base}/about` }
+		{ title: 'Posts', url: '/posts' },
+		{ title: 'About', url: '/about' }
 	];
 
 	const isUrlActive = (url: string) => {
