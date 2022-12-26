@@ -91,6 +91,19 @@ You can preview the production build with `npm run preview`.
 
 > To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
 
+## Website metadata
+
+```json
+{
+	"title": "Joseph Sebastian's website",
+	"description": "Joseph Sebastian's website",
+	"url": "https://jspsv.github.io/website",
+	"lang": "en",
+	"locale": "en_us",
+	"author": "Joseph Sebastian"
+}
+```
+
 ## Ref
 
 1. [Josh Collinsworth Blog - Let's learn SvelteKit by building a static Markdown blog from scratch](https://joshcollinsworth.com/blog/build-static-sveltekit-markdown-blog)
