@@ -14,6 +14,9 @@
 						GitHub
 					</a>
 				</span>
+				<span>
+					<a href="/imprint">Imprint</a>
+				</span>
 			</div>
 			<div>
 				<!-- TODO -->
