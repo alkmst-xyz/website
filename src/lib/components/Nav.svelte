@@ -13,10 +13,16 @@
 	};
 </script>
 
-<header class="flex justify-between py-10 text-lg">
+<header
+	class="
+  flex flex-col md:flex-row 
+  justify-between 
+  py-10 space-y-2 md:space-y-0 
+  text-lg"
+>
 	<NavItem title="Joseph Sebastian" url="/" active={isUrlActive('/')} />
 
-	<nav class="hidden md:flex">
+	<nav>
 		<ul class="flex space-x-1">
 			{#each navItems as item}
 				<li>
