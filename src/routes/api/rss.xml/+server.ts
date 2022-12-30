@@ -28,7 +28,7 @@ const render = (posts) => `<?xml version="1.0" encoding="utf-8" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>${siteTitle}</title>
-    <link>${siteURL}</link>
+    <link>https://${siteURL}</link>
     <description>${siteDescription}</description>
     <atom:link href="https://${siteURL}/api/rss.xml" rel="self" type="application/rss+xml"/>
     ${posts
