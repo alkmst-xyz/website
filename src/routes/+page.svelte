@@ -11,7 +11,7 @@
 	<div class="flex justify-center">
 		<picture>
 			<source srcset={logo} type="image/webp" />
-			<img src={logo} alt="Logo" />
+			<img src={logo} alt="logo" width="512" height="512" />
 		</picture>
 	</div>
 
