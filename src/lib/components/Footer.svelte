@@ -23,7 +23,7 @@
 			GitHub
 		</a>
 		<a href="/imprint">Imprint</a>
-		<a href="/">RSS</a>
+		<a href="http://jspsv.dev/api/rss.xml">RSS</a>
 	</div>
 </footer>
 
