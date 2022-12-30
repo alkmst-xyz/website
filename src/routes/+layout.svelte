@@ -23,7 +23,7 @@
 		{#key data.path}
 			<Nav activeUrl={data.path} />
 
-			<main class="px-2" in:fade={transitionIn} out:fade={transitionOut}>
+			<main in:fade={transitionIn} out:fade={transitionOut}>
 				<slot />
 			</main>
 		{/key}

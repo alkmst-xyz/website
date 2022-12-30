@@ -57,7 +57,7 @@ main {
 }
 
 .markdown {
-	@apply break-words my-8;
+	@apply break-words my-2 px-2;
 }
 
 .markdown p {
