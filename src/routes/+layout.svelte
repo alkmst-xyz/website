@@ -11,6 +11,10 @@
 	const transitionOut = { duration: 100 };
 </script>
 
+<div>
+testing in tmux
+</div>
+
 <div
 	class="
   text-lightParagraph

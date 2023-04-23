@@ -4,7 +4,6 @@ date: '2019-10-01'
 description: Full example of GFM
 categories:
   - 'dev'
-  - 'recepies'
 tags:
   - 'markdown'
   - 'github'
@@ -91,12 +90,29 @@ The background color should be `#ffffff` for light mode and `#0d1117` for dark m
 
 This site was built using [GitHub pages](https://pages.github.com/).
 
+## Footnotes
+
+Here is a simple footnote[^1].
+
+A footnote can also have multiple lines[^2].
+
+You can also use words, to fit your writing style more closely[^note].
+
+[^1]: My reference.
+[^2]:
+    Every new line should be prefixed with 2 spaces.  
+    This allows you to have a footnote with multiple lines.
+
+[^note]:
+    Named footnotes will still render with numbers instead of the text but allow easier identification and linking.  
+    This footnote also has been made with a different syntax using 4 spaces for new lines.
+
 ## Images
 
-<figure>
+<!-- <figure>
   <img src="https://myoctocat.com/assets/images/base-octocat.svg" alt="Octocat">
   <figcaption>Fig 1. Octocat</figcaption>
-</figure>
+</figure> -->
 
 ## Lists
 
@@ -123,23 +139,6 @@ This site was built using [GitHub pages](https://pages.github.com/).
 ## Using emoji
 
 @octocat :+1: This PR looks great - it's ready to merge! :shipit:
-
-## Footnotes
-
-Here is a simple footnote[^1].
-
-A footnote can also have multiple lines[^2].
-
-You can also use words, to fit your writing style more closely[^note].
-
-[^1]: My reference.
-[^2]:
-    Every new line should be prefixed with 2 spaces.  
-    This allows you to have a footnote with multiple lines.
-
-[^note]:
-    Named footnotes will still render with numbers instead of the text but allow easier identification and linking.  
-    This footnote also has been made with a different syntax using 4 spaces for new lines.
 
 ## Collapsed section
 
