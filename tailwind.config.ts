@@ -1,12 +1,13 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+import type { Config } from 'tailwindcss';
+
+export default {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
-	darkMode: 'class',
 	theme: {
 		extend: {
 			// fontFamily: {
 			// 	caskaydia_cove: ['CaskaydiaCove', 'monospace']
 			// },
+			// custom colors
 			colors: {
 				lightBg: '#fffffe',
 				lightHeadline: '#2b2c34',
@@ -21,5 +22,5 @@ module.exports = {
 			}
 		}
 	},
-	plugins: []
-};
+	plugins: [require('@tailwindcss/typography')]
+} satisfies Config;
