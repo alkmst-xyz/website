@@ -1,18 +1,18 @@
 <script lang="ts">
-	import type { Metadata } from '$lib/server/types';
+	import type { MdMeta } from '$lib/api/content/types';
 
-	export let postsMeta: Metadata[];
+	export let posts: MdMeta[];
 	export let postsPath: string = '/posts';
 </script>
 
-{#each postsMeta as metadata}
+{#each posts as postMeta}
 	<a
-		href="{postsPath}/{metadata.slug}"
+		href="{postsPath}/{postMeta.slug}"
 		class="
     rounded bg-gray-200 px-2 py-3
     "
 	>
-		<h1>{metadata.title}</h1>
-		<p>{metadata.description}</p>
+		<h1>{postMeta.title}</h1>
+		<p>{postMeta.description}</p>
 	</a>
 {/each}
