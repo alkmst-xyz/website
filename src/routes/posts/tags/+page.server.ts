@@ -1,15 +1,13 @@
 import type { PageServerLoad } from './$types';
-import { getAllMetadata } from '$lib/server/posts';
+import type { MdMeta } from '../../api/content/types';
 
-const allMetadata = await getAllMetadata();
-const allTags = allMetadata.map((x) => x.tags).flat();
-const uniqueTags = [...new Set(allTags)];
+export const load = (async ({ fetch }) => {
+	const response = await fetch('/api/content');
+	const result = (await response.json()) as MdMeta[];
 
-// TODO instead of returning the exact unique tag,
-// return a pojo with "name" and "count"
-// can be used to size up or down the tag indicator
+	const allTags = result.map((x) => x.tags).flat();
+	const uniqueTags = [...new Set(allTags)];
 
-export const load = (({}) => {
 	return {
 		tags: uniqueTags
 	};

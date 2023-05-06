@@ -19,8 +19,8 @@ export const GET: RequestHandler = async ({ params, fetch }) => {
 		throw error(400, 'post id too large');
 	}
 
-	const postModule = await import(`./../../../../content/${result[id].fileName}.md`);
-	const { html } = postModule.default.render();
+	const mdModule = await import(`./../../../../content/${result[id].fileName}.md`);
+	const { html } = mdModule.default.render();
 
 	return json({
 		meta: result[id],

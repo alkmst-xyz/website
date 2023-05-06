@@ -1,11 +1,13 @@
 import type { PageServerLoad } from './$types';
-import { getAllMetadata } from '$lib/server/posts';
+import type { MdMeta } from '../../api/content/types';
 
-const allMetadata = await getAllMetadata();
-const allCategories = allMetadata.map((x) => x.category);
-const uniqueCategories = [...new Set(allCategories)];
+export const load = (async ({ fetch }) => {
+	const response = await fetch('/api/content');
+	const result = (await response.json()) as MdMeta[];
 
-export const load = (({}) => {
+	const allCategories = result.map((x) => x.category);
+	const uniqueCategories = [...new Set(allCategories)];
+
 	return {
 		categories: uniqueCategories
 	};

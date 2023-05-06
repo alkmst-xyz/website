@@ -4,5 +4,5 @@
 </script>
 
 <article class="prose">
-	{@html data.content}
+	{@html data.postBody.html}
 </article>

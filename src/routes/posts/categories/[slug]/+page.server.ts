@@ -1,13 +1,11 @@
-import { getAllMetadata } from '$lib/server/posts';
 import type { PageServerLoad } from './$types';
+import type { MdMeta } from '../../../api/content/types';
 
-export const load = (async ({ params }) => {
-	const allMetadata = await getAllMetadata();
-	const allMatchedMetdata = allMetadata.filter((metadata) =>
-		metadata.category.includes(params.slug)
-	);
+export const load = (async ({ params, fetch }) => {
+	const response = await fetch('/api/content');
+	const result = (await response.json()) as MdMeta[];
 
 	return {
-		allMatchedMetdata
+		posts: result.filter((x) => x.category === params.slug)
 	};
 }) satisfies PageServerLoad;

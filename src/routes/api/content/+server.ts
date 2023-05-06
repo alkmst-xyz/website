@@ -9,11 +9,11 @@ export const prerender = true;
  */
 export const GET: RequestHandler = async () => {
 	// https://github.com/rollup/plugins/tree/master/packages/dynamic-import-vars#how-it-works
-	const postFiles = import.meta.glob<MdsvexEntry>('./../../../content/*.md');
-	const postFilesIterable = Object.entries(postFiles);
+	const mdFiles = import.meta.glob<MdsvexEntry>('./../../../content/*.md');
+	const mdFilesIterable = Object.entries(mdFiles);
 
-	const allPostMeta = await Promise.all(
-		postFilesIterable.map(async ([path, resolver]) => {
+	const mdPosts = await Promise.all(
+		mdFilesIterable.map(async ([path, resolver]) => {
 			const { metadata } = await resolver();
 
 			const fileName = path.slice(17, -3);
@@ -27,7 +27,7 @@ export const GET: RequestHandler = async () => {
 
 	// TODO maybe sorting is not needed as there might be more posts client side
 	// sort by date
-	const allPostMetaSorted = allPostMeta.sort((a, b) => {
+	const mdPostsSorted = mdPosts.sort((a, b) => {
 		return new Date(b.date).getTime() - new Date(a.date).getTime();
 	});
 
@@ -37,5 +37,5 @@ export const GET: RequestHandler = async () => {
 	// TODO get slug from metadata if defined
 	// or use title to get it (zod computed)
 
-	return json(allPostMetaSorted);
+	return json(mdPostsSorted);
 };

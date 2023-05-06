@@ -6,5 +6,5 @@
 </script>
 
 <div class="flex flex-col space-y-4">
-	<PostsList postsMeta={data.allMetadata} />
+	<PostsList posts={data.posts} />
 </div>

@@ -9,7 +9,7 @@ export type MdMeta = {
 	title: string;
 	date: Date;
 	description: string;
-	category: string[];
+	category: string;
 	tags: string[];
 	slug?: string;
 	readingTime?: string;
