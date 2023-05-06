@@ -8,7 +8,7 @@ export const prerender = true;
 // or to dev for HMR in development
 // import { dev } from '$app/environment';
 // export const csr = dev;
-export const csr = false;
+export const csr = true;
 
 export const load = (({ url }) => {
 	// import { error } from '@sveltejs/kit';

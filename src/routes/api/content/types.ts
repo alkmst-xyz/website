@@ -2,10 +2,10 @@ export type MdsvexEntry = {
 	default: {
 		render: Function;
 	};
-	metadata: Metadata;
+	metadata: MdMeta;
 };
 
-export type Metadata = {
+export type MdMeta = {
 	title: string;
 	date: Date;
 	description: string;
@@ -14,4 +14,9 @@ export type Metadata = {
 	slug?: string;
 	readingTime?: string;
 	filePath?: string;
+};
+
+export type MdBody = {
+	meta: MdMeta;
+	html: string;
 };

@@ -1,9 +1,11 @@
 import { error, json } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
-import type { MdsvexEntry } from './types';
+import type { MdsvexEntry, MdBody } from './types';
 
-// add url, params, etc.
-export const GET = (async () => {
+/**
+ * Returns MdMeta[] (array of posts) or MdBody (post data) with 'id' param
+ */
+export const GET = (async ({ url }) => {
 	// might not work in build later due vite's loading nature
 	const postFiles = import.meta.glob<MdsvexEntry>('./../../../content/*.md');
 	const postFilesIterable = Object.entries(postFiles);
@@ -22,8 +24,6 @@ export const GET = (async () => {
 		})
 	);
 
-	// TODO return error if posts dont exist
-
 	// TODO validate if metadata follows a schema
 	// if not throw error and skip returning (zod parse)
 
@@ -32,5 +32,22 @@ export const GET = (async () => {
 
 	// TODO sort by date
 
-	return json(allPostMeta);
+	// get id param
+	const id = Number(url.searchParams.get('id') ?? '-1');
+
+	if (isNaN(id) || id > allPostMeta.length - 1) {
+		throw error(400, 'id must be a valid post number');
+	} else if (id > -1) {
+		const postModule = await import(`./../../../content/${allPostMeta[id].fileName}.md`);
+		const { html } = postModule.default.render();
+
+		const postBody: MdBody = {
+			meta: allPostMeta[id],
+			html
+		};
+
+		return json(postBody);
+	} else {
+		return json(allPostMeta);
+	}
 }) satisfies RequestHandler;
