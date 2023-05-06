@@ -1,9 +1,9 @@
-import adapter from '@sveltejs/adapter-auto';
+import adapter from '@sveltejs/adapter-netlify';
 import { vitePreprocess } from '@sveltejs/kit/vite';
 
 import { defineMDSveXConfig, mdsvex } from 'mdsvex';
-// import rehypeSlug from 'rehype-slug';
-// import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import rehypeSlug from 'rehype-slug';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 
 /** @type {import('mdsvex').MdsvexOptions} */
 const mdsvexConfig = defineMDSveXConfig({
@@ -13,8 +13,7 @@ const mdsvexConfig = defineMDSveXConfig({
 		post: 'src/lib/layouts/post.svelte'
 	},
 	remarkPlugins: [],
-	rehypePlugins: []
-	// rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings]
+	rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings]
 });
 
 /** @type {import('@sveltejs/kit').Config} */

@@ -4,10 +4,10 @@
 	export let data: PageServerData;
 </script>
 
-<div class="flex space-x-1">
+<div class="flex flex-wrap gap-2">
 	{#each data.tags as tag}
 		<a
-			href="tags/{tag}"
+			href="/posts/tags/{tag}"
 			class="
       rounded bg-gray-200 px-2 py-1
       "
