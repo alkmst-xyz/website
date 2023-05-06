@@ -1,12 +1,20 @@
 ---
-title: My 4th Blog Post
-date: '2021-11-02'
+title: My first Blog Post
+date: '2020-02-02'
 description: Learning how to use @nuxt/content to create a blog
-categories:
-  - 'dev'
+category: dev
 tags:
-  - 'content'
+  - 'test'
+slug: post-1
 ---
+
+## Story of this site
+
+- Hugo to 11ty, etc.
+- vite and mdsvex shinnagigans
+
+- Inspiration from Josh Collinsworth's [tutorial](https://joshcollinsworth.com/blog/build-static-sveltekit-markdown-blog).
+- Dynamic imports in vite, how they work and their limitations.
 
 ## Writing content
 

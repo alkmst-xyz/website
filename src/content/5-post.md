@@ -2,10 +2,10 @@
 title: My fifth post
 date: '2021-12-06'
 description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-categories:
-  - 'dev'
+category: dev
 tags:
   - 'nuxtjs'
+slug: post-5
 ---
 
 Empower your NuxtJS application with `@nuxtjs/content` module: write in a `content/` directory and fetch your Markdown, JSON, YAML and CSV files through a MongoDB like API, acting as a **Git-based Headless CMS**.

@@ -2,11 +2,11 @@
 title: GitHub Flavored Markdown (GFM)
 date: '2019-10-01'
 description: Full example of GFM
-categories:
-  - 'dev'
+category: recepies
 tags:
   - 'markdown'
   - 'github'
+slug: post-0
 ---
 
 Basic writing and formatting syntax. Create sophisticated formatting for your prose and code on GitHub with simple syntax.
