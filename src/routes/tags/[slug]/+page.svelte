@@ -1,10 +1,10 @@
 <script lang="ts">
 	import PostsList from '$lib/components/PostsList.svelte';
-	import type { LayoutServerData } from './$types';
+	import type { PageServerData } from './$types';
 
-	export let data: LayoutServerData;
+	export let data: PageServerData;
 </script>
 
 <div class="flex flex-col space-y-4">
-	<PostsList postsMeta={data.allMetadata} />
+	<PostsList postsMeta={data.allMatchedMetdata} />
 </div>

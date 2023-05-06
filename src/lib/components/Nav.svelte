@@ -5,6 +5,8 @@
 
 	const navItems = [
 		{ title: 'Posts', url: '/posts' },
+		{ title: 'Categories', url: '/categories' },
+		{ title: 'Tags', url: '/tags' },
 		{ title: 'About', url: '/about' }
 	];
 
@@ -15,10 +17,10 @@
 
 <header
 	class="
-  flex flex-col md:flex-row 
-  justify-between 
-  py-10 space-y-2 md:space-y-0 
-  text-lg"
+  flex flex-col justify-between
+  space-y-2
+  py-10 text-lg md:flex-row
+  md:space-y-0"
 >
 	<NavItem title="Joseph Sebastian" url="/" active={isUrlActive('/')} />
 
