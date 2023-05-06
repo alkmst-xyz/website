@@ -13,7 +13,7 @@ export type MdMeta = {
 	tags: string[];
 	slug?: string;
 	readingTime?: string;
-	filePath?: string;
+	fileName?: string;
 };
 
 export type MdBody = {

@@ -1,8 +1,10 @@
 import type { LayoutServerLoad } from './$types';
-import { getAllMetadata } from '$lib/server/posts';
+// import { getAllMetadata } from '$lib/server/posts';
 
-export const load = (async ({}) => {
+export const load = (async ({ fetch }) => {
+	const res = await fetch('/api/content');
+	const allMetadata = await res.json();
 	return {
-		allMetadata: getAllMetadata()
+		allMetadata
 	};
 }) satisfies LayoutServerLoad;
