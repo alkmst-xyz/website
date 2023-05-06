@@ -4,6 +4,7 @@ import type { MdsvexEntry, MdBody } from './types';
 
 /**
  * Returns MdMeta[] (array of posts) or MdBody (post data) with 'id' param
+ * TODO create another route so that posts meta can be pre-rendered
  */
 export const GET = (async ({ url }) => {
 	// might not work in build later due vite's loading nature
@@ -24,6 +25,10 @@ export const GET = (async ({ url }) => {
 		})
 	);
 
+	const allPostMetaSorted = allPostMeta.sort((a, b) => {
+		return new Date(b.date).getTime() - new Date(a.date).getTime();
+	});
+
 	// TODO validate if metadata follows a schema
 	// if not throw error and skip returning (zod parse)
 
@@ -35,19 +40,19 @@ export const GET = (async ({ url }) => {
 	// get id param
 	const id = Number(url.searchParams.get('id') ?? '-1');
 
-	if (isNaN(id) || id > allPostMeta.length - 1) {
+	if (isNaN(id) || id > allPostMetaSorted.length - 1) {
 		throw error(400, 'id must be a valid post number');
 	} else if (id > -1) {
-		const postModule = await import(`./../../../content/${allPostMeta[id].fileName}.md`);
+		const postModule = await import(`./../../../content/${allPostMetaSorted[id].fileName}.md`);
 		const { html } = postModule.default.render();
 
 		const postBody: MdBody = {
-			meta: allPostMeta[id],
+			meta: allPostMetaSorted[id],
 			html
 		};
 
 		return json(postBody);
 	} else {
-		return json(allPostMeta);
+		return json(allPostMetaSorted);
 	}
 }) satisfies RequestHandler;
