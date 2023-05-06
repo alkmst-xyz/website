@@ -5,6 +5,15 @@
 	export let data: LayoutServerData;
 </script>
 
-<div class="flex flex-col space-y-4">
-	<PostsList posts={data.posts} />
+<svelte:head>
+	<title>Posts</title>
+	<meta name="Posts" content="Posts" />
+</svelte:head>
+
+<div>
+	<h1 class="mb-8 px-2">Posts</h1>
+
+	<div class="flex flex-col space-y-4">
+		<PostsList posts={data.posts} />
+	</div>
 </div>

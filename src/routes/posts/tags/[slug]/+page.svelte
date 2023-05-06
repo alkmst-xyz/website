@@ -5,6 +5,11 @@
 	export let data: PageServerData;
 </script>
 
+<svelte:head>
+	<title>Posts tagged #{data.tag}</title>
+	<meta name="Posts per tag" content="Posts per tag" />
+</svelte:head>
+
 <div class="flex flex-col space-y-4">
-	<PostsList posts={data.allMatchedMetdata} />
+	<PostsList posts={data.posts} />
 </div>

@@ -4,6 +4,11 @@
 	export let data: PageServerData;
 </script>
 
+<svelte:head>
+	<title>Posts | Categories</title>
+	<meta name="Posts | Categories" content="Posts | Categories" />
+</svelte:head>
+
 <div class="flex flex-wrap gap-2">
 	{#each data.categories as category}
 		<a

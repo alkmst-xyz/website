@@ -13,6 +13,10 @@ export const GET: RequestHandler = async ({ params, fetch }) => {
 	}
 
 	const response = await fetch('/api/content');
+	if (!response.ok) {
+		throw error(400, 'error loading data from endpoint');
+	}
+
 	const result = (await response.json()) as MdMeta[];
 
 	if (id >= result.length) {
