@@ -7,7 +7,7 @@
 <div class="mx-auto max-w-screen-sm px-2">
 	<Nav />
 
-	<main class="mb-8">
+	<main class="mb-8 px-2">
 		<slot />
 	</main>
 
