@@ -1,33 +1,15 @@
 <script lang="ts">
-	import '$lib/styles/styles.css';
-	import type { PageData } from './$types';
-	import { fade } from 'svelte/transition';
+	import '$lib/styles/tailwind.css';
 	import Nav from '$lib/components/Nav.svelte';
 	import Footer from '$lib/components/Footer.svelte';
-
-	export let data: PageData;
-
-	const transitionIn = { delay: 150, duration: 150 };
-	const transitionOut = { duration: 100 };
 </script>
 
-<div
-	class="
-  text-lightParagraph
-  leading-relaxed tracking-normal subpixel-antialiased
-  font-caskaydia_cove
-  selection:bg-lightSecondary
-  "
->
-	<body class="max-w-screen-md mx-auto px-2">
-		{#key data.path}
-			<Nav activeUrl={data.path} />
+<div class="mx-auto max-w-screen-sm px-2">
+	<Nav />
 
-			<main in:fade={transitionIn} out:fade={transitionOut}>
-				<slot />
-			</main>
-		{/key}
+	<main class="mb-8">
+		<slot />
+	</main>
 
-		<Footer />
-	</body>
+	<Footer />
 </div>

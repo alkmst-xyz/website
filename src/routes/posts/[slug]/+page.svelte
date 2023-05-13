@@ -1,39 +1,28 @@
 <script lang="ts">
-	import type { PageData } from './$types';
 	import Tag from '$lib/components/Tag.svelte';
+	import type { PageServerData } from './$types';
 
-	export let data: PageData;
-
-	// Content is capitalized as it is a component
-	const { title, date, categories, tags, Content } = data;
+	export let data: PageServerData;
+	const { meta, html } = data.postBody;
 </script>
 
 <svelte:head>
-	<title>Posts | {title}</title>
-	<meta name="description" content="About this app" />
+	<title>Posts | {meta.title}</title>
+	<meta name="Post" content="Post" />
 </svelte:head>
 
-<article>
+<div>
 	<div class="flex flex-col">
-		<h1>{title}</h1>
+		<h1>{meta.title}</h1>
 
 		<div class="flex space-x-4">
-			<p>{date}</p>
-			{#if categories.length}
-				<ul class="flex">
-					{#each categories as category}
-						<li>
-							<a href="/posts/category/{category}">
-								{category}
-							</a>
-						</li>
-					{/each}
-				</ul>
-			{/if}
+			<p>{meta.date}</p>
+			<a href="/posts/categories">{meta.category}</a>
 		</div>
-		{#if tags.length}
+
+		{#if meta.tags.length}
 			<ul class="flex space-x-2">
-				{#each tags as tag}
+				{#each meta.tags as tag}
 					<li>
 						<Tag tagsPage="/posts/tags" {tag} />
 					</li>
@@ -42,7 +31,11 @@
 		{/if}
 	</div>
 
-	<article class="markdown">
-		<svelte:component this={Content} />
+	<span>
+		{meta.description}
+	</span>
+
+	<article class="prose">
+		{@html html}
 	</article>
-</article>
+</div>
