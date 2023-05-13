@@ -10,7 +10,7 @@
 <div class="mx-auto max-w-screen-sm px-2">
 	<Nav activeUrl={data.path} />
 
-	<main class="my-8">
+	<main class="mb-8">
 		<slot />
 	</main>
 
