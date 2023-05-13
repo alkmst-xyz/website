@@ -35,19 +35,19 @@ main {
 	}
 
 	h1 {
-		@apply text-4xl;
+		@apply mb-4 text-4xl;
 	}
 
 	h2 {
-		@apply text-3xl;
+		@apply mb-3 text-3xl;
 	}
 
 	h3 {
-		@apply text-2xl;
+		@apply mb-2 text-2xl;
 	}
 
 	h4 {
-		@apply text-xl;
+		@apply mb-1 text-xl;
 	}
 
 	h5,
@@ -57,7 +57,7 @@ main {
 }
 
 .markdown {
-	@apply my-2 break-words px-2;
+	@apply break-words;
 }
 
 .markdown p {
