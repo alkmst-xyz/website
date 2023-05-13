@@ -1,9 +1,10 @@
 <footer
 	class="
+  mb-2 mt-6
   flex flex-col
-  my-6 px-2 py-2
   space-y-1
- text-gray-700 text-sm
+  px-2 py-2
+  text-sm text-gray-700
   "
 >
 	<span>Ⓒ 2022 Joseph Sebastian.</span>

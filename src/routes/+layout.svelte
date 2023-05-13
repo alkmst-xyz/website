@@ -7,7 +7,7 @@
 	export let data: PageData;
 </script>
 
-<body class="mx-auto my-2 max-w-screen-sm p-2">
+<div class="mx-auto max-w-screen-sm px-2">
 	<Nav activeUrl={data.path} />
 
 	<main class="my-8">
@@ -15,4 +15,4 @@
 	</main>
 
 	<Footer />
-</body>
+</div>
