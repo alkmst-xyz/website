@@ -5,12 +5,12 @@
 
 <a
 	class="
-  text-sm 
-  rounded-md
-  px-2 py-1
   whitespace-normal
+  rounded-md
+  bg-lightSecondary px-2
+  py-1
   font-mono
-  bg-lightSecondary"
+  text-sm"
 	href="{tagsPage}/{tag}"
 >
 	#{tag}

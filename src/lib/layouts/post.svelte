@@ -1,5 +1,5 @@
 <!-- layouts receive all values defined in frontmatter as props -->
-<script >
+<script>
 	export let title;
 	export let date;
 </script>

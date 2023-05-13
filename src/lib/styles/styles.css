@@ -31,7 +31,7 @@ main {
 	h4,
 	h5,
 	h6 {
-		@apply text-lightHighlight font-bold;
+		@apply font-bold text-lightHighlight;
 	}
 
 	h1 {
@@ -57,7 +57,7 @@ main {
 }
 
 .markdown {
-	@apply break-words my-2 px-2;
+	@apply my-2 break-words px-2;
 }
 
 .markdown p {
@@ -78,7 +78,7 @@ main {
 .markdown h4:hover .heading-anchor,
 .markdown h5:hover .heading-anchor,
 .markdown h6:hover .heading-anchor {
-	@apply transition-opacity duration-300 opacity-100;
+	@apply opacity-100 transition-opacity duration-300;
 }
 
 .markdown .footnote-ref a,
@@ -126,21 +126,21 @@ main {
 
 .markdown table th,
 .markdown table td {
-	@apply px-4 py-2 border-b border-lightSecondary;
+	@apply border-b border-lightSecondary px-4 py-2;
 }
 
 .markdown hr {
-	@apply text-lightHighlight my-8;
+	@apply my-8 text-lightHighlight;
 }
 
 .markdown details {
-	@apply p-2 rounded-lg bg-lightSecondary;
+	@apply rounded-lg bg-lightSecondary p-2;
 }
 
 .markdown blockquote {
-	@apply pl-2 border-l-4 border-lightHighlight italic opacity-70;
+	@apply border-l-4 border-lightHighlight pl-2 italic opacity-70;
 }
 
 .markdown :not(pre) > code {
-	@apply bg-lightSecondary text-sm rounded-md px-1.5 py-1 whitespace-normal;
+	@apply whitespace-normal rounded-md bg-lightSecondary px-1.5 py-1 text-sm;
 }
