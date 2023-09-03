@@ -1,15 +1,15 @@
 <script lang="ts">
-	import { page } from '$app/stores';
+  import { page } from '$app/stores';
 
-	export let title: string;
-	export let url: string;
+  export let title: string;
+  export let url: string;
 
-	$: active = $page.url.pathname === url;
+  $: active = $page.url.pathname === url;
 </script>
 
 <div>
-	<a
-		class="
+  <a
+    class="
     decoration-lightHighlight
     decoration-dotted
     decoration-2
@@ -19,10 +19,10 @@
     hover:underline
     {active ? 'font-bold text-lightHighlight underline' : ''}
     "
-		href={url}
-	>
-		<span>
-			{title}
-		</span>
-	</a>
+    href={url}
+  >
+    <span>
+      {title}
+    </span>
+  </a>
 </div>

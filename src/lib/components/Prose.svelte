@@ -2,10 +2,10 @@
 </script>
 
 <article
-	class="
+  class="
   mb-8
   text-3xl font-bold
   "
 >
-	<slot />
+  <slot />
 </article>
