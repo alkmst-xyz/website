@@ -80,10 +80,10 @@ git commit
 
 The background color should be `#ffffff` for light mode and `#0d1117` for dark mode.
 
-| Style |       Example        |
-| :---: | :------------------: |
-|  HEX  |      `#0969DA`       |
-|  RGB  |  `rgb(9, 105, 218)`  |
+| Style | Example              |
+| :---: | :------------------- |
+|  HEX  | `#0969DA`            |
+|  RGB  | `rgb(9, 105, 218)`   |
 |  HSL  | `hsl(212, 92%, 45%)` |
 
 ## Links
@@ -127,18 +127,6 @@ You can also use words, to fit your writing style more closely[^note].
 3. John Quincy Adams
    1. First nested list item
       1. Second nested list item
-
-## Tasks Lists
-
-- [x] #739
-- [ ] https://github.com/
-- [ ] Add delight to the experience when all tasks are complete :tada:
-
-- [ ] \(Optional) Open a followup issue
-
-## Using emoji
-
-@octocat :+1: This PR looks great - it's ready to merge! :shipit:
 
 ## Collapsed section
 

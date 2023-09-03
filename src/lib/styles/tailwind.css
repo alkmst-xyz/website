@@ -1,17 +1,3 @@
-/* OLD STYLES
-body {
-	margin: 0;
-	background: #eee;
-	color: #333;
-	font-family: sans-serif;
-}
-
-main {
-	padding: 1rem;
-	margin: 2rem auto;
-	max-width: 40rem;
-} */
-
 @import './prism-diff.css';
 @import './prism-one-dark.css';
 
@@ -24,123 +10,119 @@ main {
 	src: url('../static/fonts/Caskaydia_Cove_Nerd_Font_Complete_Regular.otf');
 } */
 
-@layer base {
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6 {
-		@apply font-bold text-lightHighlight;
-	}
-
-	h1 {
-		@apply mb-4 text-4xl;
-	}
-
-	h2 {
-		@apply mb-3 text-3xl;
-	}
-
-	h3 {
-		@apply mb-2 text-2xl;
-	}
-
-	h4 {
-		@apply mb-1 text-xl;
-	}
-
-	h5,
-	h6 {
-		@apply text-lg;
-	}
+.prose {
+	@apply break-words leading-normal text-lightParagraph;
 }
 
-.markdown {
-	@apply break-words;
+.prose h1 {
+	@apply mb-4 mt-8 text-4xl font-bold;
 }
 
-.markdown p {
-	@apply my-3;
+.prose h2 {
+	@apply mb-3 mt-8 text-3xl font-bold;
 }
 
-.markdown a {
-	@apply text-lightHighlight underline;
+.prose h3 {
+	@apply mb-2 mt-8 text-2xl font-bold;
 }
 
-.markdown .heading-anchor {
-	@apply no-underline opacity-0;
+.prose h4 {
+	@apply mb-1 mt-8 text-xl font-bold;
 }
 
-.markdown h1:hover .heading-anchor,
-.markdown h2:hover .heading-anchor,
-.markdown h3:hover .heading-anchor,
-.markdown h4:hover .heading-anchor,
-.markdown h5:hover .heading-anchor,
-.markdown h6:hover .heading-anchor {
-	@apply opacity-100 transition-opacity duration-300;
+.prose h5 {
+	@apply mb-1 mt-8 text-lg font-bold;
 }
 
-.markdown .footnote-ref a,
-.markdown .footnote-backref {
-	@apply no-underline;
+.prose h6 {
+	@apply mb-1 mt-8 text-base font-bold;
 }
 
-.markdown ul,
-.markdown ol {
+.prose a {
+	@apply text-lightHighlight;
+}
+
+.prose a:hover {
+	@apply underline underline-offset-2;
+}
+
+.prose ul,
+.prose ol {
 	@apply my-0 pl-8 marker:text-lightHighlight;
 }
 
-.markdown ul {
+.prose ul {
 	@apply list-disc;
 }
 
-.markdown ul ul {
+.prose ul ul {
 	@apply list-[circle];
 }
 
-.markdown ul ul ul {
+.prose ul ul ul {
 	@apply list-[square];
 }
 
-.markdown ol {
+.prose ol {
 	@apply list-decimal;
 }
 
-.markdown ol ol {
+.prose ol ol {
 	@apply list-[lower-latin];
 }
 
-.markdown ol ol ol {
+.prose ol ol ol {
 	@apply list-[lower-roman];
 }
 
-.markdown table {
-	@apply mx-auto;
+.prose table {
+	@apply mx-auto my-2;
 }
 
-.markdown td,
-.markdown th {
+.prose td,
+.prose th {
 	@apply p-0;
 }
 
-.markdown table th,
-.markdown table td {
+.prose table th,
+.prose table td {
 	@apply border-b border-lightSecondary px-4 py-2;
 }
 
-.markdown hr {
+.prose hr {
 	@apply my-8 text-lightHighlight;
 }
 
-.markdown details {
+.prose details {
 	@apply rounded-lg bg-lightSecondary p-2;
 }
 
-.markdown blockquote {
+.prose blockquote {
 	@apply border-l-4 border-lightHighlight pl-2 italic opacity-70;
 }
 
-.markdown :not(pre) > code {
+.prose :not(pre) > code {
 	@apply whitespace-normal rounded-md bg-lightSecondary px-1.5 py-1 text-sm;
 }
+
+/* 
+
+.prose .heading-anchor {
+	@apply no-underline opacity-0;
+}
+
+.prose h1:hover .heading-anchor,
+.prose h2:hover .heading-anchor,
+.prose h3:hover .heading-anchor,
+.prose h4:hover .heading-anchor,
+.prose h5:hover .heading-anchor,
+.prose h6:hover .heading-anchor {
+	@apply opacity-100 transition-opacity duration-300;
+}
+
+.prose .footnote-ref a,
+.prose .footnote-backref {
+	@apply no-underline;
+}
+
+*/

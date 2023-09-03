@@ -1,6 +1,5 @@
 <script>
 	import logo from '$lib/assets/logo_1024.png';
-	import Prose from '$lib/components/Prose.svelte';
 </script>
 
 <svelte:head>
@@ -15,7 +14,7 @@
 	</picture>
 </div>
 
-<Prose>
+<div class="prose">
 	<p>
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget hendrerit ex. Duis vulputate
 		dictum rutrum. Aenean eu quam neque. Aliquam erat volutpat. Nam pretium vel neque in
@@ -55,4 +54,4 @@
 		in faucibus. Sed eu leo et orci gravida feugiat vel sit amet elit. Aenean dui velit, pharetra
 		sed sagittis ac, mattis non ipsum. Nullam luctus sagittis congue.
 	</p>
-</Prose>
+</div>

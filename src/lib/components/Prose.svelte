@@ -1,6 +1,11 @@
 <script lang="ts">
 </script>
 
-<article class="markdown mb-8 px-2">
+<article
+	class="
+  mb-8
+  text-3xl font-bold
+  "
+>
 	<slot />
 </article>

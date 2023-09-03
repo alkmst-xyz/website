@@ -21,6 +21,5 @@ export default {
 				lightTertiary: '#e45858'
 			}
 		}
-	},
-	plugins: [require('@tailwindcss/typography')]
+	}
 } satisfies Config;
