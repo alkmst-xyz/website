@@ -1,8 +1,6 @@
 export type MdsvexEntry = {
-  default: {
-    render: Function;
-  };
   metadata: MdMeta;
+  default: any;
 };
 
 export type MdMeta = {

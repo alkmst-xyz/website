@@ -35,6 +35,20 @@ pnpm run preview
 }
 ```
 
+## Routing (TODO)
+
+- Currently the route `/api/content` will provide a list of `.md` files and their metadata.
+- This is used by the `/posts` to generate a list of posts.
+- When a post is clicked, this gets routed to `/api/content/{params}` which again pings `/api/content` for metadata.
+- Option 1: combine both the routes.
+- Option 2: pass the metadat to the slug route when its fetched.
+- Generally, unify and simply `/api/content`.
+
+## Ideas
+
+- Dump vite, mdsvex for plain json api (node:fs + markdown compiler) like [svelte.dev](https://github.com/sveltejs/svelte/tree/master/sites/svelte.dev/src/routes/content.json).
+- View transition into a post from posts list view.
+
 ## Resources
 
 1. [Josh Collinsworth Blog - Let's learn SvelteKit by building a static Markdown blog from scratch](https://joshcollinsworth.com/blog/build-static-sveltekit-markdown-blog)

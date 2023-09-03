@@ -12,6 +12,8 @@ export const GET: RequestHandler = async ({ params, fetch }) => {
     throw error(400, 'post id must be a positive number');
   }
 
+  // TODO here a request is made to get all files, not needed
+  // rather search for the particular slug
   const response = await fetch('/api/content');
   if (!response.ok) {
     throw error(400, 'error loading data from endpoint');
