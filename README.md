@@ -26,12 +26,12 @@ pnpm run preview
 
 ```json
 {
-	"title": "Joseph Sebastian's website",
-	"description": "Joseph Sebastian's website",
-	"url": "https://jspsv.github.io/website",
-	"lang": "en",
-	"locale": "en_us",
-	"author": "Joseph Sebastian"
+  "title": "Joseph Sebastian's website",
+  "description": "Joseph Sebastian's website",
+  "url": "https://jspsv.github.io/website",
+  "lang": "en",
+  "locale": "en_us",
+  "author": "Joseph Sebastian"
 }
 ```
 

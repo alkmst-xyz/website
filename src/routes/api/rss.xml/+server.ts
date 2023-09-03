@@ -4,24 +4,24 @@ export const prerender = true;
 
 // TODO: use library function
 export const GET = async () => {
-	const data = await Promise.all(
-		Object.entries(import.meta.glob('/src/content/*.md')).map(async ([path, page]) => {
-			const { metadata } = await page();
-			const slug = path.split('/').pop().split('.').shift();
-			return { ...metadata, slug };
-		})
-	).then((posts) => {
-		return posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-	});
+  const data = await Promise.all(
+    Object.entries(import.meta.glob('/src/content/*.md')).map(async ([path, page]) => {
+      const { metadata } = await page();
+      const slug = path.split('/').pop().split('.').shift();
+      return { ...metadata, slug };
+    })
+  ).then((posts) => {
+    return posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  });
 
-	const body = render(data);
-	const options = {
-		headers: {
-			'Cache-Control': `max-age=0, s-max-age=${600}`,
-			'Content-Type': 'application/xml'
-		}
-	};
-	return new Response(body, options);
+  const body = render(data);
+  const options = {
+    headers: {
+      'Cache-Control': `max-age=0, s-max-age=${600}`,
+      'Content-Type': 'application/xml'
+    }
+  };
+  return new Response(body, options);
 };
 
 const render = (posts) => `<?xml version="1.0" encoding="utf-8" ?>
@@ -32,16 +32,16 @@ const render = (posts) => `<?xml version="1.0" encoding="utf-8" ?>
     <description>${siteDescription}</description>
     <atom:link href="https://${siteURL}/api/rss.xml" rel="self" type="application/rss+xml"/>
     ${posts
-			.map(
-				(post) => `<item>
+      .map(
+        (post) => `<item>
           <title>${post.title}</title>
           <description>${post.description}</description>
           <link>https://${siteURL}/posts/${post.slug}</link>
           <guid isPermaLink="true">https://${siteURL}/posts/${post.slug}</guid>
           <pubDate>${new Date(post.date).toUTCString()}</pubDate>
         </item>`
-			)
-			.join('')}
+      )
+      .join('')}
   </channel>
 </rss>
 `;

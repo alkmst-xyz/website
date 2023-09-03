@@ -1,29 +1,29 @@
 {
-	"name": "jspsv.dev - Joseph Sebastian's website",
-	"short_name": "jspsv.dev",
-	"start_url": "/",
-	"scope": "/",
-	"id": "/?source=pwa",
-	"display": "standalone",
-	"theme_color": "#ffffff",
-	"background_color": "#ffffff",
-	"icons": [
-		{
-			"src": "/images/maskable_icon_x192.png",
-			"sizes": "192x192",
-			"type": "image/png",
-			"purpose": "any maskable"
-		},
-		{
-			"src": "/images/maskable_icon_x512.png",
-			"sizes": "512x512",
-			"type": "image/png"
-		},
-		{
-			"src": "/images/maskable_icon_x512.png",
-			"sizes": "512x512",
-			"type": "image/png",
-			"purpose": "any maskable"
-		}
-	]
+  "name": "jspsv.dev - Joseph Sebastian's website",
+  "short_name": "jspsv.dev",
+  "start_url": "/",
+  "scope": "/",
+  "id": "/?source=pwa",
+  "display": "standalone",
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
+  "icons": [
+    {
+      "src": "/images/maskable_icon_x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/maskable_icon_x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/maskable_icon_x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
 }

@@ -7,24 +7,24 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 
 /** @type {import('mdsvex').MdsvexOptions} */
 const mdsvexConfig = defineMDSveXConfig({
-	extensions: ['.md'],
-	smartypants: true,
-	layout: {
-		post: 'src/lib/layouts/post.svelte'
-	},
-	remarkPlugins: [],
-	rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings]
+  extensions: ['.md'],
+  smartypants: true,
+  layout: {
+    post: 'src/lib/layouts/post.svelte'
+  },
+  remarkPlugins: [],
+  rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings]
 });
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-	extensions: ['.svelte', '.md'],
+  extensions: ['.svelte', '.md'],
 
-	preprocess: [vitePreprocess(), mdsvex(mdsvexConfig)],
+  preprocess: [vitePreprocess(), mdsvex(mdsvexConfig)],
 
-	kit: {
-		adapter: adapter()
-	}
+  kit: {
+    adapter: adapter()
+  }
 };
 
 export default config;

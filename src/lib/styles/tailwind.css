@@ -11,98 +11,98 @@
 } */
 
 .prose {
-	@apply break-words leading-normal text-lightParagraph;
+  @apply break-words leading-normal text-lightParagraph;
 }
 
 .prose h1 {
-	@apply mb-4 mt-8 text-4xl font-bold;
+  @apply mb-4 mt-8 text-4xl font-bold;
 }
 
 .prose h2 {
-	@apply mb-3 mt-8 text-3xl font-bold;
+  @apply mb-3 mt-8 text-3xl font-bold;
 }
 
 .prose h3 {
-	@apply mb-2 mt-8 text-2xl font-bold;
+  @apply mb-2 mt-8 text-2xl font-bold;
 }
 
 .prose h4 {
-	@apply mb-1 mt-8 text-xl font-bold;
+  @apply mb-1 mt-8 text-xl font-bold;
 }
 
 .prose h5 {
-	@apply mb-1 mt-8 text-lg font-bold;
+  @apply mb-1 mt-8 text-lg font-bold;
 }
 
 .prose h6 {
-	@apply mb-1 mt-8 text-base font-bold;
+  @apply mb-1 mt-8 text-base font-bold;
 }
 
 .prose a {
-	@apply text-lightHighlight;
+  @apply text-lightHighlight;
 }
 
 .prose a:hover {
-	@apply underline underline-offset-2;
+  @apply underline underline-offset-2;
 }
 
 .prose ul,
 .prose ol {
-	@apply my-0 pl-8 marker:text-lightHighlight;
+  @apply my-0 pl-8 marker:text-lightHighlight;
 }
 
 .prose ul {
-	@apply list-disc;
+  @apply list-disc;
 }
 
 .prose ul ul {
-	@apply list-[circle];
+  @apply list-[circle];
 }
 
 .prose ul ul ul {
-	@apply list-[square];
+  @apply list-[square];
 }
 
 .prose ol {
-	@apply list-decimal;
+  @apply list-decimal;
 }
 
 .prose ol ol {
-	@apply list-[lower-latin];
+  @apply list-[lower-latin];
 }
 
 .prose ol ol ol {
-	@apply list-[lower-roman];
+  @apply list-[lower-roman];
 }
 
 .prose table {
-	@apply mx-auto my-2;
+  @apply mx-auto my-2;
 }
 
 .prose td,
 .prose th {
-	@apply p-0;
+  @apply p-0;
 }
 
 .prose table th,
 .prose table td {
-	@apply border-b border-lightSecondary px-4 py-2;
+  @apply border-b border-lightSecondary px-4 py-2;
 }
 
 .prose hr {
-	@apply my-8 text-lightHighlight;
+  @apply my-8 text-lightHighlight;
 }
 
 .prose details {
-	@apply rounded-lg bg-lightSecondary p-2;
+  @apply rounded-lg bg-lightSecondary p-2;
 }
 
 .prose blockquote {
-	@apply border-l-4 border-lightHighlight pl-2 italic opacity-70;
+  @apply border-l-4 border-lightHighlight pl-2 italic opacity-70;
 }
 
 .prose :not(pre) > code {
-	@apply whitespace-normal rounded-md bg-lightSecondary px-1.5 py-1 text-sm;
+  @apply whitespace-normal rounded-md bg-lightSecondary px-1.5 py-1 text-sm;
 }
 
 /* 
