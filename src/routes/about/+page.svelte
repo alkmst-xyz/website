@@ -1,5 +1,5 @@
 <script>
-  import logo from '$lib/assets/logo_1024.png';
+  import logo from '$lib/assets/images/logo_1024.png';
   import Prose from '$lib/components/Prose.svelte';
 </script>
 

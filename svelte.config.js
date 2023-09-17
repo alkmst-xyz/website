@@ -9,11 +9,16 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 const mdsvexConfig = defineMDSveXConfig({
   extensions: ['.md'],
   smartypants: true,
-  layout: {
-    post: 'src/lib/layouts/post.svelte'
-  },
   remarkPlugins: [],
-  rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings]
+  rehypePlugins: [
+    rehypeSlug,
+    [
+      rehypeAutolinkHeadings,
+      {
+        behavior: 'append'
+      }
+    ]
+  ]
 });
 
 /** @type {import('@sveltejs/kit').Config} */

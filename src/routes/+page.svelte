@@ -14,7 +14,7 @@
   </picture>
 </div>
 
-<div class="prose">
+<div class="markdown">
   <p>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget hendrerit ex. Duis vulputate
     dictum rutrum. Aenean eu quam neque. Aliquam erat volutpat. Nam pretium vel neque in

@@ -35,7 +35,7 @@
     {meta.description}
   </span>
 
-  <article class="prose">
+  <article class="markdown">
     {@html html}
   </article>
 </div>

@@ -4,9 +4,10 @@ export default {
   content: ['./src/**/*.{html,js,svelte,ts}'],
   theme: {
     extend: {
-      // fontFamily: {
-      // 	caskaydia_cove: ['CaskaydiaCove', 'monospace']
-      // },
+      fontFamily: {
+        'serif-custom': 'Petrona'
+      },
+
       // custom colors
       colors: {
         lightBg: '#fffffe',

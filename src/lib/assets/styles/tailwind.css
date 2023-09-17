@@ -5,124 +5,131 @@
 @tailwind components;
 @tailwind utilities;
 
-/* @font-face {
-	font-family: 'CaskaydiaCove';
-	src: url('../static/fonts/Caskaydia_Cove_Nerd_Font_Complete_Regular.otf');
-} */
-
-.prose {
-  @apply break-words leading-normal text-lightParagraph;
+@font-face {
+  font-family: 'Petrona';
+  src: url('/fonts/Petrona.ttf') format('truetype');
 }
 
-.prose h1 {
-  @apply mb-4 mt-8 text-4xl font-bold;
+@layer base {
+  body {
+    @apply font-serif-custom text-xl font-[450] leading-normal tracking-tight;
+    @apply text-lightParagraph;
+  }
 }
 
-.prose h2 {
-  @apply mb-3 mt-8 text-3xl font-bold;
+/* md headings */
+.markdown h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-semibold;
 }
 
-.prose h3 {
-  @apply mb-2 mt-8 text-2xl font-bold;
+.markdown h1 {
+  @apply text-4xl leading-10;
 }
 
-.prose h4 {
-  @apply mb-1 mt-8 text-xl font-bold;
+.markdown h2 {
+  @apply mb-4 mt-8 text-3xl leading-8;
 }
 
-.prose h5 {
-  @apply mb-1 mt-8 text-lg font-bold;
+.markdown h3 {
+  @apply mt-6 text-2xl leading-7;
 }
 
-.prose h6 {
-  @apply mb-1 mt-8 text-base font-bold;
-}
-
-.prose a {
+/* md links */
+.markdown a {
   @apply text-lightHighlight;
 }
 
-.prose a:hover {
-  @apply underline underline-offset-2;
+/* md heading achors */
+.markdown :is(h2, h3, h4, h5, h6) > a::before {
+  @apply ml-1 text-lightParagraph opacity-0 transition-all content-['⟡'];
 }
 
-.prose ul,
-.prose ol {
-  @apply my-0 pl-8 marker:text-lightHighlight;
+.markdown :is(h2, h3, h4, h5, h6):hover > a::before {
+  @apply opacity-100;
 }
 
-.prose ul {
+/* md lists */
+.markdown :is(ul, ol) {
+  @apply my-0 pl-8;
+}
+
+.markdown ul {
   @apply list-disc;
 }
 
-.prose ul ul {
+.markdown ul ul {
   @apply list-[circle];
 }
 
-.prose ul ul ul {
+.markdown ul ul ul {
   @apply list-[square];
 }
 
-.prose ol {
+.markdown ol {
   @apply list-decimal;
 }
 
-.prose ol ol {
+.markdown ol ol {
   @apply list-[lower-latin];
 }
 
-.prose ol ol ol {
+.markdown ol ol ol {
   @apply list-[lower-roman];
 }
 
-.prose table {
-  @apply mx-auto my-2;
+/* md tables */
+.markdown table {
+  @apply my-5 table-fixed border-collapse overflow-x-auto;
 }
 
-.prose td,
-.prose th {
-  @apply p-0;
+.markdown :is(th, td) {
+  @apply py-2 pr-6;
 }
 
-.prose table th,
-.prose table td {
-  @apply border-b border-lightSecondary px-4 py-2;
+.markdown th {
+  @apply font-semibold;
 }
 
-.prose hr {
+.markdown tr {
+  @apply border-b border-lightSecondary;
+}
+
+/* md code */
+.markdown :not(pre) > code {
+  @apply whitespace-normal rounded bg-lightSecondary px-1.5 py-[2px] text-sm;
+}
+
+.markdown pre > code {
+  @apply text-sm;
+}
+
+/* .markdown summary */
+.markdown details {
+  @apply my-3 rounded-sm bg-lightSecondary/50 px-2 py-1;
+}
+
+.markdown details summary {
+  @apply cursor-pointer select-none list-none;
+}
+
+.markdown summary::after {
+  @apply absolute ml-3 translate-y-[1px] rotate-0 align-baseline text-base transition-all content-["◂"];
+}
+
+.markdown details[open] summary:after {
+  @apply translate-y-[2px] -rotate-90;
+}
+
+/* md misc */
+.markdown blockquote {
+  @apply my-4 border-l-4 border-lightHighlight pl-2 italic opacity-80;
+}
+
+.markdown hr {
   @apply my-8 text-lightHighlight;
 }
-
-.prose details {
-  @apply rounded-lg bg-lightSecondary p-2;
-}
-
-.prose blockquote {
-  @apply border-l-4 border-lightHighlight pl-2 italic opacity-70;
-}
-
-.prose :not(pre) > code {
-  @apply whitespace-normal rounded-md bg-lightSecondary px-1.5 py-1 text-sm;
-}
-
-/* 
-
-.prose .heading-anchor {
-	@apply no-underline opacity-0;
-}
-
-.prose h1:hover .heading-anchor,
-.prose h2:hover .heading-anchor,
-.prose h3:hover .heading-anchor,
-.prose h4:hover .heading-anchor,
-.prose h5:hover .heading-anchor,
-.prose h6:hover .heading-anchor {
-	@apply opacity-100 transition-opacity duration-300;
-}
-
-.prose .footnote-ref a,
-.prose .footnote-backref {
-	@apply no-underline;
-}
-
-*/
