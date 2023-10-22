@@ -1,5 +1,6 @@
 <script>
-  import logo from '$lib/assets/images/logo_1024.png';
+  import { src as logoSrc } from '$lib/assets/images/logo_1024.png?w=1024&format=avif&quality=80&lossless=true&alpha=&as=metadata';
+  import Prose from '$lib/components/Prose.svelte';
 </script>
 
 <svelte:head>
@@ -9,12 +10,12 @@
 
 <div class="flex justify-center">
   <picture>
-    <source srcset={logo} type="image/webp" />
-    <img src={logo} alt="logo" width="512" height="512" />
+    <source srcset={logoSrc} type="image/avif" />
+    <img src={logoSrc} alt="logo" width="512" height="512" />
   </picture>
 </div>
 
-<div class="markdown">
+<Prose>
   <p>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget hendrerit ex. Duis vulputate
     dictum rutrum. Aenean eu quam neque. Aliquam erat volutpat. Nam pretium vel neque in
@@ -54,4 +55,4 @@
     in faucibus. Sed eu leo et orci gravida feugiat vel sit amet elit. Aenean dui velit, pharetra
     sed sagittis ac, mattis non ipsum. Nullam luctus sagittis congue.
   </p>
-</div>
+</Prose>
