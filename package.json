@@ -22,6 +22,7 @@
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-svelte": "^2.34.0",
     "mdsvex": "^0.11.0",
+    "mdsvex-relative-images": "^1.0.3",
     "postcss": "^8.4.31",
     "prettier": "^3.0.3",
     "prettier-plugin-svelte": "^3.0.3",
@@ -34,6 +35,7 @@
     "tslib": "^2.6.2",
     "typescript": "^5.2.2",
     "vite": "^4.5.0",
+    "vite-imagetools": "^6.0.0",
     "vitest": "^0.34.6"
   },
   "type": "module"

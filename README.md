@@ -1,8 +1,8 @@
 # jspsv.dev
 
 <p align="center">
-    <img width="100" src="./src/lib/images/indigo-to-blue-to-green_512x512x32.png" alt="logo">
-    </a>
+    <img width="150" src="./src/lib/assets/images/logo_1024.png" alt="logo">
+    </img>
 </p>
 
 ## Run locally
