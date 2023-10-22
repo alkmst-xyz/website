@@ -9,7 +9,7 @@
 >
   <span>Ⓒ 2022 Joseph Sebastian.</span>
   <span
-    >This website is made with
+    >Made with
     <a href="https://kit.svelte.dev/" target="_blank" rel="noopener noreferrer">SvelteKit</a>
     and
     <a href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer">Tailwind</a>.</span

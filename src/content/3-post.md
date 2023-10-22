@@ -4,8 +4,9 @@ date: '2021-10-06'
 description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 category: dev
 tags:
-  - 'programming'
+  - programming
 slug: post-3
+draft: true
 ---
 
 Here, some code :)

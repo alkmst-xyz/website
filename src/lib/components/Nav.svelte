@@ -18,7 +18,7 @@
   md:flex-row
   md:space-y-0"
 >
-  <NavItem title="Joseph Sebastian" url="/" />
+  <NavItem title="jspsv" url="/" />
 
   <nav>
     <ul class="flex space-x-2">

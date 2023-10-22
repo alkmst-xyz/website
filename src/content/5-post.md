@@ -4,8 +4,9 @@ date: '2021-12-06'
 description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 category: dev
 tags:
-  - 'nuxtjs'
+  - nuxtjs
 slug: post-5
+draft: true
 ---
 
 Empower your NuxtJS application with `@nuxtjs/content` module: write in a `content/` directory and fetch your Markdown, JSON, YAML and CSV files through a MongoDB like API, acting as a **Git-based Headless CMS**.
