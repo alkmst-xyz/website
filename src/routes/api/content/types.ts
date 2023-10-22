@@ -12,6 +12,7 @@ export type MdMeta = {
   slug?: string;
   readingTime?: string;
   fileName?: string;
+  draft?: boolean;
 };
 
 export type MdBody = {

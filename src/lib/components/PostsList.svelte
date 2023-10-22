@@ -12,7 +12,21 @@
     rounded bg-gray-200 px-2 py-3
     "
   >
-    <h1>{postMeta.title}</h1>
+    <div class="flex items-center justify-between">
+      <h2 class="">{postMeta.title}</h2>
+      {#if postMeta.draft}
+        <span
+          class="
+          rounded-md border border-gray-600
+          px-1 font-mono text-sm
+          text-gray-600
+          "
+        >
+          draft
+        </span>
+      {/if}
+    </div>
+
     <p>{postMeta.description}</p>
   </a>
 {/each}

@@ -1,4 +1,5 @@
 import { json } from '@sveltejs/kit';
+import { NODE_ENV } from '$env/static/private';
 import type { RequestHandler } from './$types';
 import type { MdsvexEntry } from './types';
 
@@ -12,7 +13,7 @@ export const GET: RequestHandler = async () => {
   const mdFiles = import.meta.glob<MdsvexEntry>('./../../../content/*.md');
   const mdFilesIterable = Object.entries(mdFiles);
 
-  const mdPosts = await Promise.all(
+  const posts = await Promise.all(
     mdFilesIterable.map(async ([path, resolver]) => {
       const { metadata } = await resolver();
 
@@ -25,17 +26,19 @@ export const GET: RequestHandler = async () => {
     })
   );
 
-  // TODO maybe sorting is not needed as there might be more posts client side
-  // sort by date
-  const mdPostsSorted = mdPosts.sort((a, b) => {
-    return new Date(b.date).getTime() - new Date(a.date).getTime();
-  });
+  // filter out draft posts, sort by date
+  const postsFiltered = posts
+    .filter((post) => {
+      if (!post.draft || NODE_ENV === 'development') {
+        return post;
+      }
+    })
+    .sort((a, b) => {
+      return new Date(b.date).getTime() - new Date(a.date).getTime();
+    });
 
-  // TODO validate if metadata follows a schema
-  // if not throw error and skip returning (zod parse)
+  // TODO validate schema (zod parse, and throw friendly error messages)
+  // TODO get slug from metadata or use title to get it (zod computed)
 
-  // TODO get slug from metadata if defined
-  // or use title to get it (zod computed)
-
-  return json(mdPostsSorted);
+  return json(postsFiltered);
 };
