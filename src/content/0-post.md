@@ -4,8 +4,8 @@ date: '2019-10-01'
 description: Full example of GFM
 category: recepies
 tags:
-  - 'markdown'
-  - 'github'
+  - markdown
+  - github
 slug: post-0
 ---
 
@@ -25,12 +25,12 @@ Basic writing and formatting syntax. Create sophisticated formatting for your pr
 5. [Links](#links)
 6. [Images](#images)
 7. [Lists](#lists)
-8. [~~Task Lists~~](#tasks-lists)
-9. [Using emoji](#using-emoji)
-10. [Footnotes](#footnotes)
-11. [Collapsed section](#collapsed-section)
-12. [~~Math expressions~~](#math-expressions)
-13. [~~Creating digrams~~](#creating-diagrams)
+   <!-- 8. [~~Task Lists~~](#tasks-lists) -->
+   <!-- 8. [Using emoji](#using-emoji) -->
+8. [Footnotes](#footnotes)
+9. [Collapsed section](#collapsed-section)
+10. [~~Math expressions~~](#math-expressions)
+11. [~~Creating digrams~~](#creating-diagrams)
 
 </details>
 
@@ -80,10 +80,10 @@ git commit
 
 The background color should be `#ffffff` for light mode and `#0d1117` for dark mode.
 
-| Style |       Example        |
-| :---: | :------------------: |
-|  HEX  |      `#0969DA`       |
-|  RGB  |  `rgb(9, 105, 218)`  |
+| Style | Example              |
+| :---: | :------------------- |
+|  HEX  | `#0969DA`            |
+|  RGB  | `rgb(9, 105, 218)`   |
 |  HSL  | `hsl(212, 92%, 45%)` |
 
 ## Links
@@ -127,18 +127,6 @@ You can also use words, to fit your writing style more closely[^note].
 3. John Quincy Adams
    1. First nested list item
       1. Second nested list item
-
-## Tasks Lists
-
-- [x] #739
-- [ ] https://github.com/
-- [ ] Add delight to the experience when all tasks are complete :tada:
-
-- [ ] \(Optional) Open a followup issue
-
-## Using emoji
-
-@octocat :+1: This PR looks great - it's ready to merge! :shipit:
 
 ## Collapsed section
 

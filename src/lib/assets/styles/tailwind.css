@@ -1,0 +1,134 @@
+@import './prism-diff.css';
+@import './prism-one-dark.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Petrona';
+  src: url('/fonts/Petrona.ttf') format('truetype');
+}
+
+@layer base {
+  body {
+    @apply font-serif-custom text-xl font-[450] leading-normal tracking-tight;
+    @apply text-lightParagraph;
+  }
+}
+
+/* md headings */
+.markdown h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-semibold;
+}
+
+.markdown h1 {
+  @apply mb-8 text-4xl font-bold leading-10;
+}
+
+.markdown h2 {
+  @apply mb-4 mt-8 text-3xl leading-8;
+}
+
+.markdown h3 {
+  @apply mt-6 text-2xl leading-7;
+}
+
+/* md links */
+.markdown a {
+  @apply text-lightHighlight;
+}
+
+/* md heading achors */
+.markdown :is(h2, h3, h4, h5, h6) > a::before {
+  @apply ml-1 text-lightParagraph opacity-0 transition-all content-['⟡'];
+}
+
+.markdown :is(h2, h3, h4, h5, h6):hover > a::before {
+  @apply opacity-100;
+}
+
+/* md lists */
+.markdown :is(ul, ol) {
+  @apply my-0 pl-8;
+}
+
+.markdown ul {
+  @apply list-disc;
+}
+
+.markdown ul ul {
+  @apply list-[circle];
+}
+
+.markdown ul ul ul {
+  @apply list-[square];
+}
+
+.markdown ol {
+  @apply list-decimal;
+}
+
+.markdown ol ol {
+  @apply list-[lower-latin];
+}
+
+.markdown ol ol ol {
+  @apply list-[lower-roman];
+}
+
+/* md tables */
+.markdown table {
+  @apply my-5 table-fixed border-collapse overflow-x-auto;
+}
+
+.markdown :is(th, td) {
+  @apply py-2 pr-6;
+}
+
+.markdown th {
+  @apply font-semibold;
+}
+
+.markdown tr {
+  @apply border-b border-lightSecondary;
+}
+
+/* md code */
+.markdown :not(pre) > code {
+  @apply whitespace-normal rounded bg-lightSecondary px-1.5 py-[2px] text-sm;
+}
+
+.markdown pre > code {
+  @apply text-sm;
+}
+
+/* .markdown summary */
+.markdown details {
+  @apply my-3 rounded-sm bg-lightSecondary/50 px-2 py-1;
+}
+
+.markdown details summary {
+  @apply cursor-pointer select-none list-none;
+}
+
+.markdown summary::after {
+  @apply absolute ml-3 translate-y-[1px] rotate-0 align-baseline text-base transition-all content-["◂"];
+}
+
+.markdown details[open] summary:after {
+  @apply translate-y-[2px] -rotate-90;
+}
+
+/* md misc */
+.markdown blockquote {
+  @apply my-4 border-l-4 border-lightHighlight pl-2 italic opacity-80;
+}
+
+.markdown hr {
+  @apply my-8 text-lightHighlight;
+}

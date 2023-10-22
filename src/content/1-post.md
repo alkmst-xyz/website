@@ -4,8 +4,9 @@ date: '2020-02-02'
 description: Learning how to use @nuxt/content to create a blog
 category: dev
 tags:
-  - 'test'
+  - test
 slug: post-1
+draft: true
 ---
 
 ## Story of this site

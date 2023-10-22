@@ -1,23 +1,28 @@
 <script lang="ts">
-	import { page } from '$app/stores';
+  import { page } from '$app/stores';
 
-	export let title: string;
-	export let url: string;
+  export let title: string;
+  export let url: string;
 
-	$: active = $page.url.pathname === url;
+  $: active = $page.url.pathname === url;
 </script>
 
 <div>
-	<a
-		class="
-    rounded-lg px-2
-    py-1
-    transition-colors duration-300 ease-in-out
-    hover:bg-lightSecondary
-    {active ? 'bg-lightSecondary' : ''}
+  <a
+    class="
+    decoration-lightHighlight
+    decoration-dotted
+    decoration-2
+    underline-offset-4
+    transition-colors
+    ease-in-out
+    hover:underline
+    {active ? 'font-bold text-lightHighlight underline' : ''}
     "
-		href={url}
-	>
-		{title}
-	</a>
+    href={url}
+  >
+    <span>
+      {title}
+    </span>
+  </a>
 </div>

@@ -1,22 +1,21 @@
 export type MdsvexEntry = {
-	default: {
-		render: Function;
-	};
-	metadata: MdMeta;
+  metadata: MdMeta;
+  default: any;
 };
 
 export type MdMeta = {
-	title: string;
-	date: Date;
-	description: string;
-	category: string;
-	tags: string[];
-	slug?: string;
-	readingTime?: string;
-	fileName?: string;
+  title: string;
+  date: Date;
+  description: string;
+  category: string;
+  tags: string[];
+  slug?: string;
+  readingTime?: string;
+  fileName?: string;
+  draft?: boolean;
 };
 
 export type MdBody = {
-	meta: MdMeta;
-	html: string;
+  meta: MdMeta;
+  html: string;
 };
