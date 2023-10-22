@@ -1,5 +1,5 @@
 import { json } from '@sveltejs/kit';
-import { NODE_ENV } from '$env/static/private';
+import { dev } from '$app/environment';
 import type { RequestHandler } from './$types';
 import type { MdsvexEntry } from './types';
 
@@ -29,7 +29,7 @@ export const GET: RequestHandler = async () => {
   // filter out draft posts, sort by date
   const postsFiltered = posts
     .filter((post) => {
-      if (!post.draft || NODE_ENV === 'development') {
+      if (!post.draft || dev) {
         return post;
       }
     })

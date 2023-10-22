@@ -1,6 +1,7 @@
 <script lang="ts">
+  import Prose from '$lib/components/Prose.svelte';
+  import Tag from '$lib/components/Tag.svelte';
   import type { PageServerData } from './$types';
-
   export let data: PageServerData;
 </script>
 
@@ -9,15 +10,12 @@
   <meta name="Posts | Categories" content="Posts | Categories" />
 </svelte:head>
 
+<Prose>
+  <h1>Categories</h1>
+</Prose>
+
 <div class="flex flex-wrap gap-2">
   {#each data.categories as category}
-    <a
-      href="/posts/categories/{category}"
-      class="
-      rounded bg-gray-200 px-2 py-1
-      "
-    >
-      <h1>{category}</h1>
-    </a>
+    <Tag standalone={true} tag={category} tagsPage="/posts/categories" />
   {/each}
 </div>

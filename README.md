@@ -20,7 +20,8 @@ pnpm run preview
 - [ ] Convert images to .webp during build (while retaining lazy-loading), similar to what [@11ty/eleventy-img](https://www.11ty.dev/docs/plugins/image/) offers.
 - [ ] RSS feed
 - [ ] Tags with spaces are not supported yet
-- [ ] manage node versions using pnpm
+- [ ] Manage node versions using pnpm
+- [x] Draft mode. (works now but requires at least 1 post to compile).
 
 ## Website metadata
 

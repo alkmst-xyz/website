@@ -11,12 +11,10 @@
   <meta name="Posts" content="Posts" />
 </svelte:head>
 
-<div>
-  <Prose>
-    <h1>Posts</h1>
-  </Prose>
+<Prose>
+  <h1>Posts</h1>
+</Prose>
 
-  <div class="flex flex-col space-y-4">
-    <PostsList posts={data.posts} />
-  </div>
+<div class="flex flex-col space-y-4">
+  <PostsList posts={data.posts} />
 </div>
