@@ -9,7 +9,7 @@
 </svelte:head>
 
 <Prose>
-  <h1>About this app</h1>
+  <h1 class="italic">About</h1>
   <p>
     This is my about page. See <a href="/imprint">Imprint.</a>
   </p>

@@ -12,12 +12,14 @@
 </svelte:head>
 
 <div>
-  <div class="flex flex-col">
-    <h1>{meta.title}</h1>
+  <div class="flex flex-col space-y-1">
+    <h1 class="font-serif text-4xl">{meta.title}</h1>
 
-    <div class="flex space-x-4">
+    <div class="flex space-x-4 text-lg">
       <p>{meta.date}</p>
-      <a href="/posts/categories">{meta.category}</a>
+      <a
+      class="bg-lightHighlight/15 px-2 rounded-lg"
+       href="/posts/categories">{meta.category}</a>
     </div>
 
     {#if meta.tags.length}
@@ -29,11 +31,12 @@
         {/each}
       </ul>
     {/if}
+
+    <span class="font-serif italic">
+      {meta.description}
+    </span>
   </div>
 
-  <span>
-    {meta.description}
-  </span>
 
   <article class="markdown">
     {@html html}

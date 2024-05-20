@@ -5,7 +5,9 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        'serif-custom': 'Petrona'
+        sans: ['"Geist Sans"', 'sans-serif'],
+        serif: ['"Petrona Variable"', 'serif'],
+        mono: ['"Geist Mono"', 'monospace']
       },
 
       // custom colors
@@ -22,5 +24,6 @@ export default {
         lightTertiary: '#e45858'
       }
     }
-  }
+  },
+  plugins: []
 } satisfies Config;

@@ -12,7 +12,7 @@
 </svelte:head>
 
 <Prose>
-  <h1>Tags</h1>
+  <h1 class="italic">Tags</h1>
 </Prose>
 
 <div class="flex flex-wrap gap-2">

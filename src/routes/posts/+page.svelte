@@ -12,7 +12,7 @@
 </svelte:head>
 
 <Prose>
-  <h1>Posts</h1>
+  <h1 class="italic">Posts</h1>
 </Prose>
 
 <div class="flex flex-col space-y-4">

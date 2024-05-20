@@ -11,7 +11,7 @@
 </svelte:head>
 
 <Prose>
-  <h1>Categories</h1>
+  <h1 class="italic">Categories</h1>
 </Prose>
 
 <div class="flex flex-wrap gap-2">
