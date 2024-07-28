@@ -1,6 +1,6 @@
 ---
 title: My first Blog Post
-date: '2020-02-02'
+date: "2020-02-02"
 description: Learning how to use @nuxt/content to create a blog
 category: dev
 tags:

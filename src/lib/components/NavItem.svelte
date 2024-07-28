@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { page } from '$app/stores';
+  import { page } from "$app/stores";
 
   export let title: string;
   export let url: string;

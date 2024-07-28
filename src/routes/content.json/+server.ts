@@ -1,5 +1,5 @@
-import { get_index } from '$lib/server/content.js';
-import { json } from '@sveltejs/kit';
+import { get_index } from "$lib/server/content.js";
+import { json } from "@sveltejs/kit";
 
 export interface Block {
   breadcrumbs: string[];

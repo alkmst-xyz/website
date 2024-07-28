@@ -1,7 +1,7 @@
-import type { Writable } from 'svelte/store';
+import type { Writable } from "svelte/store";
 
 export interface FileStub {
-  type: 'file';
+  type: "file";
   name: string;
   basename: string;
   contents: string;
@@ -9,7 +9,7 @@ export interface FileStub {
 }
 
 export interface DirectoryStub {
-  type: 'directory';
+  type: "directory";
   name: string;
   basename: string;
 }

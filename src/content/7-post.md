@@ -1,6 +1,6 @@
 ---
 title: Lemon Pound Cake
-date: '2023-05-29'
+date: "2023-05-29"
 description: The humble lemon pound cake.
 category: recepies
 tags:

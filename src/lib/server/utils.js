@@ -1,13 +1,13 @@
 /** @param {string} name */
 export function get_depth(name) {
-  return name.split('/').length - 1;
+  return name.split("/").length - 1;
 }
 
 /** @type {Record<string, string>} */
 const chars = {
-  '&': '&amp;',
-  '<': '&lt;',
-  '>': '&gt;'
+  "&": "&amp;",
+  "<": "&lt;",
+  ">": "&gt;"
 };
 
 /** @param {string} html */
@@ -17,5 +17,5 @@ export function escape_html(html) {
 
 /** @param {string} path */
 export function posixify(path) {
-  return path.replace(/\\/g, '/');
+  return path.replace(/\\/g, "/");
 }

@@ -1,6 +1,6 @@
 ---
 title: My second post
-date: '2021-06-06'
+date: "2021-06-06"
 description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 category: dev
 tags:

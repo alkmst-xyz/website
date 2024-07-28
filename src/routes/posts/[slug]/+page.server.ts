@@ -1,6 +1,6 @@
-import { error } from '@sveltejs/kit';
-import type { PageServerLoad } from './$types';
-import type { MdBody } from '../../api/content/types';
+import { error } from "@sveltejs/kit";
+import type { PageServerLoad } from "./$types";
+import type { MdBody } from "../../api/content/types";
 
 export const load = (async ({ parent, params, fetch }) => {
   const { posts } = await parent();
@@ -8,7 +8,7 @@ export const load = (async ({ parent, params, fetch }) => {
 
   const response = await fetch(`/api/content/${postId}`);
   if (!response.ok) {
-    throw error(400, 'error loading data from endpoint');
+    throw error(400, "error loading data from endpoint");
   }
 
   return {

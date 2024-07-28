@@ -1,7 +1,7 @@
 <script lang="ts">
-  import PostsList from '$lib/components/PostsList.svelte';
-  import Prose from '$lib/components/Prose.svelte';
-  import type { PageServerData } from './$types';
+  import PostsList from "$lib/components/PostsList.svelte";
+  import Prose from "$lib/components/Prose.svelte";
+  import type { PageServerData } from "./$types";
 
   export let data: PageServerData;
 </script>

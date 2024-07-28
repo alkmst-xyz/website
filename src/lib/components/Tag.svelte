@@ -1,6 +1,6 @@
 <script lang="ts">
-  export let tagsPage = '';
-  export let tag = '';
+  export let tagsPage = "";
+  export let tag = "";
   export let standalone = false;
 </script>
 

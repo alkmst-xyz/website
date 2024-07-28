@@ -1,6 +1,6 @@
 ---
 title: My fifth post
-date: '2021-12-06'
+date: "2021-12-06"
 description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 category: dev
 tags:

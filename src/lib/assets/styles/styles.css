@@ -1,23 +1,23 @@
-@import '@fontsource-variable/petrona';
-@import '@fontsource-variable/petrona/wght-italic.css';
-@import '@fontsource/geist-sans/100.css';
-@import '@fontsource/geist-sans/200.css';
-@import '@fontsource/geist-sans/300.css';
-@import '@fontsource/geist-sans/400.css';
-@import '@fontsource/geist-sans/500.css';
-@import '@fontsource/geist-sans/600.css';
-@import '@fontsource/geist-sans/700.css';
-@import '@fontsource/geist-sans/800.css';
-@import '@fontsource/geist-sans/900.css';
-@import '@fontsource/geist-mono/100.css';
-@import '@fontsource/geist-mono/200.css';
-@import '@fontsource/geist-mono/300.css';
-@import '@fontsource/geist-mono/400.css';
-@import '@fontsource/geist-mono/500.css';
-@import '@fontsource/geist-mono/600.css';
-@import '@fontsource/geist-mono/700.css';
-@import '@fontsource/geist-mono/800.css';
-@import '@fontsource/geist-mono/900.css';
+@import "@fontsource-variable/petrona";
+@import "@fontsource-variable/petrona/wght-italic.css";
+@import "@fontsource/geist-sans/100.css";
+@import "@fontsource/geist-sans/200.css";
+@import "@fontsource/geist-sans/300.css";
+@import "@fontsource/geist-sans/400.css";
+@import "@fontsource/geist-sans/500.css";
+@import "@fontsource/geist-sans/600.css";
+@import "@fontsource/geist-sans/700.css";
+@import "@fontsource/geist-sans/800.css";
+@import "@fontsource/geist-sans/900.css";
+@import "@fontsource/geist-mono/100.css";
+@import "@fontsource/geist-mono/200.css";
+@import "@fontsource/geist-mono/300.css";
+@import "@fontsource/geist-mono/400.css";
+@import "@fontsource/geist-mono/500.css";
+@import "@fontsource/geist-mono/600.css";
+@import "@fontsource/geist-mono/700.css";
+@import "@fontsource/geist-mono/800.css";
+@import "@fontsource/geist-mono/900.css";
 
 @tailwind base;
 @tailwind components;
@@ -40,11 +40,11 @@ h6 {
 }
 
 .markdown h1 {
-  @apply font-serif mb-8 text-4xl font-bold leading-10;
+  @apply mb-8 font-serif text-4xl font-bold leading-10;
 }
 
 .markdown h2 {
-  @apply font-serif mb-4 mt-8 text-3xl leading-8;
+  @apply mb-4 mt-8 font-serif text-3xl leading-8;
 }
 
 .markdown h3 {

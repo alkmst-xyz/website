@@ -1,6 +1,6 @@
 <script lang="ts">
-  import Tag from '$lib/components/Tag.svelte';
-  import type { PageServerData } from './$types';
+  import Tag from "$lib/components/Tag.svelte";
+  import type { PageServerData } from "./$types";
 
   export let data: PageServerData;
   const { meta, html } = data.postBody;
@@ -17,9 +17,7 @@
 
     <div class="flex space-x-4 text-lg">
       <p>{meta.date}</p>
-      <a
-      class="bg-lightHighlight/15 px-2 rounded-lg"
-       href="/posts/categories">{meta.category}</a>
+      <a class="rounded-lg bg-lightHighlight/15 px-2" href="/posts/categories">{meta.category}</a>
     </div>
 
     {#if meta.tags.length}
@@ -36,7 +34,6 @@
       {meta.description}
     </span>
   </div>
-
 
   <article class="markdown">
     {@html html}
