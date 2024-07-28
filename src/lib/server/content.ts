@@ -1,27 +1,27 @@
-import type { ChapterStub, DirectoryStub, FileStub, PartStub, Exercise } from '$lib/types';
-import { posixify } from '$lib/utils.js';
-import { readFile, readdir, stat } from 'node:fs/promises';
-import path from 'node:path';
+import type { ChapterStub, DirectoryStub, FileStub, PartStub, Exercise } from "$lib/server";
+import { posixify } from "$lib/server/utils.js";
+import { readFile, readdir, stat } from "node:fs/promises";
+import path from "node:path";
 // import glob from 'tiny-glob';
-import { transform } from './markdown';
+import { transform } from "./markdown";
 
 const text_files = new Set([
-  '.svelte',
-  '.txt',
-  '.json',
-  '.js',
-  '.ts',
-  '.css',
-  '.svg',
-  '.html',
-  '.md',
-  '.env'
+  ".svelte",
+  ".txt",
+  ".json",
+  ".js",
+  ".ts",
+  ".css",
+  ".svg",
+  ".html",
+  ".md",
+  ".env"
 ]);
 
-const excluded = new Set(['.DS_Store', '.gitkeep', '.svelte-kit', 'package-lock.json']);
+const excluded = new Set([".DS_Store", ".gitkeep", ".svelte-kit", "package-lock.json"]);
 
 async function json(file: string) {
-  return JSON.parse(await readFile(file, 'utf-8'));
+  return JSON.parse(await readFile(file, "utf-8"));
 }
 
 function is_valid(dir: string) {
@@ -42,7 +42,7 @@ async function exists_readme(part: string, chapter: string, dir: string) {
 }
 
 export async function get_index() {
-  const parts = (await readdir('content/tutorial')).filter(is_valid).map(posixify);
+  const parts = (await readdir("content/tutorial")).filter(is_valid).map(posixify);
 
   const final_data: PartStub[] = [];
 
@@ -73,7 +73,7 @@ export async function get_index() {
       for (const exercise of exercises) {
         const dir = `content/tutorial/${part}/${chapter}/${exercise}`;
 
-        const text = await readFile(`${dir}/README.md`, 'utf-8');
+        const text = await readFile(`${dir}/README.md`, "utf-8");
         const { frontmatter } = extract_frontmatter(text, dir);
         const { title } = frontmatter;
 
@@ -279,8 +279,8 @@ function extract_frontmatter(markdown: string, dir: string) {
 
   const frontmatter: Record<string, string> = {};
 
-  for (const line of match[1].split('\n')) {
-    const index = line.indexOf(':');
+  for (const line of match[1].split("\n")) {
+    const index = line.indexOf(":");
     if (index !== -1) {
       frontmatter[line.slice(0, index).trim()] = line.slice(index + 1).trim();
     }
@@ -309,18 +309,18 @@ async function walk(cwd: string, options: { exclude?: string[] } = {}) {
 
       if (stats.isDirectory()) {
         result[name] = {
-          type: 'directory',
+          type: "directory",
           name,
           basename
         };
 
-        await walk_dir(name + '/', depth + 1);
+        await walk_dir(name + "/", depth + 1);
       } else {
         const text = text_files.has(path.extname(name) || path.basename(name));
-        const contents = await readFile(resolved, text ? 'utf-8' : 'base64');
+        const contents = await readFile(resolved, text ? "utf-8" : "base64");
 
         result[name] = {
-          type: 'file',
+          type: "file",
           name,
           basename,
           text,
@@ -330,5 +330,5 @@ async function walk(cwd: string, options: { exclude?: string[] } = {}) {
     }
   }
 
-  return await walk_dir('/', 1), result;
+  return await walk_dir("/", 1), result;
 }
