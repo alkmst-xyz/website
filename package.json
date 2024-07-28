@@ -40,5 +40,8 @@
     "vite-imagetools": "^7.0.4",
     "vitest": "^2.0.0"
   },
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "tiny-glob": "^0.2.9"
+  }
 }

@@ -78,3 +78,20 @@ export interface EditingConstraints {
   create: Set<string>;
   remove: Set<string>;
 }
+
+// TODO replace with `Warning` from `svelte/compiler`
+export interface Warning {
+  code: string;
+  start: { line: number; column: number; character: number };
+  end: { line: number; column: number; character: number };
+  pos: number;
+  filename: string;
+  frame: string;
+  message: string;
+}
+
+export interface MenuItem {
+  icon: string;
+  label: string;
+  fn: () => void;
+}

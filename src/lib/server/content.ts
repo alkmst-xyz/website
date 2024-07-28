@@ -1,9 +1,9 @@
-import type { ChapterStub, DirectoryStub, FileStub, PartStub, Exercise } from "$lib/server";
-import { posixify } from "$lib/server/utils.js";
 import { readFile, readdir, stat } from "node:fs/promises";
 import path from "node:path";
-// import glob from 'tiny-glob';
-import { transform } from "./markdown";
+import glob from "tiny-glob";
+
+import { transform, posixify } from "./markdown.js";
+import type { Exercise, PartStub, ChapterStub, DirectoryStub, FileStub } from "./types";
 
 const text_files = new Set([
   ".svelte",
@@ -41,7 +41,7 @@ async function exists_readme(part: string, chapter: string, dir: string) {
   return exists(`content/tutorial/${part}/${chapter}/${dir}/README.md`);
 }
 
-export async function get_index() {
+export async function get_index(): Promise<PartStub[]> {
   const parts = (await readdir("content/tutorial")).filter(is_valid).map(posixify);
 
   const final_data: PartStub[] = [];
@@ -92,184 +92,189 @@ export async function get_index() {
   return final_data;
 }
 
-// export async function get_exercise(slug: string): Promise<Exercise | undefined> {
-//   const exercises = (
-//     await glob('[0-9][0-9]-*/[0-9][0-9]-*/[0-9][0-9]-*/README.md', {
-//       cwd: 'content/tutorial'
-//     })
-//   ).map(posixify);
+export async function get_exercise(slug: string): Promise<Exercise | undefined> {
+  const exercises = (
+    await glob("[0-9][0-9]-*/[0-9][0-9]-*/[0-9][0-9]-*/README.md", {
+      cwd: "content/tutorial"
+    })
+  ).map(posixify);
 
-//   const chain: string[] = [];
+  const chain: string[] = [];
 
-//   for (let i = 0; i < exercises.length; i += 1) {
-//     const file = exercises[i];
-//     const [part_dir, chapter_dir, exercise_dir] = file.split('/');
-//     const exercise_slug = exercise_dir.slice(3);
+  for (let i = 0; i < exercises.length; i += 1) {
+    const file = exercises[i];
+    const [part_dir, chapter_dir, exercise_dir] = file.split("/");
+    const exercise_slug = exercise_dir.slice(3);
 
-//     const dir = `content/tutorial/${part_dir}/${chapter_dir}/${exercise_dir}`;
+    const dir = `content/tutorial/${part_dir}/${chapter_dir}/${exercise_dir}`;
 
-//     if (await exists(`${dir}/app-a`)) {
-//       chain.length = 0;
-//       chain.push(`${dir}/app-a`);
-//     }
+    if (await exists(`${dir}/app-a`)) {
+      chain.length = 0;
+      chain.push(`${dir}/app-a`);
+    }
 
-//     if (exercise_slug === slug) {
-//       const a = {
-//         ...(await walk('content/tutorial/common', {
-//           exclude: ['node_modules', 'static/tutorial', 'static/svelte-logo-mask.svg']
-//         })),
-//         ...(await walk(`content/tutorial/${part_dir}/common`))
-//       };
+    if (exercise_slug === slug) {
+      const a = {
+        ...(await walk("content/tutorial/common", {
+          exclude: ["node_modules", "static/tutorial", "static/svelte-logo-mask.svg"]
+        })),
+        ...(await walk(`content/tutorial/${part_dir}/common`))
+      };
 
-//       for (const dir of chain) {
-//         Object.assign(a, await walk(dir));
-//       }
+      for (const dir of chain) {
+        Object.assign(a, await walk(dir));
+      }
 
-//       const b = await walk(`${dir}/app-b`);
-//       const has_solution = Object.keys(b).length > 0;
+      const b = await walk(`${dir}/app-b`);
+      const has_solution = Object.keys(b).length > 0;
 
-//       // ensure no duplicate content
-//       for (const key in b) {
-//         if (!a[key]) continue;
-//         if (b[key].type !== 'file') continue;
+      // ensure no duplicate content
+      for (const key in b) {
+        if (!a[key]) continue;
+        if (b[key].type !== "file") continue;
 
-//         const a_ = a[key] as FileStub;
-//         const b_ = b[key] as FileStub;
+        const a_ = a[key] as FileStub;
+        const b_ = b[key];
 
-//         if (a_.contents === b_.contents) {
-//           throw new Error(`duplicate file: ${exercise_slug} ${key}`);
-//         }
-//       }
+        if (a_.contents === b_.contents) {
+          throw new Error(`duplicate file: ${exercise_slug} ${key}`);
+        }
+      }
 
-//       const part_meta = await json(`content/tutorial/${part_dir}/meta.json`);
-//       const chapter_meta = await json(`content/tutorial/${part_dir}/${chapter_dir}/meta.json`);
+      const part_meta = await json(`content/tutorial/${part_dir}/meta.json`);
+      const chapter_meta = await json(`content/tutorial/${part_dir}/${chapter_dir}/meta.json`);
 
-//       const exercise_meta_file = `content/tutorial/${part_dir}/${chapter_dir}/${exercise_dir}/meta.json`;
-//       const exercise_meta = (await exists(exercise_meta_file))
-//         ? await json(exercise_meta_file)
-//         : {};
+      const exercise_meta_file = `content/tutorial/${part_dir}/${chapter_dir}/${exercise_dir}/meta.json`;
+      const exercise_meta = (await exists(exercise_meta_file))
+        ? await json(exercise_meta_file)
+        : {};
 
-//       const scope = chapter_meta.scope ?? part_meta.scope;
+      const scope = chapter_meta.scope ?? part_meta.scope;
 
-//       const text = await readFile(`${dir}/README.md`, 'utf-8');
-//       const { frontmatter, markdown } = extract_frontmatter(text, dir);
-//       const { title, path = '/', focus } = frontmatter;
+      const text = await readFile(`${dir}/README.md`, "utf-8");
+      const { frontmatter, markdown } = extract_frontmatter(text, dir);
+      const { title, path = "/", focus } = frontmatter;
 
-//       const prev_slug = exercises[i - 1]?.split('/')[2].slice(3);
-//       const prev = prev_slug
-//         ? {
-//             slug: prev_slug
-//           }
-//         : null;
+      const prev_slug = exercises[i - 1]?.split("/")[2].slice(3);
+      const prev = prev_slug
+        ? {
+            slug: prev_slug
+          }
+        : null;
 
-//       let next = null;
+      let next = null;
 
-//       const next_exercise = exercises[i + 1];
+      const next_exercise = exercises[i + 1];
 
-//       if (next_exercise) {
-//         let title: string;
+      if (next_exercise) {
+        let title: string;
 
-//         const dirs = next_exercise.split('/');
-//         if (dirs[0] !== part_dir) {
-//           title = (await json(`content/tutorial/${dirs[0]}/meta.json`)).title;
-//         } else if (dirs[1] !== chapter_dir) {
-//           title = (await json(`content/tutorial/${dirs[0]}/${dirs[1]}/meta.json`)).title;
-//         } else {
-//           title = extract_frontmatter(
-//             await readFile(`content/tutorial/${next_exercise}`, 'utf-8'),
-//             next_exercise
-//           ).frontmatter.title;
-//         }
+        const dirs = next_exercise.split("/");
+        if (dirs[0] !== part_dir) {
+          title = (await json(`content/tutorial/${dirs[0]}/meta.json`)).title;
+        } else if (dirs[1] !== chapter_dir) {
+          title = (await json(`content/tutorial/${dirs[0]}/${dirs[1]}/meta.json`)).title;
+        } else {
+          title = extract_frontmatter(
+            await readFile(`content/tutorial/${next_exercise}`, "utf-8"),
+            next_exercise
+          ).frontmatter.title;
+        }
 
-//         next = {
-//           slug: next_exercise.split('/')[2].slice(3),
-//           title
-//         };
-//       }
+        next = {
+          slug: next_exercise.split("/")[2].slice(3),
+          title
+        };
+      }
 
-//       const editing_constraints = {
-//         create: new Set(exercise_meta.editing_constraints?.create ?? []),
-//         remove: new Set(exercise_meta.editing_constraints?.remove ?? [])
-//       };
+      const editing_constraints = {
+        create: new Set(exercise_meta.editing_constraints?.create ?? []),
+        remove: new Set(exercise_meta.editing_constraints?.remove ?? [])
+      };
 
-//       const solution = { ...a };
+      const solution = { ...a };
 
-//       for (const stub of Object.values(b)) {
-//         if (stub.type === 'file' && stub.contents.startsWith('__delete')) {
-//           // remove file
-//           editing_constraints.remove.add(stub.name);
-//           delete solution[stub.name];
-//         } else if (stub.name.endsWith('/__delete')) {
-//           // remove directory
-//           const parent = stub.name.slice(0, stub.name.lastIndexOf('/'));
-//           editing_constraints.remove.add(parent);
-//           delete solution[parent];
-//           for (const k in solution) {
-//             if (k.startsWith(parent + '/')) {
-//               delete solution[k];
-//             }
-//           }
-//         } else {
-//           if (!solution[stub.name]) {
-//             editing_constraints.create.add(stub.name);
-//           }
-//           solution[stub.name] = stub;
-//         }
-//       }
+      for (const stub of Object.values(b)) {
+        if (stub.type === "file" && stub.contents.startsWith("__delete")) {
+          // remove file
+          editing_constraints.remove.add(stub.name);
+          delete solution[stub.name];
+        } else if (stub.name.endsWith("/__delete")) {
+          // remove directory
+          const parent = stub.name.slice(0, stub.name.lastIndexOf("/"));
+          editing_constraints.remove.add(parent);
+          delete solution[parent];
+          for (const k in solution) {
+            if (k.startsWith(parent + "/")) {
+              delete solution[k];
+            }
+          }
+        } else {
+          if (!solution[stub.name]) {
+            editing_constraints.create.add(stub.name);
+          }
+          solution[stub.name] = stub;
+        }
+      }
 
-//       // ensure every code block for an exercise with multiple files has a `/// file:` annotation
-//       const filtered = Object.values(solution).filter((item) => {
-//         return item.type === 'file' && item.name.startsWith(scope.prefix);
-//       });
+      // ensure every code block for an exercise with multiple files has a `/// file:` annotation
+      const filtered = Object.values(solution).filter((item) => {
+        return item.type === "file" && item.name.startsWith(scope.prefix);
+      });
 
-//       if (filtered.length > 0) {
-//         for (const match of markdown.matchAll(/```[a-z]+\n([\s\S]+?)\n```/g)) {
-//           const content = match[1];
-//           if (!content.includes('/// file') && !content.includes('/// no-file')) {
-//             throw new Error(`Code block lacks a \`/// file: ...\` annotation: ${dir}/README.md`);
-//           }
-//         }
-//       }
+      if (filtered.length > 0) {
+        for (const match of markdown.matchAll(/```[a-z]+\n([\s\S]+?)\n```/g)) {
+          const content = match[1];
+          if (!content.includes("/// file") && !content.includes("/// no-file")) {
+            throw new Error(`Code block lacks a \`/// file: ...\` annotation: ${dir}/README.md`);
+          }
+        }
+      }
 
-//       const all_files = { ...a, ...solution };
-//       const filenames = new Set(
-//         Object.keys(all_files)
-//           .filter(
-//             (filename) => filename.startsWith(scope.prefix) && all_files[filename].type === 'file'
-//           )
-//           .map((filename) => filename.slice(scope.prefix.length))
-//       );
+      const all_files = { ...a, ...solution };
+      const filenames = new Set(
+        Object.keys(all_files)
+          .filter(
+            (filename) => filename.startsWith(scope.prefix) && all_files[filename].type === "file"
+          )
+          .map((filename) => filename.slice(scope.prefix.length))
+      );
 
-//       return {
-//         part: {
-//           slug: part_dir,
-//           title: `Part ${part_dir.slice(1, 2)}`,
-//           label: part_meta.title
-//         },
-//         chapter: {
-//           slug: chapter_dir,
-//           title: chapter_meta.title
-//         },
-//         scope,
-//         focus: focus ?? chapter_meta.focus ?? part_meta.focus,
-//         title,
-//         path,
-//         slug: exercise_slug,
-//         prev,
-//         next,
-//         dir,
-//         editing_constraints,
-//         markdown,
-//         html: await transform(markdown),
-//         a,
-//         b: solution,
-//         has_solution
-//       };
-//     }
+      return {
+        part: {
+          slug: part_dir,
+          title: `Part ${part_dir.slice(1, 2)}`,
+          label: part_meta.title
+        },
+        chapter: {
+          slug: chapter_dir,
+          title: chapter_meta.title
+        },
+        scope,
+        focus: focus ?? chapter_meta.focus ?? part_meta.focus,
+        title,
+        path,
+        slug: exercise_slug,
+        prev,
+        next,
+        dir,
+        editing_constraints,
+        markdown,
+        html: await transform(markdown, {
+          codespan: (text) =>
+            filenames.size > 1 && filenames.has(text)
+              ? `<code data-file="${scope.prefix + text}">${text}</code>`
+              : `<code>${text}</code>`
+        }),
+        a,
+        b: solution,
+        has_solution
+      };
+    }
 
-//     chain.push(`${dir}/app-b`);
-//   }
-// }
+    chain.push(`${dir}/app-b`);
+  }
+}
 
 function extract_frontmatter(markdown: string, dir: string) {
   const match = /---\n([^]+?)\n---\n([^]+)/.exec(markdown);
@@ -289,6 +294,9 @@ function extract_frontmatter(markdown: string, dir: string) {
   return { frontmatter, markdown: match[2] };
 }
 
+/**
+ * Get a list of all files in a directory
+ */
 async function walk(cwd: string, options: { exclude?: string[] } = {}) {
   const result: Record<string, FileStub | DirectoryStub> = {};
 

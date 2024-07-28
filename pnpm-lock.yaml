@@ -7,6 +7,10 @@ settings:
 importers:
 
   .:
+    dependencies:
+      tiny-glob:
+        specifier: ^0.2.9
+        version: 0.2.9
     devDependencies:
       '@fontsource-variable/petrona':
         specifier: ^5.0.14
