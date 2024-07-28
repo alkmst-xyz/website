@@ -16,5 +16,5 @@
 </Prose>
 
 <div class="flex flex-col space-y-4">
-  <PostsList posts={data.posts} />
+  <PostsList posts={data.links} />
 </div>

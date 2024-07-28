@@ -1,7 +1,9 @@
 <script lang="ts">
+  import type { PostStub } from "$lib/server/types";
+
   import type { MdMeta } from "../../routes/api/content/types";
 
-  export let posts: MdMeta[];
+  export let posts: PostStub[];
   export let postsPath: string = "/posts";
 </script>
 

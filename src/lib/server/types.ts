@@ -74,6 +74,14 @@ export interface PartStub {
   chapters: ChapterStub[];
 }
 
+// used
+export interface PostStub {
+  slug: string;
+  title: string;
+  description: string;
+  draft?: boolean;
+}
+
 export interface EditingConstraints {
   create: Set<string>;
   remove: Set<string>;
@@ -94,4 +102,28 @@ export interface MenuItem {
   icon: string;
   label: string;
   fn: () => void;
+}
+
+// Navigation
+export interface NavigationLink {
+  title: string;
+  prefix: string;
+  pathname: string;
+  sections?: {
+    title: string;
+    sections: {
+      title: string;
+      sections: {
+        title: string;
+        path: string;
+        badge?: string;
+      }[];
+    }[];
+  }[];
+}
+
+export interface NavigationLink2 {
+  title: string;
+  path: string;
+  badge?: string;
 }
