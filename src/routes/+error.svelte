@@ -3,8 +3,8 @@
 </script>
 
 <svelte:head>
-  <title>Posts</title>
-  <meta name="description" content="About this app" />
+  <title>Page Error</title>
+  <meta name="description" content="Page Error." />
 </svelte:head>
 
 <h1>Yup, you ran into an error, sorry for that :(</h1>
