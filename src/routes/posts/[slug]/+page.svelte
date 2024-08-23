@@ -3,7 +3,7 @@
   import type { PageServerData } from "./$types";
 
   export let data: PageServerData;
-  const { meta, html } = data.postBody;
+  const { meta, html } = data.post;
 </script>
 
 <svelte:head>

@@ -57,6 +57,38 @@ export interface Exercise {
   has_solution: boolean;
 }
 
+export interface Exercise2 {
+  // part: {
+  //   slug: string;
+  //   title: string;
+  //   label: string;
+  // };
+  // chapter: {
+  //   slug: string;
+  //   title: string;
+  // };
+  // scope: Scope;
+  // focus: string;
+  title: string;
+  // /** the initial path to navigate to */
+  // path: string;
+  // slug: string;
+  // prev: { slug: string } | null;
+  // next: { slug: string; title: string } | null;
+  // markdown: string;
+  // html: string;
+  // dir: string;
+  // editing_constraints: {
+  //   create: Set<string>;
+  //   remove: Set<string>;
+  // };
+  // a: Record<string, Stub>;
+  // b: Record<string, Stub>;
+  // has_solution: boolean;
+  meta: any;
+  html: string;
+}
+
 export interface ExerciseStub {
   title: string;
   slug: string;

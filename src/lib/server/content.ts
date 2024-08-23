@@ -3,7 +3,15 @@ import path from "node:path";
 import glob from "tiny-glob";
 
 import { transform, posixify } from "./markdown.js";
-import type { Exercise, PartStub, PostStub, ChapterStub, DirectoryStub, FileStub } from "./types";
+import type {
+  Exercise,
+  Exercise2,
+  PartStub,
+  PostStub,
+  ChapterStub,
+  DirectoryStub,
+  FileStub
+} from "./types";
 
 const text_files = new Set([
   ".svelte",
@@ -110,56 +118,13 @@ export async function get_index_2(): Promise<PostStub[]> {
     const { title, description } = frontmatter;
 
     const obj: PostStub = {
-      slug: part,
+      slug: part.slice(0, -3),
       title: title,
       description: description
     };
 
     final_data.push(obj);
   }
-
-  // for (const part of parts) {
-  //   const chapters = (await readdir(`content/tutorial/${part}`)).filter(is_valid).map(posixify);
-
-  //   const obj: PartStub = {
-  //     slug: part,
-  //     title: (await json(`content/tutorial/${part}/meta.json`)).title,
-  //     chapters: []
-  //   };
-
-  //   for (const chapter of chapters) {
-  //     let exercises = await readdir(`content/tutorial/${part}/${chapter}`);
-  //     for (const exercise of exercises) {
-  //       if (!(is_valid(exercise) && (await exists_readme(part, chapter, exercise)))) {
-  //         exercises = exercises.filter((e) => e !== exercise);
-  //       }
-  //     }
-  //     exercises = exercises.map(posixify);
-
-  //     const chapters_obj: ChapterStub = {
-  //       slug: chapter,
-  //       title: (await json(`content/tutorial/${part}/${chapter}/meta.json`)).title,
-  //       exercises: []
-  //     };
-
-  //     for (const exercise of exercises) {
-  //       const dir = `content/tutorial/${part}/${chapter}/${exercise}`;
-
-  //       const text = await readFile(`${dir}/README.md`, "utf-8");
-  //       const { frontmatter } = extract_frontmatter(text, dir);
-  //       const { title } = frontmatter;
-
-  //       chapters_obj.exercises.push({
-  //         slug: exercise.slice(3),
-  //         title
-  //       });
-  //     }
-
-  //     obj.chapters.push(chapters_obj);
-  //   }
-
-  //   final_data.push(obj);
-  // }
 
   return final_data;
 }
@@ -345,6 +310,31 @@ export async function get_exercise(slug: string): Promise<Exercise | undefined> 
     }
 
     chain.push(`${dir}/app-b`);
+  }
+}
+
+/**
+ * new
+ */
+export async function get_exercise_2(slug: string): Promise<Exercise2 | undefined> {
+  const parts = (await readdir("content")).filter(is_md_file);
+
+  for (const part of parts) {
+    if (slug === part.slice(0, -3)) {
+      const dir = `content/${part}`;
+      const text = await readFile(`${dir}`, "utf-8");
+      const { frontmatter, markdown } = extract_frontmatter(text, dir);
+      const { title, description } = frontmatter;
+
+      return {
+        // slug: part,
+        title: title,
+        html: await transform(markdown, {
+          codespan: (text) => `<code>${text}</code>`
+        }),
+        meta: frontmatter
+      };
+    }
   }
 }
 

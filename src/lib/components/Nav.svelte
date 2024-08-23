@@ -13,7 +13,7 @@
   class="
   flex flex-col justify-between
   space-y-2
-  px-2 py-10
+  py-10
   text-lg
   md:flex-row
   md:space-y-0"
