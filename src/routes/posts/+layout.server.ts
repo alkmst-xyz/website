@@ -1,14 +1,15 @@
-import { error } from '@sveltejs/kit';
-import type { LayoutServerLoad } from './$types';
-import type { MdMeta } from '../api/content/types';
+import { error } from "@sveltejs/kit";
+import type { LayoutServerLoad } from "./$types";
+
+export const prerender = true;
 
 export const load = (async ({ fetch }) => {
-  const response = await fetch('/api/content');
+  const response = await fetch("/nav.json");
   if (!response.ok) {
-    throw error(400, 'error loading data from endpoint');
+    throw error(400, "Error loading data from endpoint");
   }
 
   return {
-    posts: (await response.json()) as MdMeta[]
+    links: await response.json()
   };
 }) satisfies LayoutServerLoad;

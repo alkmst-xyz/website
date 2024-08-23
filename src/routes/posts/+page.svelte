@@ -1,7 +1,7 @@
 <script lang="ts">
-  import PostsList from '$lib/components/PostsList.svelte';
-  import Prose from '$lib/components/Prose.svelte';
-  import type { LayoutServerData } from './$types';
+  import PostsList from "$lib/components/PostsList.svelte";
+  import Prose from "$lib/components/Prose.svelte";
+  import type { LayoutServerData } from "./$types";
 
   export let data: LayoutServerData;
 </script>
@@ -16,5 +16,5 @@
 </Prose>
 
 <div class="flex flex-col space-y-4">
-  <PostsList posts={data.posts} />
+  <PostsList posts={data.links} />
 </div>

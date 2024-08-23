@@ -1,6 +1,6 @@
 ---
 title: My third post (yay!)
-date: '2021-10-06'
+date: "2021-10-06"
 description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 category: dev
 tags:

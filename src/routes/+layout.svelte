@@ -1,17 +1,15 @@
 <script lang="ts">
-  import '$lib/assets/styles/styles.css';
-  import Nav from '$lib/components/Nav.svelte';
-  import Footer from '$lib/components/Footer.svelte';
+  import "$lib/assets/styles/styles.css";
+  import Nav from "$lib/components/Nav.svelte";
+  import Footer from "$lib/components/Footer.svelte";
 </script>
 
-<div class="">
-  <div class="mx-auto max-w-screen-sm px-2">
-    <Nav />
+<div class="mx-auto max-w-screen-lg px-8">
+  <Nav />
 
-    <main class="mb-8 px-2">
-      <slot />
-    </main>
+  <main>
+    <slot />
+  </main>
 
-    <Footer />
-  </div>
+  <Footer />
 </div>

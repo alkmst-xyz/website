@@ -1,7 +1,7 @@
 <script lang="ts">
-  import Prose from '$lib/components/Prose.svelte';
-  import Tag from '$lib/components/Tag.svelte';
-  import type { PageServerData } from './$types';
+  import Prose from "$lib/components/Prose.svelte";
+  import Tag from "$lib/components/Tag.svelte";
+  import type { PageServerData } from "./$types";
   export let data: PageServerData;
 </script>
 

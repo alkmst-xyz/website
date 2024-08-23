@@ -1,6 +1,6 @@
 <script>
-  import { src as logoSrc } from '$lib/assets/images/logo_1024.png?w=1024&format=avif&quality=80&lossless=true&alpha=&as=metadata';
-  import Prose from '$lib/components/Prose.svelte';
+  import { src as logoSrc } from "$lib/assets/images/logo_1024.png?w=1024&format=avif&quality=80&lossless=true&alpha=&as=metadata";
+  import Prose from "$lib/components/Prose.svelte";
 </script>
 
 <svelte:head>

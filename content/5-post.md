@@ -1,12 +1,11 @@
 ---
-title: My second post
-date: '2021-06-06'
+title: My fifth post
+date: "2021-12-06"
 description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 category: dev
 tags:
-  - programming
-  - nuxt
-slug: post-2
+  - nuxtjs
+slug: post-5
 draft: true
 ---
 

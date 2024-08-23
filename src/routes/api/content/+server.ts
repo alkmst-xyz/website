@@ -1,7 +1,7 @@
-import { json } from '@sveltejs/kit';
-import { dev } from '$app/environment';
-import type { RequestHandler } from './$types';
-import type { MdsvexEntry } from './types';
+import { json } from "@sveltejs/kit";
+import { dev } from "$app/environment";
+import type { RequestHandler } from "./$types";
+import type { MdsvexEntry } from "./types";
 
 export const prerender = true;
 
@@ -10,7 +10,7 @@ export const prerender = true;
  */
 export const GET: RequestHandler = async () => {
   // https://github.com/rollup/plugins/tree/master/packages/dynamic-import-vars#how-it-works
-  const mdFiles = import.meta.glob<MdsvexEntry>('./../../../content/*.md');
+  const mdFiles = import.meta.glob<MdsvexEntry>("./../../../content/*.md");
   const mdFilesIterable = Object.entries(mdFiles);
 
   const posts = await Promise.all(

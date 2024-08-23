@@ -1,6 +1,6 @@
 ---
 title: My last post (oh no!)
-date: '2022-03-06'
+date: "2022-03-06"
 description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 category: dev
 tags:
